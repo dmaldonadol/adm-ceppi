@@ -1,4 +1,4 @@
-package cl.ml.ceppi.ceppi_core;
+package cl.ml.ceppi.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
