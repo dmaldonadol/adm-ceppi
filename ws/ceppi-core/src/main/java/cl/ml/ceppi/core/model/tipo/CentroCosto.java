@@ -3,13 +3,31 @@
  */
 package cl.ml.ceppi.core.model.tipo;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 /**
- * @author dmaldonado
+ * @author Maldonado León
  * 
  */
-public class CentroCosto {
+@Entity
+@SequenceGenerator(name = "SEC_CENTRO_COSTO", sequenceName = "SEC_CENTRO_COSTO")
+@Table(name = "CENTRO_COSTO")
+public class CentroCosto implements Serializable {
+	private static final long serialVersionUID = -139712273252199785L;
+	@Id
+	@GeneratedValue(generator = "SEC_CENTRO_COSTO")
+	@Column(name = "ID_CENTRO_COSTO", nullable = false)
 	private int oid;
+	@Column
 	private String nombre;
+	@Column
 	private String descripcion;
 
 	/**

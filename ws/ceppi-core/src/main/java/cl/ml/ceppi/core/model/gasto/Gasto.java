@@ -3,20 +3,42 @@
  */
 package cl.ml.ceppi.core.model.gasto;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
 
 /**
- * @author dmaldonado
+ * @author Maldonado León
  * 
  */
-public class Gasto {
+@Entity
+@SequenceGenerator(name = "SEC_GASTO", sequenceName = "SEC_GASTO")
+@Table(name = "GASTO")
+public class Gasto implements Serializable {
 
+	private static final long serialVersionUID = -1954990226741449568L;
+	@Id
+	@GeneratedValue(generator = "SEC_GASTO")
+	@Column(name = "ID_GASTO", nullable = false)
 	private int oid;
+	@Column
 	private String monto;
+	@Column
 	private String fecha;
+	@Column
 	private String detalle;
+	@ManyToOne
 	private TipoGasto tipoGasto;
+	@ManyToOne
 	private CentroCosto centroCosto;
 
 	/**

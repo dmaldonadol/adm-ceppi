@@ -1,16 +1,32 @@
-/**
- * 
- */
 package cl.ml.ceppi.core.model.tipo;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 /**
- * @author dmaldonado
+ * @author Maldonado León
  * 
  */
-public class TipoGasto {
+@Entity
+@SequenceGenerator(name = "SEC_TIPO_GASTO", sequenceName = "SEC_TIPO_GASTO")
+@Table(name = "TIPO_GASTO")
+public class TipoGasto implements Serializable{
 
+	private static final long serialVersionUID = 3090757832227438377L;
+	
+	@Id
+	@GeneratedValue(generator = "SEC_TIPO_GASTO")
+	@Column(name = "ID_TIPO_GASTO", nullable = false)
 	private int oid;
+	@Column
 	private String nombre;
+	@Column
 	private String descripcion;
 
 	/**

@@ -1,20 +1,40 @@
 package cl.ml.ceppi.core.model.socio;
 
-import cl.ml.ceppi.core.model.estado.EstadoCuota;
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import cl.ml.ceppi.core.model.estado.Estado;
 import cl.ml.ceppi.core.model.persona.Persona;
 import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 
 /**
  * 
- * @author dmaldonado
+ * @author Maldonado León
  * 
  */
-public class Socio extends Persona {
+@Entity
+@SequenceGenerator(name = "SEC_SOCIO", sequenceName = "SEC_SOCIO")
+@Table(name = "SOCIO")
+public class Socio extends Persona implements Serializable {
 
+	private static final long serialVersionUID = 257402133488075225L;
+	@Id
+	@GeneratedValue(generator = "SEC_SOCIO")
+	@Column(name = "ID_SOCIO", nullable = false)
 	private int oid;
-	private EstadoCuota estadoCuota;
+	@Column
+	private Estado estado;
+	@ManyToOne
 	private TipoSocio tipoSocio;
+	@ManyToOne
 	private CategoriaSocio categoriaSocio;
 
 	public Socio() {
@@ -45,12 +65,12 @@ public class Socio extends Persona {
 		this.categoriaSocio = categoriaSocio;
 	}
 
-	public EstadoCuota getEstadoCuota() {
-		return estadoCuota;
+	public Estado getEstado() {
+		return estado;
 	}
 
-	public void setEstadoCuota(EstadoCuota estadoCuota) {
-		this.estadoCuota = estadoCuota;
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 }

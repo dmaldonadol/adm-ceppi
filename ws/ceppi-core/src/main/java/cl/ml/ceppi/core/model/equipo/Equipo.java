@@ -3,11 +3,15 @@
  */
 package cl.ml.ceppi.core.model.equipo;
 
+import java.io.Serializable;
+
 /**
- * @author dmaldonado
+ * @author Maldonado León
  *
  */
-public class Equipo {
+public class Equipo implements Serializable{
+
+	private static final long serialVersionUID = 240104970931764714L;
 
 	/**
 	 * 

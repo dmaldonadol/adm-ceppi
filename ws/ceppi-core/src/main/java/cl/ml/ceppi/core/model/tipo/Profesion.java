@@ -1,15 +1,31 @@
-/**
- * 
- */
 package cl.ml.ceppi.core.model.tipo;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 /**
- * @author dmaldonado
+ * @author Maldonado León
  * 
  */
-public class Profesion {
+@Entity
+@SequenceGenerator(name = "SEC_PROFESION", sequenceName = "SEC_PROFESION")
+@Table(name = "PROFESION")
+public class Profesion implements Serializable {
+	private static final long serialVersionUID = -7033070437508223564L;
+	
+	@Id
+	@GeneratedValue(generator = "SEC_PROFESION")
+	@Column(name = "ID_PROFESION", nullable = false)
 	private int oid;
+	@Column
 	private String nombre;
+	@Column
 	private String descripcion;
 
 	/**

@@ -3,15 +3,33 @@
  */
 package cl.ml.ceppi.core.model.usuario;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 import cl.ml.ceppi.core.model.persona.Persona;
 
 /**
- * @author dmaldonado
+ * @author Maldonado León
  * 
  */
-public class Usuario extends Persona {
+@Entity
+@SequenceGenerator(name = "SEC_USUARIO", sequenceName = "SEC_USUARIO")
+@Table(name = "USUARIO")
+public class Usuario extends Persona implements Serializable {
+	private static final long serialVersionUID = -1065304047321416426L;
+	@Id
+	@GeneratedValue(generator = "SEC_USUARIO")
+	@Column(name = "ID_USUARIO", nullable = false)
 	private int oid;
+	@Column(unique = true, length = 20, nullable = false)
 	private String username;
+	@Column(unique = true, length = 20, nullable = false)
 	private String password;
 
 	/**
