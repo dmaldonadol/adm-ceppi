@@ -1,20 +1,18 @@
 package cl.ml.ceppi.core.model.menu;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
  * 
  * @author Maldonado León
- *
+ * 
  */
 @Entity
 @SequenceGenerator(name = "SEC_ITEM", sequenceName = "SEC_ITEM")
@@ -27,17 +25,21 @@ public class Item implements Serializable {
 	@GeneratedValue(generator = "SEC_ITEM")
 	@Column(name = "ID_ITEM", nullable = false)
 	private int oid;
+
+	@Column
+	private int idPadre;
 	
 	@Column
 	private String nombre;
+
 	@Column
 	private String path;
+
 	@Column
 	private String orden;
+
 	@Column
 	private Permiso permiso;
-	@ManyToOne
-	private List<Item> lista;
 
 	public Item() {
 		// TODO Auto-generated constructor stub
@@ -83,12 +85,12 @@ public class Item implements Serializable {
 		this.permiso = permiso;
 	}
 
-	public List<Item> getLista() {
-		return lista;
+	public int getIdPadre() {
+		return idPadre;
 	}
 
-	public void setLista(List<Item> lista) {
-		this.lista = lista;
+	public void setIdPadre(int idPadre) {
+		this.idPadre = idPadre;
 	}
 
 }

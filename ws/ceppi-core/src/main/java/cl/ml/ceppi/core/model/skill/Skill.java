@@ -22,6 +22,7 @@ import javax.persistence.Table;
 public class Skill implements Serializable {
 
 	private static final long serialVersionUID = 6272579091850707826L;
+	
 	@Id
 	@GeneratedValue(generator = "SEC_SKILL")
 	@Column(name = "ID_SKILL", nullable = false)

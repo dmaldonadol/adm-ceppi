@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -26,19 +27,27 @@ import cl.ml.ceppi.core.model.tipo.TipoGasto;
 public class Gasto implements Serializable {
 
 	private static final long serialVersionUID = -1954990226741449568L;
+	
 	@Id
 	@GeneratedValue(generator = "SEC_GASTO")
 	@Column(name = "ID_GASTO", nullable = false)
 	private int oid;
+	
 	@Column
 	private String monto;
+	
 	@Column
 	private String fecha;
+	
 	@Column
 	private String detalle;
+	
 	@ManyToOne
+	@JoinColumn(name = "ID_TIPO_GASTO")
 	private TipoGasto tipoGasto;
+	
 	@ManyToOne
+	@JoinColumn(name = "ID_CENTRO_COSTO")
 	private CentroCosto centroCosto;
 
 	/**

@@ -1,11 +1,13 @@
 package cl.ml.ceppi.core.model.equipo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -23,14 +25,18 @@ import cl.ml.ceppi.core.model.skill.Skill;
 public class SkillJugador implements Serializable {
 
 	private static final long serialVersionUID = 4137884810393070496L;
+	
 	@Id
 	@GeneratedValue(generator = "SEC_SKILL_JUGADOR")
 	@Column(name = "ID_SKILL_JUGADOR", nullable = false)
 	private int oid;
+	
 	@Column
 	private String data;
+	
 	@OneToMany
-	private Skill skill;
+	@JoinColumn(name = "ID_SKILL")
+	private List<Skill> skill;
 
 	public int getOid() {
 		return oid;
@@ -48,11 +54,11 @@ public class SkillJugador implements Serializable {
 		this.data = data;
 	}
 
-	public Skill getSkill() {
+	public List<Skill> getSkill() {
 		return skill;
 	}
 
-	public void setSkill(Skill skill) {
+	public void setSkill(List<Skill> skill) {
 		this.skill = skill;
 	}
 

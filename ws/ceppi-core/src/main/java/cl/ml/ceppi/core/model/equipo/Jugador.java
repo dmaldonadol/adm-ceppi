@@ -4,13 +4,14 @@
 package cl.ml.ceppi.core.model.equipo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,7 +24,7 @@ import cl.ml.ceppi.core.model.persona.Persona;
 @Entity
 @SequenceGenerator(name = "SEC_JUGADOR", sequenceName = "SEC_JUGADOR")
 @Table(name = "JUGADOR")
-public class Jugador extends Persona implements Serializable {
+public class Jugador implements Serializable {
 
 	private static final long serialVersionUID = -153115785512062943L;
 
@@ -39,10 +40,13 @@ public class Jugador extends Persona implements Serializable {
 	private String posicion;
 
 	@OneToMany
-	private SkillJugador skillJugador;
+	private List<SkillJugador> skillJugador;
+	
+	@OneToOne
+	private Persona persona;
 
-	@ManyToMany
-	private Equipo equipo;
+	// @ManyToMany
+	// private Equipo equipo;
 
 	/**
 	 * 
@@ -75,20 +79,28 @@ public class Jugador extends Persona implements Serializable {
 		this.posicion = posicion;
 	}
 
-	public SkillJugador getSkillJugador() {
+	public List<SkillJugador> getSkillJugador() {
 		return skillJugador;
 	}
 
-	public void setSkillJugador(SkillJugador skillJugador) {
+	public void setSkillJugador(List<SkillJugador> skillJugador) {
 		this.skillJugador = skillJugador;
 	}
 
-	public Equipo getEquipo() {
-		return equipo;
+	public Persona getPersona() {
+		return persona;
 	}
 
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
+
+	// public Equipo getEquipo() {
+	// return equipo;
+	// }
+	//
+	// public void setEquipo(Equipo equipo) {
+	// this.equipo = equipo;
+	// }
 
 }

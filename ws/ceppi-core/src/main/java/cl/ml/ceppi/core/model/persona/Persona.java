@@ -9,6 +9,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -23,41 +26,44 @@ import cl.ml.ceppi.core.model.tipo.TipoSocio;
 @Entity
 @SequenceGenerator(name = "SEC_PERSONA", sequenceName = "SEC_PERSONA")
 @Table(name = "PERSONA")
-public abstract class Persona implements Serializable{
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 8554029070080556470L;
+
 	@Id
 	@GeneratedValue(generator = "SEC_PERSONA")
-	@Column(name = "ID_PERSONA", nullable = false)	
+	@Column(name = "ID_PERSONA", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 10 )
+
+	@Column(unique = true, length = 10)
 	private String rut;
-	
+
 	@Column(length = 1)
 	private String dv;
-	
+
 	@Column(nullable = false, length = 100)
 	private String nombre;
-	
+
 	@Column(nullable = false, length = 100)
 	private String apellidoPaterno;
-	
+
 	@Column(length = 100)
 	private String apellidoMaterno;
-	
+
 	@Column(length = 50)
 	private String email;
-	
+
 	@ManyToOne
+	@JoinColumn(name = "ID_TIPO_SOCIO")
 	private TipoSocio tipoSocio;
-	
+
 	@Column
 	private String estatura;
-	
+
 	@Column
 	private String peso;
-	
+
 	@Column
 	private Genero genero;
 
@@ -131,4 +137,29 @@ public abstract class Persona implements Serializable{
 	public void setTipoSocio(TipoSocio tipoSocio) {
 		this.tipoSocio = tipoSocio;
 	}
+
+	public String getEstatura() {
+		return estatura;
+	}
+
+	public void setEstatura(String estatura) {
+		this.estatura = estatura;
+	}
+
+	public String getPeso() {
+		return peso;
+	}
+
+	public void setPeso(String peso) {
+		this.peso = peso;
+	}
+
+	public Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
+
 }

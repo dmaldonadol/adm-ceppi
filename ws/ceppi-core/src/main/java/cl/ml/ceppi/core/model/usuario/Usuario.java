@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,16 +22,22 @@ import cl.ml.ceppi.core.model.persona.Persona;
 @Entity
 @SequenceGenerator(name = "SEC_USUARIO", sequenceName = "SEC_USUARIO")
 @Table(name = "USUARIO")
-public class Usuario extends Persona implements Serializable {
+public class Usuario implements Serializable {
 	private static final long serialVersionUID = -1065304047321416426L;
+	
 	@Id
 	@GeneratedValue(generator = "SEC_USUARIO")
 	@Column(name = "ID_USUARIO", nullable = false)
 	private int oid;
+	
 	@Column(unique = true, length = 20, nullable = false)
 	private String username;
+	
 	@Column(unique = true, length = 20, nullable = false)
 	private String password;
+	
+	@OneToOne
+	private Persona persona;
 
 	/**
 	 * 
@@ -61,6 +68,14 @@ public class Usuario extends Persona implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
 }

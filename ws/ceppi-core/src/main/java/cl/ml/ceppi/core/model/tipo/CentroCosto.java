@@ -21,6 +21,7 @@ import javax.persistence.Table;
 @Table(name = "CENTRO_COSTO")
 public class CentroCosto implements Serializable {
 	private static final long serialVersionUID = -139712273252199785L;
+
 	@Id
 	@GeneratedValue(generator = "SEC_CENTRO_COSTO")
 	@Column(name = "ID_CENTRO_COSTO", nullable = false)
