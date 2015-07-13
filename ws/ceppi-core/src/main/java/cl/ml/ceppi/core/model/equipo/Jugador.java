@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -43,6 +44,7 @@ public class Jugador implements Serializable {
 	private List<SkillJugador> skillJugador;
 	
 	@OneToOne
+	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 
 	// @ManyToMany

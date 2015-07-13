@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -37,6 +38,7 @@ public class Usuario implements Serializable {
 	private String password;
 	
 	@OneToOne
+	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 
 	/**

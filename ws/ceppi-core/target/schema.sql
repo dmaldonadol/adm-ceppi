@@ -65,7 +65,7 @@
 
     create table ACCESO (
         ID_ACCESO number(10,0) not null,
-        usuario_ID_USUARIO number(10,0),
+        ID_USUARIO number(10,0),
         primary key (ID_ACCESO)
     );
 
@@ -120,7 +120,7 @@
         ID_JUGADOR number(10,0) not null,
         numero varchar2(255 char),
         posicion varchar2(255 char),
-        persona_ID_PERSONA number(10,0),
+        ID_PERSONA number(10,0),
         primary key (ID_JUGADOR)
     );
 
@@ -169,9 +169,9 @@
     create table SOCIO (
         ID_SOCIO number(10,0) not null,
         estado number(10,0),
-        categoriaSocio_ID_CATEGORIA_SOCIO number(10,0),
-        persona_ID_PERSONA number(10,0),
-        tipoSocio_ID_TIPO_SOCIO number(10,0),
+        ID_CATEGORIA_SOCIO number(10,0),
+        ID_PERSONA number(10,0),
+        ID_TIPO_SOCIO number(10,0),
         primary key (ID_SOCIO)
     );
 
@@ -193,13 +193,13 @@
         ID_USUARIO number(10,0) not null,
         password varchar2(20 char) not null,
         username varchar2(20 char) not null,
-        persona_ID_PERSONA number(10,0),
+        ID_PERSONA number(10,0),
         primary key (ID_USUARIO)
     );
 
     alter table ACCESO 
-        add constraint FK72BAA9606A9B8726 
-        foreign key (usuario_ID_USUARIO) 
+        add constraint FK72BAA960346C4D75 
+        foreign key (ID_USUARIO) 
         references USUARIO;
 
     alter table ACCESO_ITEM 
@@ -228,8 +228,8 @@
         references SOCIO;
 
     alter table JUGADOR 
-        add constraint FKDFA027A2BBF1C762 
-        foreign key (persona_ID_PERSONA) 
+        add constraint FKDFA027A281EF84EF 
+        foreign key (ID_PERSONA) 
         references PERSONA;
 
     alter table JUGADOR_SKILL_JUGADOR 
@@ -253,23 +253,23 @@
         references SKILL_JUGADOR;
 
     alter table SOCIO 
-        add constraint FK4B68CCD748E9942 
-        foreign key (tipoSocio_ID_TIPO_SOCIO) 
+        add constraint FK4B68CCD9A638CC8 
+        foreign key (ID_TIPO_SOCIO) 
         references TIPO_SOCIO;
 
     alter table SOCIO 
-        add constraint FK4B68CCDBBF1C762 
-        foreign key (persona_ID_PERSONA) 
-        references PERSONA;
-
-    alter table SOCIO 
-        add constraint FK4B68CCD37AECB3 
-        foreign key (categoriaSocio_ID_CATEGORIA_SOCIO) 
+        add constraint FK4B68CCD46CAFBEE 
+        foreign key (ID_CATEGORIA_SOCIO) 
         references CATEGORIA_SOCIO;
 
+    alter table SOCIO 
+        add constraint FK4B68CCD81EF84EF 
+        foreign key (ID_PERSONA) 
+        references PERSONA;
+
     alter table USUARIO 
-        add constraint FK22E07F0EBBF1C762 
-        foreign key (persona_ID_PERSONA) 
+        add constraint FK22E07F0E81EF84EF 
+        foreign key (ID_PERSONA) 
         references PERSONA;
 
     create sequence SEC_ACCESO;
