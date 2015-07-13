@@ -3,6 +3,9 @@
  * Page/renders: page-login.html
  * Plugins used: parsley
  * ======================================================================== */
+var URL_PAGE_INDEX = CONSTANTS.contextPath + '/private/pages/index.jsp';
+var URL_SERVICE_AUTHENTICATION = CONSTANTS.contextPath + '/api/authentication';
+
 
 'use strict';
 
@@ -16,34 +19,51 @@
     }
 }(function () {
 
-    $(function () {
-        // Login form function
-        // ================================
-        var $form    = $('form[name=form-login]');
-
-        // On button submit click
-        $form.on('click', 'button[type=submit]', function (e) {
+    $(function () 
+    {
+        var $form = $('form[name=form-login]');
+        $form.on('click', 'button[type=submit]', function (e) 
+        {
             var $this = $(this);
-
-            // Run parsley validation
-            if ($form.parsley().validate()) {
-                // Disable submit button
-                $this.prop('disabled', true);
-
-                // start nprogress bar
-                NProgress.start();
-
-                // you can do the ajax request here
-                // this is for demo purpose only
-                setTimeout(function () {
-                    // done nprogress bar
-                    NProgress.done();
-
-                    // redirect user
-                    location.href = 'index.html';
-                }, 500);
-            } else {
-                // toggle animation
+			if ($form.parsley().validate()) 
+			{
+			    $this.prop('disabled', true);
+			    NProgress.start();
+			    
+			    
+			    var user = 
+			    { 
+		    		username: $('input[name=username]').val(), 
+		    		password:$('input[name=password]').val() 
+			    };
+			    
+			    $.ajax(
+			    {
+                    url: URL_SERVICE_AUTHENTICATION,
+                    cache: false,
+                    type: 'POST',
+                    dataType: "application/json",
+                    contentType : "application/json",
+                    data : JSON.stringify(user),
+                    error : function(xhr, ajaxOptions, thrownError)
+					{
+						  if( xhr.status == "200" )
+						  {
+							  location.href =  URL_PAGE_INDEX;
+						  }
+						  else
+						  {
+							  alert("Inicio de sesion no valido");
+							  $this.prop('disabled', false);
+						  }
+						  NProgress.done();
+					}
+                });
+			
+				
+			} 
+            else 
+            {
                 $form
                     .removeClass('animation animating shake')
                     .addClass('animation animating shake')
@@ -51,7 +71,6 @@
                         $(this).removeClass('animation animating shake');
                     });
             }
-            // prevent default
             e.preventDefault();
         });
     });

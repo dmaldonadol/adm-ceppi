@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/bootstrap.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/layout.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/uielement.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/nprogress/css/nprogress.css">
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
     </head>
     <!--/ END Head -->
@@ -95,11 +96,24 @@
                 </div>
             </section>
         </section>
+        <script type="text/javascript">
+        	var CONSTANTS = 
+        	{
+        		contextPath : "<%=request.getContextPath() %>"
+        	};
+        </script>
+        
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/vendor.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/core.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/backend/app.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/parsley/js/parsley.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/backend/pages/login.js"></script>
+        
+        
+        
+        
+        
     </body>
     <!--/ END Body -->
 </html>
