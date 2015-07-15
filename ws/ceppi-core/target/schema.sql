@@ -127,7 +127,6 @@
         nombre varchar2(255 char),
         orden varchar2(255 char),
         path varchar2(255 char),
-        permiso varchar2(255 char),
         ID_PADRE number(10,0),
         primary key (ID_MENU)
     );

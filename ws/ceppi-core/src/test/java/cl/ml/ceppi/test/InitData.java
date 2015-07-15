@@ -14,22 +14,11 @@ public class InitData {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("ceppi-beanLocations-admin.xml");
 		TipoFacade tipoFacade = (TipoFacade) appContext.getBean("tipoFacade");
 		
-//		Profesion profesion = new Profesion();
-//		profesion.setNombre("Ingeniero");
-//		profesion.setDescripcion("Ingeniero");
-//		
-//		tipoFacade.save(profesion);
-		
 		Profesion prof = tipoFacade.findProfesionById(1);
 		prof.setDescripcion("Ingenieria Informatica");
 		tipoFacade.delete(prof);
 		
-//		System.out.println(tipoFacade.findProfesionById(1).getOid());
-//		
-//		for (Profesion p : tipoFacade.listProfesion()) 
-//		{
-//			System.out.println(p.getDescripcion());
-//		}
+
 	}
 
 }
