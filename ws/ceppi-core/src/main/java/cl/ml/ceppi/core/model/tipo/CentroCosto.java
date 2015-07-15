@@ -26,8 +26,13 @@ public class CentroCosto implements Serializable {
 	@GeneratedValue(generator = "SEC_CENTRO_COSTO")
 	@Column(name = "ID_CENTRO_COSTO", nullable = false)
 	private int oid;
+	
+	@Column
+	private String codigo;
+	
 	@Column
 	private String nombre;
+	
 	@Column
 	private String descripcion;
 
@@ -60,6 +65,14 @@ public class CentroCosto implements Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 }

@@ -1,19 +1,21 @@
-package cl.ml.ceppi.core.model.menu;
+package cl.ml.ceppi.core.model.acceso;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import cl.ml.ceppi.core.model.usuario.Usuario;
+import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.Permiso;
+import cl.ml.ceppi.core.model.perfil.Perfil;
 
 /**
  * 
@@ -32,11 +34,16 @@ public class Acceso implements Serializable {
 	private int oid;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_USUARIO")
-	private Usuario usuario;
+	@JoinColumn(name = "ID_PERFIL")
+	private Perfil perfil;
 
-	@OneToMany
-	private List<Item> items;
+	@ManyToOne
+	@JoinColumn(name = "ID_MENU")
+	private Menu itemsMenu;
+	
+	@Column
+	@Enumerated(EnumType.STRING)
+	private Permiso permiso;
 
 	public Acceso() {
 	}
@@ -49,20 +56,28 @@ public class Acceso implements Serializable {
 		this.oid = oid;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Perfil getPerfil() {
+		return perfil;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
 	}
 
-	public List<Item> getItems() {
-		return items;
+	public Menu getItemsMenu() {
+		return itemsMenu;
 	}
 
-	public void setItems(List<Item> items) {
-		this.items = items;
+	public void setItemsMenu(Menu itemsMenu) {
+		this.itemsMenu = itemsMenu;
+	}
+
+	public Permiso getPermiso() {
+		return permiso;
+	}
+
+	public void setPermiso(Permiso permiso) {
+		this.permiso = permiso;
 	}
 
 }

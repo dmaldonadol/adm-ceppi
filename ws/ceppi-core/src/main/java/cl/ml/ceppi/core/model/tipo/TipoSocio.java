@@ -19,16 +19,20 @@ import javax.persistence.Table;
 @Entity
 @SequenceGenerator(name = "SEC_TIPO_SOCIO", sequenceName = "SEC_TIPO_SOCIO")
 @Table(name = "TIPO_SOCIO")
-public class TipoSocio implements Serializable
-{
+public class TipoSocio implements Serializable {
 	private static final long serialVersionUID = -3925374795494263674L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_TIPO_SOCIO")
 	@Column(name = "ID_TIPO_SOCIO", nullable = false)
 	private int oid;
+
+	@Column
+	private String codigo;
+
 	@Column
 	private String nombre;
+
 	@Column
 	private String descripcion;
 
@@ -61,6 +65,14 @@ public class TipoSocio implements Serializable
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 }

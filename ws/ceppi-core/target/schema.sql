@@ -1,8 +1,6 @@
 
     drop table ACCESO cascade constraints;
 
-    drop table ACCESO_ITEM cascade constraints;
-
     drop table CATEGORIA_SOCIO cascade constraints;
 
     drop table CENTRO_COSTO cascade constraints;
@@ -11,11 +9,13 @@
 
     drop table INGRESO cascade constraints;
 
-    drop table ITEM cascade constraints;
-
     drop table JUGADOR cascade constraints;
 
     drop table JUGADOR_SKILL_JUGADOR cascade constraints;
+
+    drop table MENU cascade constraints;
+
+    drop table PERFIL cascade constraints;
 
     drop table PERSONA cascade constraints;
 
@@ -43,9 +43,11 @@
 
     drop sequence SEC_INGRESO;
 
-    drop sequence SEC_ITEM;
-
     drop sequence SEC_JUGADOR;
+
+    drop sequence SEC_MENU;
+
+    drop sequence SEC_PERFIL;
 
     drop sequence SEC_PERSONA;
 
@@ -65,18 +67,15 @@
 
     create table ACCESO (
         ID_ACCESO number(10,0) not null,
-        ID_USUARIO number(10,0),
+        permiso varchar2(255 char),
+        ID_MENU number(10,0),
+        ID_PERFIL number(10,0),
         primary key (ID_ACCESO)
-    );
-
-    create table ACCESO_ITEM (
-        ACCESO_ID_ACCESO number(10,0) not null,
-        items_ID_ITEM number(10,0) not null,
-        unique (items_ID_ITEM)
     );
 
     create table CATEGORIA_SOCIO (
         ID_CATEGORIA_SOCIO number(10,0) not null,
+        codigo varchar2(255 char),
         descripcion varchar2(255 char),
         nombre varchar2(255 char),
         primary key (ID_CATEGORIA_SOCIO)
@@ -84,6 +83,7 @@
 
     create table CENTRO_COSTO (
         ID_CENTRO_COSTO number(10,0) not null,
+        codigo varchar2(255 char),
         descripcion varchar2(255 char),
         nombre varchar2(255 char),
         primary key (ID_CENTRO_COSTO)
@@ -106,16 +106,6 @@
         primary key (ID_INGRESO)
     );
 
-    create table ITEM (
-        ID_ITEM number(10,0) not null,
-        idPadre number(10,0),
-        nombre varchar2(255 char),
-        orden varchar2(255 char),
-        path varchar2(255 char),
-        permiso number(10,0),
-        primary key (ID_ITEM)
-    );
-
     create table JUGADOR (
         ID_JUGADOR number(10,0) not null,
         numero varchar2(255 char),
@@ -130,6 +120,25 @@
         unique (skillJugador_ID_SKILL_JUGADOR)
     );
 
+    create table MENU (
+        TIPO varchar2(31 char) not null,
+        ID_MENU number(10,0) not null,
+        codigo varchar2(255 char),
+        nombre varchar2(255 char),
+        orden varchar2(255 char),
+        path varchar2(255 char),
+        permiso varchar2(255 char),
+        ID_PADRE number(10,0),
+        primary key (ID_MENU)
+    );
+
+    create table PERFIL (
+        ID_PERFIL number(10,0) not null,
+        codigo varchar2(255 char),
+        descripcion varchar2(255 char),
+        primary key (ID_PERFIL)
+    );
+
     create table PERSONA (
         ID_PERSONA number(10,0) not null,
         apellidoMaterno varchar2(100 char),
@@ -137,7 +146,7 @@
         dv varchar2(1 char),
         email varchar2(50 char),
         estatura varchar2(255 char),
-        genero number(10,0),
+        genero varchar2(255 char),
         nombre varchar2(100 char) not null,
         peso varchar2(255 char),
         rut varchar2(10 char) unique,
@@ -147,6 +156,7 @@
 
     create table PROFESION (
         ID_PROFESION number(10,0) not null,
+        codigo varchar2(255 char),
         descripcion varchar2(255 char),
         nombre varchar2(255 char),
         primary key (ID_PROFESION)
@@ -177,6 +187,7 @@
 
     create table TIPO_GASTO (
         ID_TIPO_GASTO number(10,0) not null,
+        codigo varchar2(255 char),
         descripcion varchar2(255 char),
         nombre varchar2(255 char),
         primary key (ID_TIPO_GASTO)
@@ -184,6 +195,7 @@
 
     create table TIPO_SOCIO (
         ID_TIPO_SOCIO number(10,0) not null,
+        codigo varchar2(255 char),
         descripcion varchar2(255 char),
         nombre varchar2(255 char),
         primary key (ID_TIPO_SOCIO)
@@ -198,19 +210,14 @@
     );
 
     alter table ACCESO 
-        add constraint FK72BAA960346C4D75 
-        foreign key (ID_USUARIO) 
-        references USUARIO;
+        add constraint FK72BAA960D74BE1B 
+        foreign key (ID_PERFIL) 
+        references PERFIL;
 
-    alter table ACCESO_ITEM 
-        add constraint FK3DB55E924B64F971 
-        foreign key (ACCESO_ID_ACCESO) 
-        references ACCESO;
-
-    alter table ACCESO_ITEM 
-        add constraint FK3DB55E921A6C4F77 
-        foreign key (items_ID_ITEM) 
-        references ITEM;
+    alter table ACCESO 
+        add constraint FK72BAA960E165B58E 
+        foreign key (ID_MENU) 
+        references MENU;
 
     alter table GASTO 
         add constraint FK40752F4D932612 
@@ -241,6 +248,16 @@
         add constraint FK2402D5B7ECA1601B 
         foreign key (skillJugador_ID_SKILL_JUGADOR) 
         references SKILL_JUGADOR;
+
+    alter table MENU 
+        add constraint FK240D5FB9768E86 
+        foreign key (ID_PADRE) 
+        references MENU;
+
+    alter table MENU 
+        add constraint FK240D5F6CA3D16D 
+        foreign key (ID_PADRE) 
+        references MENU;
 
     alter table PERSONA 
         add constraint FK25B5B8C9A638CC8 
@@ -282,9 +299,11 @@
 
     create sequence SEC_INGRESO;
 
-    create sequence SEC_ITEM;
-
     create sequence SEC_JUGADOR;
+
+    create sequence SEC_MENU;
+
+    create sequence SEC_PERFIL;
 
     create sequence SEC_PERSONA;
 

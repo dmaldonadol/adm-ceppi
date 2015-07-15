@@ -1,34 +1,46 @@
+/**
+ * 
+ */
 package cl.ml.ceppi.core.model.menu;
 
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
- * 
  * @author Maldonado León
  * 
  */
 @Entity
-@SequenceGenerator(name = "SEC_ITEM", sequenceName = "SEC_ITEM")
-@Table(name = "ITEM")
-public class Item implements Serializable {
-
-	private static final long serialVersionUID = 8015270775274569824L;
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TIPO", discriminatorType = DiscriminatorType.STRING)
+@SequenceGenerator(name = "SEC_MENU", sequenceName = "SEC_MENU")
+@Table(name = "MENU")
+public abstract class Menu implements Serializable {
+	private static final long serialVersionUID = -1946525400219081851L;
 
 	@Id
-	@GeneratedValue(generator = "SEC_ITEM")
-	@Column(name = "ID_ITEM", nullable = false)
+	@GeneratedValue(generator = "SEC_MENU")
+	@Column(name = "ID_MENU", nullable = false)
 	private int oid;
 
 	@Column
-	private int idPadre;
-	
+	private String codigo;
+
 	@Column
 	private String nombre;
 
@@ -39,9 +51,17 @@ public class Item implements Serializable {
 	private String orden;
 
 	@Column
+	@Enumerated(EnumType.STRING)
 	private Permiso permiso;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ID_PADRE")
+	private Menu menu;
 
-	public Item() {
+	/**
+	 * 
+	 */
+	public Menu() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -51,6 +71,14 @@ public class Item implements Serializable {
 
 	public void setOid(int oid) {
 		this.oid = oid;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -83,14 +111,6 @@ public class Item implements Serializable {
 
 	public void setPermiso(Permiso permiso) {
 		this.permiso = permiso;
-	}
-
-	public int getIdPadre() {
-		return idPadre;
-	}
-
-	public void setIdPadre(int idPadre) {
-		this.idPadre = idPadre;
 	}
 
 }

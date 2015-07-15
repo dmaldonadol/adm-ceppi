@@ -26,8 +26,13 @@ public class CategoriaSocio implements Serializable {
 	@GeneratedValue(generator = "SEC_CATEGORIA_SOCIO")
 	@Column(name = "ID_CATEGORIA_SOCIO", nullable = false)
 	private int oid;
+	
+	@Column
+	private String codigo;
+	
 	@Column
 	private String nombre;
+	
 	@Column
 	private String descripcion;
 
@@ -60,6 +65,14 @@ public class CategoriaSocio implements Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 }

@@ -1,4 +1,7 @@
-package cl.ml.ceppi.core.model.tipo;
+/**
+ * 
+ */
+package cl.ml.ceppi.core.model.perfil;
 
 import java.io.Serializable;
 
@@ -14,30 +17,24 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@SequenceGenerator(name = "SEC_TIPO_GASTO", sequenceName = "SEC_TIPO_GASTO")
-@Table(name = "TIPO_GASTO")
-public class TipoGasto implements Serializable{
+@SequenceGenerator(name = "SEC_PERFIL", sequenceName = "SEC_PERFIL")
+@Table(name = "PERFIL")
+public class Perfil implements Serializable {
 
-	private static final long serialVersionUID = 3090757832227438377L;
-	
+	private static final long serialVersionUID = 180819603754451937L;
+
 	@Id
-	@GeneratedValue(generator = "SEC_TIPO_GASTO")
-	@Column(name = "ID_TIPO_GASTO", nullable = false)
+	@GeneratedValue(generator = "SEC_PERFIL")
+	@Column(name = "ID_PERFIL", nullable = false)
 	private int oid;
-	
+
 	@Column
 	private String codigo;
-	
-	@Column
-	private String nombre;
-	
+
 	@Column
 	private String descripcion;
 
-	/**
-	 * 
-	 */
-	public TipoGasto() {
+	public Perfil() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -49,12 +46,12 @@ public class TipoGasto implements Serializable{
 		this.oid = oid;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getDescripcion() {
@@ -63,14 +60,6 @@ public class TipoGasto implements Serializable{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
 	}
 
 }

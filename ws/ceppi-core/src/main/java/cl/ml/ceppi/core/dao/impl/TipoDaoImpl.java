@@ -1,12 +1,11 @@
-/**
- * 
- */
 package cl.ml.ceppi.core.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -106,64 +105,69 @@ public class TipoDaoImpl implements TipoDao
 		getSession().delete(tipoSocio);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<CategoriaSocio> listCategoriaSocio() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<CategoriaSocio>) getSession().createQuery("from CategoriaSocio").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<CentroCosto> listCentroCosto() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<CentroCosto>) getSession().createQuery("from CentroCosto").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Profesion> listProfesion() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Profesion>) getSession().createQuery("from Profesion").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<TipoGasto> listTipoGasto() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<TipoGasto>) getSession().createQuery("from TipoGasto").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<TipoSocio> listTipoSocio() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<TipoSocio>) getSession().createQuery("from TipoSocio").list();
 	}
 
 	@Override
 	public CategoriaSocio findCategoriaSocioById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria cr = getSession().createCriteria(CategoriaSocio.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (CategoriaSocio) cr.list().get(0);
 	}
 
 	@Override
 	public CentroCosto findCentroCostoById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria cr = getSession().createCriteria(CentroCosto.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (CentroCosto) cr.list().get(0);
 	}
 
 	@Override
 	public Profesion findProfesionById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria cr = getSession().createCriteria(Profesion.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (Profesion) cr.list().get(0);
 	}
 
 	@Override
 	public TipoGasto findTipoGastoById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria cr = getSession().createCriteria(TipoGasto.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (TipoGasto) cr.list().get(0);
 	}
 
 	@Override
 	public TipoSocio findTipoSocioById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria cr = getSession().createCriteria(TipoSocio.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (TipoSocio) cr.list().get(0);
 	}
 
 }
