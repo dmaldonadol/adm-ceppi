@@ -32,6 +32,9 @@ public class Perfil implements Serializable {
 	private String codigo;
 
 	@Column
+	private String nombre;
+	
+	@Column
 	private String descripcion;
 
 	public Perfil() {
@@ -60,6 +63,14 @@ public class Perfil implements Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 }

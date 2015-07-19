@@ -135,6 +135,7 @@
         ID_PERFIL number(10,0) not null,
         codigo varchar2(255 char),
         descripcion varchar2(255 char),
+        nombre varchar2(255 char),
         primary key (ID_PERFIL)
     );
 

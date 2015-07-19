@@ -111,4 +111,12 @@ public abstract class Menu implements Serializable {
 		this.permiso = permiso;
 	}
 
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
 }

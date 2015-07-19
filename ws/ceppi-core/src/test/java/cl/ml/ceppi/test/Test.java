@@ -13,7 +13,7 @@ public class Test {
 	
 	public static void main(String[] args) {
 	
-		String pkg = "cl.ml.ceppi.core";
+		String pkg = "cl.ml.ceppi.core.model";
 		StringBuffer sb;
         Set<Class<? extends Object>> clazzSet = getClazzSet(pkg);
         for (Class<? extends Object> clazz : clazzSet) 
