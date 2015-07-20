@@ -1,13 +1,10 @@
 package cl.ml.ceppi.test;
 
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cl.ml.ceppi.core.facade.PerfilFacade;
 import cl.ml.ceppi.core.facade.TipoFacade;
-import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.menu.MenuSimple;
 import cl.ml.ceppi.core.model.perfil.Perfil;
@@ -30,9 +27,9 @@ public class InitData {
 			
 			MenuSimple menuPersona = new MenuSimple();
 			menuPersona.setCodigo("0011");
-			menuPersona.setNombre("Persona");
+			menuPersona.setNombre("Socio");
 			menuPersona.setOrden("1");
-			menuPersona.setPath("/templatePersona");
+			menuPersona.setPath("/templateSocio");
 			menuPersona.setMenu(menuCompuesto);
 			
 			MenuSimple menuUsuario = new MenuSimple();
