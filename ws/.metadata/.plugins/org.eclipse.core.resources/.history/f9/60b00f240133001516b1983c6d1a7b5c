@@ -1,0 +1,137 @@
+package cl.ml.ceppi.web.logic;
+
+import java.util.List;
+
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+
+import org.apache.log4j.Logger;
+
+import cl.ml.ceppi.core.facade.TipoFacade;
+import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
+import cl.ml.ceppi.core.model.tipo.Profesion;
+import cl.ml.ceppi.core.model.tipo.TipoGasto;
+import cl.ml.ceppi.core.model.tipo.TipoSocio;
+import cl.ml.ceppi.web.locator.ServiceLocator;
+import cl.ml.ceppi.web.util.Constantes;
+
+/**
+ * 
+ * @author Maldonado León
+ *
+ */
+public class TipoLogic 
+{
+	private static final Logger LOGGER = Logger.getLogger(TipoLogic.class);
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static Response listaGastos() 
+	{
+		Response response;
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<TipoGasto> lista =	facade.listTipoGasto();
+			
+			response = Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Gastos.", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+		
+		return response;
+	}
+
+	public static Response listaCentroCosto() {
+		Response response;
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<TipoGasto> lista =	facade.listTipoGasto();
+			
+			response = Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Gastos.", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+		
+		return response;
+	}
+
+	/**
+	 * Obtiene la lista de profesiones
+	 * @return
+	 */
+	public static Response listaProfesion() 
+	{
+		Response response;
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<Profesion> lista =	facade.listProfesion();
+			
+			response = Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Profesiones.", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+		
+		return response;
+	}
+
+	/**
+	 * Obtiene la lista de categorias de socio
+	 * @return
+	 */
+	public static Response listaCategorias() 
+	{
+		Response response;
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<CategoriaSocio> lista =	facade.listCategoriaSocio();
+			
+			response = Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Categorias.", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+		
+		return response;
+	}
+
+	/**
+	 * Obtiene la lista de tipos de socios
+	 * @return
+	 */
+	public static Response listaSocios() 
+	{
+		Response response;
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<TipoSocio> lista =	facade.listTipoSocio();
+			
+			response = Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Socios.", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+		
+		return response;
+	}
+
+}

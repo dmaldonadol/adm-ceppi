@@ -43,6 +43,22 @@ public class TipoSocio implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public TipoSocio(String codigo, String nombre, String descripcion) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+	
+
+	public TipoSocio(int oid, String codigo, String nombre, String descripcion) {
+		super();
+		this.oid = oid;
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
 	public int getOid() {
 		return oid;
 	}

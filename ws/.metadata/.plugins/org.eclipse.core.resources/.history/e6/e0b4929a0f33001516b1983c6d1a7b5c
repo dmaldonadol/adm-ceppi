@@ -1,0 +1,145 @@
+package cl.ml.ceppi.web.rest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.apache.log4j.Logger;
+
+import cl.ml.ceppi.web.logic.TipoLogic;
+import cl.ml.ceppi.web.pojo.TipoPojo;
+
+/**
+ * 
+ * @author Maldonado Le�n
+ * 
+ */
+
+@Path("/tipo")
+public class TipoRest 
+{
+	private static final Logger LOGGER = Logger.getLogger(TipoRest.class);
+
+	private HttpServletRequest request;
+
+	public TipoRest() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@GET
+	@Path("/gasto")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaGastos() 
+	{		
+		return TipoLogic.listaGastos();
+		
+	}
+	
+	@GET
+	@Path("/socio")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaSocios() 
+	{		
+		return TipoLogic.listaSocios();
+		
+	}
+	
+	@GET
+	@Path("/categoria")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaCategorias() 
+	{		
+		return TipoLogic.listaCategorias();
+		
+	}
+	
+	@GET
+	@Path("/profesion")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaProfesion() 
+	{		
+		return TipoLogic.listaProfesion();
+		
+	}
+	
+	@GET
+	@Path("/centroCosto")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaCentroCosto() 
+	{		
+		return TipoLogic.listaCentroCosto();
+		
+	}
+	
+
+	public HttpServletRequest getRequest() {
+		return request;
+	}
+
+	public void setRequest(HttpServletRequest request) {
+		this.request = request;
+	}
+	
+	
+	@POST
+	@Path("/saveGasto")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response saveGastos(TipoPojo pojo) 
+	{		
+		return TipoLogic.saveGasto(pojo);
+		
+	}
+	
+	@POST
+	@Path("/saveSocio")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response saveSocios(TipoPojo pojo) 
+	{		
+		return TipoLogic.saveSocio(pojo);
+		
+	}
+	
+	@POST
+	@Path("/saveCategoria")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response saveCategoria(TipoPojo pojo) 
+	{		
+		return TipoLogic.saveCategoria(pojo);
+		
+	}
+	
+	@POST
+	@Path("/saveProfesion")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response saveProfesion(TipoPojo pojo) 
+	{		
+		return TipoLogic.saveProfesion();
+		
+	}
+	
+	@POST
+	@Path("/saveCentroCosto")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response saveCentroCosto(TipoPojo pojo) 
+	{		
+		return TipoLogic.saveCentroCosto(pojo);
+		
+	}
+	
+
+}

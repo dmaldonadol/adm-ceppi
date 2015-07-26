@@ -1,0 +1,53 @@
+package cl.ml.ceppi.web.logic;
+
+import javax.ws.rs.core.Response;
+
+import org.apache.log4j.Logger;
+
+import cl.ml.ceppi.core.facade.TipoFacade;
+import cl.ml.ceppi.web.locator.ServiceLocator;
+import cl.ml.ceppi.web.util.Constantes;
+
+/**
+ * 
+ * @author Maldonado León
+ *
+ */
+public class TipoLogic 
+{
+	private static final Logger LOGGER = Logger.getLogger(TipoLogic.class);
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static Response listaGastos() 
+	{
+		TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+		return null;
+	}
+
+	public static Response listaCentroCosto() {
+		TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+		return null;
+	}
+
+	public static Response listaProfesion() 
+	{
+		TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+		return null;
+	}
+
+	public static Response listaCategorias() 
+	{
+		TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+		return null;
+	}
+
+	public static Response listaSocios() 
+	{
+		TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+		return null;
+	}
+
+}

@@ -1,0 +1,22 @@
+package cl.ml.ceppi.web.logic;
+
+import javax.ws.rs.core.Response;
+
+public class TipoLogic {
+
+	public static Response listaGastos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static Response listaCentroCosto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static Response listaProfesion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

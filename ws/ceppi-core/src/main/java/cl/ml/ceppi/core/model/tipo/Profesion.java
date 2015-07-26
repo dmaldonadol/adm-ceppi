@@ -40,6 +40,21 @@ public class Profesion implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Profesion(String codigo, String nombre, String descripcion) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+	
+	public Profesion(int oid, String codigo, String nombre, String descripcion) {
+		super();
+		this.oid = oid;
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
 	public int getOid() {
 		return oid;
 	}

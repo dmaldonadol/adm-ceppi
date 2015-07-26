@@ -40,6 +40,27 @@ public class TipoGasto implements Serializable{
 	public TipoGasto() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public TipoGasto(String codigo, String nombre, String descripcion) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
+
+
+	public TipoGasto(int oid, String codigo, String nombre, String descripcion) {
+		super();
+		this.oid = oid;
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
+
 
 	public int getOid() {
 		return oid;

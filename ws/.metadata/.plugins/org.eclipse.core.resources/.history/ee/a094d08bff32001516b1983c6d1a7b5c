@@ -1,0 +1,5 @@
+package cl.ml.ceppi.web.util;
+
+public class Constantes {
+
+}

@@ -42,6 +42,22 @@ public class CategoriaSocio implements Serializable {
 	public CategoriaSocio() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public CategoriaSocio(String codigo, String nombre, String descripcion) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+	
+
+	public CategoriaSocio(int oid, String codigo, String nombre, String descripcion) {
+		super();
+		this.oid = oid;
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
 
 	public int getOid() {
 		return oid;

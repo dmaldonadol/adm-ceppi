@@ -1,0 +1,5 @@
+package cl.ml.ceppi.web.pojo;
+
+public class TipoPojo {
+
+}
