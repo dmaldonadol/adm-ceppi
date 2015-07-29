@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="cl.ml.ceppi.core.model.usuario.Usuario" %>    
+   
+<% Usuario usuario = (Usuario)request.getSession().getAttribute("USER"); %>
 
     
     <header id="header" class="navbar">
@@ -44,8 +47,8 @@
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle dropdown-hover" data-toggle="dropdown">
                             <span class="meta">
-                                <span class="avatar"><img src="<%=request.getContextPath() %>/public/image/avatar/avatar7.jpg" class="img-circle" alt="" /></span>
-                                <span class="text hidden-xs hidden-sm pl5">Erich Reyes</span>
+                                <span class="avatar"><img src="<%=request.getContextPath() %>/public/image/avatar/avatar.png" class="img-circle" alt="" /></span>
+                                <span class="text hidden-xs hidden-sm pl5"><%=   usuario.getNombre() + " " + usuario.getApellidoPaterno()  %></span>
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -66,11 +69,10 @@
                                 </div>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-user-plus2"></i></span> My Accounts</a></li>
+                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-user-plus2"></i></span> Mi cuenta</a></li>
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-cog4"></i></span> Profile Setting</a></li>
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-question"></i></span> Help</a></li>
                             <li class="divider"></li>
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-exit"></i></span> Sign Out</a></li>
+                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-exit"></i></span> Salir</a></li>
                         </ul>
                     </li>
                 </ul>

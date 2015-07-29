@@ -48,6 +48,8 @@ public class AuthenticationRest {
 		{
 			if( usuario.getUsername().equals("admin") && usuario.getPassword().equals("admin") )
 			{
+				usuario.setNombre("Administrador");
+				usuario.setRut("1-9");
 				HttpSession session = request.getSession( true );
 				session.setAttribute( USER_SESSION , usuario );
 				
