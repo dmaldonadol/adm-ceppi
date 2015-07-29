@@ -5,6 +5,7 @@ package cl.ml.ceppi.core.facade;
 
 import java.util.List;
 
+import cl.ml.ceppi.core.model.GenericResponse;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 
 /**
@@ -22,4 +23,7 @@ public interface UsuarioFacade
 	List<Usuario> listUsuario();
 
 	Usuario findUsuarioById(int id);
+	
+	Usuario autenticar(String user, String pass);
+
 }

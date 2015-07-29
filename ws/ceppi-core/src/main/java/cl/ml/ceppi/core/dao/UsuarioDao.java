@@ -19,4 +19,6 @@ public interface UsuarioDao
 	List<Usuario> listUsuario();
 		
 	Usuario findUsuarioById(int id);
+	
+	Usuario autenticar(String user, String pass);
 }

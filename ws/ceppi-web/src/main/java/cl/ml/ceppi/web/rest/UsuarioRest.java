@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.web.logic.PerfilLogic;
+import cl.ml.ceppi.web.logic.UsuarioLogic;
 
 /**
  * 
@@ -33,11 +33,10 @@ public class UsuarioRest
 	@Path("/autenticar")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response autenticar() 
+	public Response autenticar(String user, String pass) 
 	{		
-		LOGGER.info("[Init] - lista perfiles");
-		return PerfilLogic.listaPerfiles();
-		
+		LOGGER.info("[Init] - autenticar");
+		return UsuarioLogic.autenticar(user, pass, this.getRequest());
 	}
 	
 

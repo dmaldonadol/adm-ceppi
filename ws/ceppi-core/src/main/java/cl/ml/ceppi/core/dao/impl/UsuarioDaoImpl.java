@@ -52,5 +52,13 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		cr.add(Restrictions.eq("oid", id));
 		return (Usuario) cr.list().get(0);
 	}
+	
+	@Override
+	public Usuario autenticar(String user, String pass){
+		Criteria cr = getSession().createCriteria(Usuario.class);
+		cr.add(Restrictions.eq("username", user));
+		cr.add(Restrictions.eq("password", pass));
+		return (Usuario) cr.list().get(0);
+	}
 
 }

@@ -43,5 +43,10 @@ public class UsuarioFacadeImpl implements UsuarioFacade {
 	public Usuario findUsuarioById(int id) {
 		return usuarioService.findUsuarioById(id);
 	}
+	
+	@Transactional
+	public Usuario autenticar(String user, String pass) {
+		return usuarioService.autenticar(user, pass);
+	}
 
 }

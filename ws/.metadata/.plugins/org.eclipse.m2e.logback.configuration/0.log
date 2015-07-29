@@ -1506,3 +1506,465 @@
 2015-07-25 23:17:29,084 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2015-07-25 23:17:29,114 [Worker-114] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2015-07-25 23:17:29,120 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-25 23:56:58,709 [Worker-113] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2015-07-25 23:57:02,144 [Worker-113] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-25 23:57:02,942 [Worker-113] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-25 23:57:03,071 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc6:jar:11.2.0 is missing, no dependency information available
+2015-07-25 23:57:03,444 [Worker-113] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-25 23:57:05,997 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc6:jar:11.2.0 is missing, no dependency information available
+2015-07-25 23:57:07,370 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/main/java
+2015-07-25 23:57:07,380 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/test/java
+2015-07-25 23:57:07,843 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/main/java
+2015-07-25 23:57:07,844 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-core/src/main/resources
+2015-07-25 23:57:07,845 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/test/java
+2015-07-25 23:57:08,029 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/main/java
+2015-07-25 23:57:08,030 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-web/src/main/resources
+2015-07-25 23:57:08,030 [Worker-113] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/test/java
+2015-07-25 23:57:09,015 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc6:jar:11.2.0 is missing, no dependency information available
+2015-07-25 23:57:10,627 [Worker-113] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ceppi-web
+2015-07-25 23:57:10,634 [Worker-113] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 11 sec
+2015-07-25 23:57:12,164 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-25 23:57:12,169 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-25 23:57:12,183 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-25 23:57:12,184 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-25 23:57:13,665 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc6:jar:11.2.0 is missing, no dependency information available
+2015-07-25 23:57:13,825 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-25 23:57:13,827 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-25 23:57:13,857 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-25 23:57:13,857 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-25 23:57:26,546 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc6:jar:11.2.0 is missing, no dependency information available
+2015-07-25 23:57:26,787 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-25 23:57:26,789 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-25 23:57:26,792 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-25 23:57:26,792 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-25 23:57:26,793 [Worker-122] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ceppi-web
+2015-07-25 23:57:26,793 [Worker-122] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ceppi-web
+2015-07-25 23:57:26,802 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:01:07,777 [Worker-128] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:01:07,785 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:01:07,788 [Worker-128] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:01:07,788 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:01:11,732 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:01:11,733 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:01:11,736 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:01:11,737 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:17:58,534 [Worker-122] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2015-07-26 00:18:01,393 [Worker-122] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-26 00:18:02,212 [Worker-122] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-26 00:18:02,810 [Worker-122] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-26 00:18:07,868 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/main/java
+2015-07-26 00:18:07,869 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/test/java
+2015-07-26 00:18:08,150 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/main/java
+2015-07-26 00:18:08,151 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-core/src/main/resources
+2015-07-26 00:18:08,156 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/test/java
+2015-07-26 00:18:08,404 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/main/java
+2015-07-26 00:18:08,404 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-web/src/main/resources
+2015-07-26 00:18:08,405 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/test/java
+2015-07-26 00:18:12,331 [Worker-122] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ceppi-web
+2015-07-26 00:18:12,384 [Worker-122] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 13 sec
+2015-07-26 00:18:14,807 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:18:14,808 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-26 00:18:14,825 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:18:14,825 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-26 00:18:16,712 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:18:16,721 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-26 00:18:16,782 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:18:16,783 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-26 00:18:32,472 [Worker-135] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:18:32,485 [Worker-135] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-26 00:18:32,488 [Worker-135] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:18:32,489 [Worker-135] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:18:32,490 [Worker-135] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ceppi-web
+2015-07-26 00:18:32,490 [Worker-135] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ceppi-web
+2015-07-26 00:18:32,500 [Worker-135] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:19:05,230 [Worker-134] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:19:05,233 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:19:05,236 [Worker-134] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:19:05,237 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:19:20,951 [Worker-134] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ceppi-web
+2015-07-26 00:19:21,146 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:19:21,146 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-26 00:19:21,148 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:19:21,149 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-26 00:19:21,190 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:19:21,191 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-26 00:19:21,196 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:19:21,197 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-26 00:19:31,706 [Worker-123] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:19:31,707 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-26 00:19:31,710 [Worker-123] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:19:31,711 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:19:31,712 [Worker-123] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ceppi-web
+2015-07-26 00:19:31,712 [Worker-123] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ceppi-web
+2015-07-26 00:19:31,722 [Worker-123] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:28:15,986 [Worker-137] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-26 00:28:18,141 [Worker-137] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar
+2015-07-26 00:28:18,206 [Worker-137] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-26 00:28:19,008 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:28:19,009 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:28:19,011 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:28:19,012 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-26 00:28:20,063 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:28:20,064 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:28:20,067 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:28:20,067 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:28:29,615 [Worker-136] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2015-07-26 00:28:30,455 [Worker-136] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-26 00:28:30,810 [Worker-136] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-26 00:28:31,096 [Worker-136] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-26 00:28:33,322 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/main/java
+2015-07-26 00:28:33,322 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/test/java
+2015-07-26 00:28:33,449 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/main/java
+2015-07-26 00:28:33,449 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-core/src/main/resources
+2015-07-26 00:28:33,450 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/test/java
+2015-07-26 00:28:33,618 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/main/java
+2015-07-26 00:28:33,618 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-web/src/main/resources
+2015-07-26 00:28:33,619 [Worker-136] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/test/java
+2015-07-26 00:28:35,289 [Worker-136] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ceppi-web
+2015-07-26 00:28:35,293 [Worker-136] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 5 sec
+2015-07-26 00:28:36,145 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:28:36,145 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-26 00:28:36,158 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:28:36,159 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-26 00:28:37,482 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:28:37,484 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-26 00:28:37,546 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:28:37,546 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-26 00:28:51,551 [Worker-144] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:28:51,553 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-26 00:28:51,556 [Worker-144] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:28:51,556 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:28:51,557 [Worker-144] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ceppi-web
+2015-07-26 00:28:51,557 [Worker-144] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ceppi-web
+2015-07-26 00:28:51,566 [Worker-144] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:30:15,667 [Worker-136] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-26 00:30:15,916 [Worker-136] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-26 00:30:16,672 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:30:16,674 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:30:16,677 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:30:16,677 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-26 00:30:17,300 [Worker-136] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:30:17,306 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:30:17,308 [Worker-136] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:30:17,313 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:30:18,866 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:30:18,873 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:30:18,876 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:30:18,885 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:31:43,174 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:31:43,177 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-26 00:31:43,180 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:31:43,185 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:31:54,485 [Worker-150] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2015-07-26 00:31:55,182 [Worker-150] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-26 00:31:55,540 [Worker-150] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-26 00:31:56,044 [Worker-150] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-26 00:31:58,573 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/main/java
+2015-07-26 00:31:58,574 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-bussines/src/test/java
+2015-07-26 00:31:58,666 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/main/java
+2015-07-26 00:31:58,666 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-core/src/main/resources
+2015-07-26 00:31:58,668 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-core/src/test/java
+2015-07-26 00:31:58,823 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/main/java
+2015-07-26 00:31:58,823 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ceppi-web/src/main/resources
+2015-07-26 00:31:58,824 [Worker-150] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ceppi-web/src/test/java
+2015-07-26 00:32:00,362 [Worker-150] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ceppi-web
+2015-07-26 00:32:00,375 [Worker-150] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 5 sec
+2015-07-26 00:32:01,026 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:32:01,026 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-26 00:32:01,034 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:32:01,035 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-26 00:32:04,633 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:32:04,635 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-26 00:32:04,665 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-26 00:32:04,665 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-26 00:32:16,372 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:32:16,373 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-26 00:32:16,376 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-26 00:32:16,377 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-26 00:32:16,377 [Worker-122] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ceppi-web
+2015-07-26 00:32:16,377 [Worker-122] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ceppi-web
+2015-07-26 00:32:16,387 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:53:07,290 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-27 22:53:07,289 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-27 22:53:10,682 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:53:10,683 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-27 22:53:10,691 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:53:10,692 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-27 22:53:13,938 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-27 22:53:15,389 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-27 22:53:16,096 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-27 22:53:19,871 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:53:19,896 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 22:53:19,962 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:53:19,962 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 22:53:23,909 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-bussines:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-bussines/pom.xml.
+2015-07-27 22:53:25,089 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-core:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-core/pom.xml.
+2015-07-27 22:53:26,147 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: cl.ml.ceppi:ceppi-web:0.0.1-SNAPSHOT @ /home/administrador/adm-ceppi/ws/ceppi-web/pom.xml.
+2015-07-27 22:54:12,115 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:54:12,116 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/main/resources
+2015-07-27 22:54:12,123 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:54:12,123 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-bussines/src/test/resources
+2015-07-27 22:54:12,677 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:54:12,692 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2015-07-27 22:54:12,695 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 22:54:12,695 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 22:54:34,985 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:54:34,987 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:54:34,990 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:54:34,991 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:54:54,512 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:54:54,516 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:54:54,531 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:54:54,532 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:56:46,114 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:56:46,116 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:56:46,123 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:56:46,124 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:57:09,463 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:57:09,465 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:57:09,469 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:57:09,470 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:57:28,515 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:57:28,516 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:57:28,521 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:57:28,522 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:58:11,007 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:58:11,008 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:58:11,011 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:58:11,012 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:58:22,805 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:58:22,807 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:58:22,810 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:58:22,811 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:59:13,645 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:59:13,647 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:59:13,650 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:59:13,651 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 22:59:26,107 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:59:26,108 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 22:59:26,115 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 22:59:26,116 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:00:34,227 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:00:34,228 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:00:34,231 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:00:34,233 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:00:48,248 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:00:48,249 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:00:48,252 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:00:48,253 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:02:32,373 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:02:32,375 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:02:32,379 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:02:32,380 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:04:32,665 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:04:32,670 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:04:32,676 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:04:32,676 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:04:59,184 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:04:59,186 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:04:59,189 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:04:59,189 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:05:11,190 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:05:11,192 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:05:11,195 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:05:11,196 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:07:22,005 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:07:22,007 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:07:22,010 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:07:22,011 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:07:29,429 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:07:29,432 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:07:29,436 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:07:29,436 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:08:02,559 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:08:02,561 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:08:02,564 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:08:02,565 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:09:55,640 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:09:55,642 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:09:55,644 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:09:55,645 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:09:55,696 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:09:55,698 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:09:55,701 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:09:55,702 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:10:38,007 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:10:38,009 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:10:38,011 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:10:38,012 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:10:38,060 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:10:38,061 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:10:38,064 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:10:38,065 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:11:00,837 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:11:00,839 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:11:00,842 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:11:00,842 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:11:58,521 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:11:58,524 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:11:58,527 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:11:58,527 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:12:23,530 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:12:23,532 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:12:23,535 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:12:23,536 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:12:36,878 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:12:36,879 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:12:36,888 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:12:36,889 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:13:15,688 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:15,689 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:13:15,692 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:15,692 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:13:41,231 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:41,232 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:13:41,235 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:41,236 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:13:48,896 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:48,898 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:13:48,901 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:48,901 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:13:51,232 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:51,233 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:13:51,237 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:13:51,237 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:14:47,381 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:14:47,383 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:14:47,385 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:14:47,386 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:15:15,903 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:15:15,904 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:15:15,908 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:15:15,909 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:20:24,995 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:20:24,997 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:20:24,999 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:20:25,000 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:20:46,719 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:20:46,720 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:20:46,723 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:20:46,723 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:20:46,772 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:20:46,773 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:20:46,776 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:20:46,777 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:21:55,806 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:21:55,807 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:21:55,812 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:21:55,812 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:22:12,757 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:22:12,758 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:22:12,761 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:22:12,761 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:22:48,219 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:22:48,221 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:22:48,223 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:22:48,224 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:23:15,722 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:23:15,723 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:23:15,733 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:23:15,733 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:23:59,669 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:23:59,670 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:23:59,673 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:23:59,673 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:24:59,001 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:24:59,002 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:24:59,005 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:24:59,005 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:25:08,321 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:25:08,323 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:25:08,325 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:25:08,326 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:25:20,462 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:25:20,463 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:25:20,466 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:25:20,466 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:26:44,805 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:26:44,813 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:26:44,817 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:26:44,817 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:30:50,208 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:30:50,223 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:30:50,226 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:30:50,226 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:31:09,902 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:31:09,903 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:31:09,909 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:31:09,909 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:31:27,886 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:31:27,888 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:31:27,891 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:31:27,892 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:31:36,776 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:31:36,778 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:31:36,784 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:31:36,785 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:32:31,478 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:32:31,479 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:32:31,482 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:32:31,482 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:33:18,792 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:33:18,803 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:33:18,806 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:33:18,807 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:34:22,301 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:34:22,302 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:34:22,305 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:34:22,305 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:34:22,353 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:34:22,354 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:34:22,357 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:34:22,357 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:35:08,032 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:35:08,033 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:35:08,037 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:35:08,038 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:35:24,069 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:35:24,074 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:35:24,077 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:35:24,078 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:36:31,548 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:36:31,549 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:36:31,552 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:36:31,552 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:37:22,642 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:37:22,644 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2015-07-27 23:37:22,646 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-07-27 23:37:22,659 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-core/src/test/resources
+2015-07-27 23:37:40,943 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:37:40,945 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:37:40,948 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:37:40,955 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:38:18,426 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:38:18,431 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:38:18,434 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:38:18,434 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:39:20,973 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:39:20,975 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:39:20,977 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:39:20,978 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:39:51,240 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:39:51,242 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:39:51,245 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:39:51,245 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:40:13,761 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:40:13,764 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:40:13,768 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:40:13,769 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:40:21,784 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:40:21,785 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:40:21,788 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:40:21,788 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:40:42,296 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:40:42,297 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:40:42,308 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:40:42,309 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:41:25,227 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:41:25,228 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:41:25,231 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:41:25,232 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources
+2015-07-27 23:41:34,791 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:41:34,792 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-07-27 23:41:34,795 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-07-27 23:41:34,796 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/administrador/adm-ceppi/ws/ceppi-web/src/test/resources

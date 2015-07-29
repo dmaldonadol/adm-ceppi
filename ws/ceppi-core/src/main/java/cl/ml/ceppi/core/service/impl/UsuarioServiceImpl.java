@@ -47,5 +47,10 @@ public class UsuarioServiceImpl implements UsuarioService
 	public Usuario findUsuarioById(int id) {
 		return usuarioDao.findUsuarioById(id);
 	}
+	
+	@Transactional
+	public Usuario autenticar(String user, String pass) {
+		return usuarioDao.autenticar(user, pass);
+	}
 
 }
