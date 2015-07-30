@@ -1,8 +1,5 @@
 package cl.ml.ceppi.web.logic;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.Response;
-
 import org.apache.log4j.Logger;
 
 import cl.ml.ceppi.core.facade.UsuarioFacade;
@@ -30,20 +27,20 @@ public class UsuarioLogic {
 	 * @param request
 	 * @return
 	 */
-	public static Response autenticar(String user, String pass, HttpServletRequest request) 
+	public static Usuario autenticar(String user, String pass) 
 	{
+		Usuario usuario = null;
 		try 
 		{
 			UsuarioFacade usuarioFacade = (UsuarioFacade) ServiceLocator.getInstance().getBean(Constantes.USUARIO_FACADE);
 			String password = Crypt.encrypt(pass);
-			Usuario usuario = usuarioFacade.autenticar(user, password);
-			request.getSession().setAttribute("usuario", usuario);
-			return Response.status(Response.Status.OK).entity(null).build();
+			usuario = usuarioFacade.autenticar(user, password);
+			
 		}
 		catch (Exception e) 
 		{
 			LOGGER.error("Error al autenticar usuario "+ user +".", e);
-			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
 		}
+		return usuario;
 	}
 }

@@ -18,6 +18,7 @@ import javax.ws.rs.core.Response.Status;
 import org.apache.log4j.Logger;
 
 import cl.ml.ceppi.core.model.usuario.Usuario;
+import cl.ml.ceppi.web.logic.UsuarioLogic;
 
 /**
  * 
@@ -42,26 +43,22 @@ public class AuthenticationRest {
 	 * @param user
 	 * @return
 	 */
-	public Response login( Usuario usuario )
+	public Response login(Usuario user)
 	{
 		try 
 		{
-			if( usuario.getUsername().equals("admin") && usuario.getPassword().equals("admin") )
+			Usuario usuario = UsuarioLogic.autenticar(user.getUsername(), user.getPassword());
+			
+			HttpSession session = request.getSession( true );
+			session.setAttribute( USER_SESSION , usuario );
+			if (null != usuario)
 			{
-				usuario.setNombre("Administrador");
-				usuario.setRut("1-9");
-				HttpSession session = request.getSession( true );
-				session.setAttribute( USER_SESSION , usuario );
-				
-				LOGGER.info( "El usuario " + usuario.getUsername() + " ha iniciado sesion correctamente" );
 				return Response.status(Status.OK).build();
 			}
 			else
 			{
-				LOGGER.error( "Usuario y/o clave no validos");
 				return Response.status(Status.UNAUTHORIZED).build();
 			}
-			
 		}
 		catch( Exception e )
 		{
@@ -88,7 +85,6 @@ public class AuthenticationRest {
 	{
 		return login(usuario);
 	}
-	
 	
 	
 	@DELETE
