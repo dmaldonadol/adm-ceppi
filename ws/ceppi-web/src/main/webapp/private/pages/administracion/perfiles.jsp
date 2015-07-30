@@ -24,8 +24,8 @@
     
     <body>
         
-  		<jsp:include page="commons/header.jsp" />
-  		<jsp:include page="commons/menu.jsp" />
+  		<jsp:include page="../commons/header.jsp" />
+  		<jsp:include page="../commons/menu.jsp" />
 
         <section id="main" role="main">
             <div class="container-fluid">

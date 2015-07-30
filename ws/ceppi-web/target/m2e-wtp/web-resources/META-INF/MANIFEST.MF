@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: dmaldonado
 Build-Jdk: 1.8.0_40
+=======
+Built-By: kuvasz
+Build-Jdk: 1.8.0_31
+>>>>>>> 2e444bcc82ee674e9cf489e49a08458cd5d4abe1
 Created-By: Maven Integration for Eclipse
 

@@ -3,5 +3,56 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Ceppi BackEnd</display-name>
+  
+  
+  <filter>
+  	<filter-name>SessionFilter</filter-name>
+  	<display-name>SessionFilter</display-name>
+  	<description></description>
+  	<filter-class>cl.ml.ceppi.web.filter.SessionFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>SessionAPIFilter</filter-name>
+  	<display-name>SessionAPIFilter</display-name>
+  	<description></description>
+  	<filter-class>cl.ml.ceppi.web.filter.SessionAPIFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>SessionFilter</filter-name>
+  	<url-pattern>/private/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>SessionAPIFilter</filter-name>
+  	<url-pattern>/api/private/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>cl.ml.ceppi.web.rest</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	 <welcome-file-list>
+        <welcome-file>/public/pages/login.jsp</welcome-file>
+    </welcome-file-list>
+  
 </web-app>
