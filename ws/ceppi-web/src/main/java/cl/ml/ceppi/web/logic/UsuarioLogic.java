@@ -13,7 +13,7 @@ import cl.ml.ceppi.web.util.Constantes;
 
 /**
  * 
- * @author Maldonado LeÃ³n
+ * @author Maldonado León
  *
  */
 public class UsuarioLogic {
