@@ -48,7 +48,7 @@
                         <a href="javascript:void(0);" class="dropdown-toggle dropdown-hover" data-toggle="dropdown">
                             <span class="meta">
                                 <span class="avatar"><img src="<%=request.getContextPath() %>/public/image/avatar/avatar.png" class="img-circle" alt="" /></span>
-                                <span class="text hidden-xs hidden-sm pl5"><%=   usuario.getNombre() + " " + usuario.getApellidoPaterno()  %></span>
+                                <span class="text hidden-xs hidden-sm pl5"><%=   usuario.getPersona().getNombre() + " " + usuario.getPersona().getApellidoPaterno()  %></span>
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -72,7 +72,7 @@
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-user-plus2"></i></span> Mi cuenta</a></li>
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-cog4"></i></span> Profile Setting</a></li>
                             <li class="divider"></li>
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-exit"></i></span> Salir</a></li>
+                            <li><a id="logout" href="javascript:void(0);"><span class="icon"><i class="ico-exit"></i></span> Salir</a></li>
                         </ul>
                     </li>
                 </ul>

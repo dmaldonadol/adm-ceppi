@@ -4,10 +4,19 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cl.ml.ceppi.core.facade.PerfilFacade;
+import cl.ml.ceppi.core.facade.PersonaFacade;
 import cl.ml.ceppi.core.facade.TipoFacade;
+import cl.ml.ceppi.core.facade.UsuarioFacade;
+import cl.ml.ceppi.core.model.acceso.Acceso;
+import cl.ml.ceppi.core.model.estado.Genero;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.menu.MenuSimple;
+import cl.ml.ceppi.core.model.menu.Permiso;
 import cl.ml.ceppi.core.model.perfil.Perfil;
+import cl.ml.ceppi.core.model.persona.Persona;
+import cl.ml.ceppi.core.model.tipo.TipoSocio;
+import cl.ml.ceppi.core.model.usuario.Usuario;
+import cl.ml.ceppi.core.util.Crypt;
 
 public class InitData {
 
@@ -16,7 +25,25 @@ public class InitData {
 		try {
 			ApplicationContext appContext = new ClassPathXmlApplicationContext("ceppi-beanLocations-admin.xml");
 			TipoFacade tipoFacade = (TipoFacade) appContext.getBean("tipoFacade");
+			PersonaFacade personaFacade = (PersonaFacade) appContext.getBean("personaFacade");
+			UsuarioFacade usuarioFacade = (UsuarioFacade) appContext.getBean("usuarioFacade");
 			PerfilFacade perfilFacade = (PerfilFacade) appContext.getBean("perfilFacade");
+			
+			TipoSocio tipoSocio = new TipoSocio("0001", "TP1", "TP1");
+			tipoFacade.save(tipoSocio);
+			
+			Persona persona = new Persona();
+			persona.setNombre("David");
+			persona.setApellidoPaterno("Maldonado");
+			persona.setApellidoMaterno("Leon");
+			persona.setRut("16020016");
+			persona.setDv("2");
+			persona.setEmail("maldonadoleon@gmail.com");
+			persona.setGenero(Genero.MASCULINO);
+			persona.setEstatura("170");
+			persona.setPeso("65");
+			persona.setTipoSocio(tipoSocio);
+			personaFacade.save(persona);
 			
 			/* MENU ADMINISTRACION */
 			MenuCompuesto menuCompuesto = new MenuCompuesto();
@@ -168,6 +195,13 @@ public class InitData {
 			perfil.setNombre("Administrador");
 			perfil.setDescripcion("Todopoderoso del sistema");
 			perfilFacade.save(perfil);
+			
+			Usuario usuario = new Usuario();
+			usuario.setUsername("admin");
+			usuario.setPassword(Crypt.encrypt("admin"));
+			usuario.setPersona(persona);
+			usuario.setPerfil(perfil);
+			usuarioFacade.save(usuario);
 
 			perfil = new Perfil();
 			perfil.setCodigo("0002");
@@ -180,6 +214,12 @@ public class InitData {
 			perfil.setNombre("Recaudador");
 			perfil.setDescripcion("Ingresa cuotas al sistema");
 			perfilFacade.save(perfil);
+			
+			Acceso acceso = new Acceso();
+			acceso.setItemsMenu(itemsMenu);
+			acceso.setPerfil(perfil);
+			acceso.setPermiso(Permiso.ESCRITURA);
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

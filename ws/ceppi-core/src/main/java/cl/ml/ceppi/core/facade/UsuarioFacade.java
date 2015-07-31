@@ -5,7 +5,6 @@ package cl.ml.ceppi.core.facade;
 
 import java.util.List;
 
-import cl.ml.ceppi.core.model.GenericResponse;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 
 /**

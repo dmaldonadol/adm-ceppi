@@ -203,8 +203,9 @@
 
     create table USUARIO (
         ID_USUARIO number(10,0) not null,
-        password varchar2(20 char) not null,
+        password varchar2(50 char) not null,
         username varchar2(20 char) not null,
+        ID_PERFIL number(10,0),
         ID_PERSONA number(10,0),
         primary key (ID_USUARIO)
     );
@@ -283,6 +284,11 @@
         add constraint FK4B68CCD81EF84EF 
         foreign key (ID_PERSONA) 
         references PERSONA;
+
+    alter table USUARIO 
+        add constraint FK22E07F0ED74BE1B 
+        foreign key (ID_PERFIL) 
+        references PERFIL;
 
     alter table USUARIO 
         add constraint FK22E07F0E81EF84EF 

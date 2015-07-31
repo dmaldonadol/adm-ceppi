@@ -35,7 +35,6 @@ public class PerfilLogic {
 			LOGGER.error("Error al obtener la lista de Perfiles. ", e);
 			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
 		}
-		
 	}
 
 }

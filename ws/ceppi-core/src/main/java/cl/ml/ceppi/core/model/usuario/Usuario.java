@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.model.persona.Persona;
 
 /**
@@ -34,8 +35,12 @@ public class Usuario implements Serializable {
 	@Column(unique = true, length = 20, nullable = false)
 	private String username;
 	
-	@Column(unique = true, length = 20, nullable = false)
+	@Column(unique = true, length = 50, nullable = false)
 	private String password;
+	
+	@OneToOne
+	@JoinColumn(name = "ID_PERFIL")
+	private Perfil perfil;
 	
 	@OneToOne
 	@JoinColumn(name = "ID_PERSONA")
@@ -78,6 +83,14 @@ public class Usuario implements Serializable {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public Perfil getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
 	}
 
 }
