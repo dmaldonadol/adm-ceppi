@@ -14,6 +14,7 @@ import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
 import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
+import cl.ml.ceppi.core.model.tipo.TipoIngreso;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 
 /**
@@ -168,6 +169,34 @@ public class TipoDaoImpl implements TipoDao
 		Criteria cr = getSession().createCriteria(TipoSocio.class);
 		cr.add(Restrictions.eq("oid", id));
 		return (TipoSocio) cr.list().get(0);
+	}
+
+	@Override
+	public void save(TipoIngreso tipoIngreso) {
+		getSession().persist(tipoIngreso);
+	}
+
+	@Override
+	public void update(TipoIngreso tipoIngreso) {
+		getSession().update(tipoIngreso);
+	}
+
+	@Override
+	public void delete(TipoIngreso tipoIngreso) {
+		getSession().delete(tipoIngreso);		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TipoIngreso> listTipoIngreso() {
+		return (List<TipoIngreso>) getSession().createQuery("from TipoIngreso").list();
+	}
+
+	@Override
+	public TipoIngreso findTipoIngresoById(int id) {
+		Criteria cr = getSession().createCriteria(TipoIngreso.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (TipoIngreso) cr.list().get(0);
 	}
 
 }

@@ -4,6 +4,7 @@
 package cl.ml.ceppi.core.model.gasto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import cl.ml.ceppi.core.model.socio.Socio;
 import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
 
@@ -36,8 +40,8 @@ public class Gasto implements Serializable {
 	@Column
 	private String monto;
 	
-	@Column
-	private String fecha;
+	@Temporal(TemporalType.DATE)
+	private Date fecha;
 	
 	@Column
 	private String detalle;
@@ -50,6 +54,10 @@ public class Gasto implements Serializable {
 	@JoinColumn(name = "ID_CENTRO_COSTO")
 	private CentroCosto centroCosto;
 
+	@ManyToOne
+	@JoinColumn(name = "ID_SOCIO")
+	private Socio socio;
+	
 	/**
 	 * 
 	 */
@@ -71,14 +79,6 @@ public class Gasto implements Serializable {
 
 	public void setMonto(String monto) {
 		this.monto = monto;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
 	}
 
 	public String getDetalle() {
@@ -103,6 +103,22 @@ public class Gasto implements Serializable {
 
 	public void setCentroCosto(CentroCosto centroCosto) {
 		this.centroCosto = centroCosto;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public Socio getSocio() {
+		return socio;
+	}
+
+	public void setSocio(Socio socio) {
+		this.socio = socio;
 	}
 
 }

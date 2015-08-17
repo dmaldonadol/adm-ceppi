@@ -4,6 +4,7 @@
 package cl.ml.ceppi.core.model.ingreso;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import cl.ml.ceppi.core.model.socio.Socio;
+import cl.ml.ceppi.core.model.tipo.TipoIngreso;
 
 /**
  * @author Maldonado León
@@ -25,15 +29,25 @@ import cl.ml.ceppi.core.model.socio.Socio;
 @Table(name = "INGRESO")
 public class Ingreso implements Serializable {
 	private static final long serialVersionUID = 1070587907575253154L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_INGRESO")
 	@Column(name = "ID_INGRESO", nullable = false)
 	private int oid;
-	
+
 	@Column
-	private String fecha;
-	
+	private String monto;
+
+	@Temporal(TemporalType.DATE)
+	private Date fecha;
+
+	@Column
+	private String detalle;
+
+	@ManyToOne
+	@JoinColumn(name = "ID_TIPO_INGRESO")
+	private TipoIngreso tipoIngreso;
+
 	@ManyToOne
 	@JoinColumn(name = "ID_SOCIO")
 	private Socio socio;
@@ -53,21 +67,37 @@ public class Ingreso implements Serializable {
 		this.oid = oid;
 	}
 
-	public String getFecha() {
+	public String getMonto() {
+		return monto;
+	}
+
+	public void setMonto(String monto) {
+		this.monto = monto;
+	}
+
+	public Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 
-//	public Cuota getCuota() {
-//		return cuota;
-//	}
-//
-//	public void setCuota(Cuota cuota) {
-//		this.cuota = cuota;
-//	}
+	public String getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
+	}
+
+	public TipoIngreso getTipoIngreso() {
+		return tipoIngreso;
+	}
+
+	public void setTipoIngreso(TipoIngreso tipoIngreso) {
+		this.tipoIngreso = tipoIngreso;
+	}
 
 	public Socio getSocio() {
 		return socio;

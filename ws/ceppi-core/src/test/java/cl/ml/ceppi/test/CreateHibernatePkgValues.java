@@ -9,7 +9,7 @@ import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
 
-public class Test {
+public class CreateHibernatePkgValues {
 	
 	public static void main(String[] args) {
 	

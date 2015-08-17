@@ -31,27 +31,31 @@
 
 		<property name="annotatedClasses">
 			<list>
-				<value>cl.ml.ceppi.core.model.tipo.Profesion</value>
 <!-- 				<value>cl.ml.ceppi.core.model.equipo.Equipo</value> -->
+				<value>cl.ml.ceppi.core.model.socio.Socio</value>
+				<value>cl.ml.ceppi.core.model.tipo.CategoriaSocio</value>
+				<value>cl.ml.ceppi.core.model.tipo.TipoIngreso</value>
+				<value>cl.ml.ceppi.core.model.cuota.ValorCuota</value>
+				<value>cl.ml.ceppi.core.model.GenericResponse</value>
+				<value>cl.ml.ceppi.core.model.equipo.Jugador</value>
+				<value>cl.ml.ceppi.core.model.cuota.Cuota</value>
+				<value>cl.ml.ceppi.core.model.gasto.Gasto</value>
+				<value>cl.ml.ceppi.core.model.menu.MenuCompuesto</value>
+				<value>cl.ml.ceppi.core.model.tipo.CentroCosto</value>
+				<value>cl.ml.ceppi.core.model.tipo.TipoSocio</value>
+				
+				<value>cl.ml.ceppi.core.model.skill.Skill</value>
+				<value>cl.ml.ceppi.core.model.tipo.TipoGasto</value>
 				<value>cl.ml.ceppi.core.model.perfil.Perfil</value>
 				<value>cl.ml.ceppi.core.model.menu.MenuSimple</value>
-				<value>cl.ml.ceppi.core.model.tipo.CentroCosto</value>
+				<value>cl.ml.ceppi.core.model.cuota.RegistroCuota</value>
 				<value>cl.ml.ceppi.core.model.ingreso.Ingreso</value>
-				<value>cl.ml.ceppi.core.model.persona.Persona</value>
-				<value>cl.ml.ceppi.core.model.tipo.CategoriaSocio</value>
-				<value>cl.ml.ceppi.core.model.menu.MenuCompuesto</value>
-				<value>cl.ml.ceppi.core.model.tipo.TipoSocio</value>
-				<value>cl.ml.ceppi.core.model.gasto.Gasto</value>
-				<value>cl.ml.ceppi.core.model.socio.Socio</value>
-				<value>cl.ml.ceppi.core.model.equipo.Jugador</value>
-				<value>cl.ml.ceppi.core.model.menu.Menu</value>
-				<value>cl.ml.ceppi.core.model.skill.Skill</value>
-				<value>cl.ml.ceppi.core.model.usuario.Usuario</value>
-				<value>cl.ml.ceppi.core.model.equipo.SkillJugador</value>
-				<value>cl.ml.ceppi.core.model.tipo.TipoGasto</value>
 				<value>cl.ml.ceppi.core.model.acceso.Acceso</value>
-				<!-- <value>cl.ml.ceppi.core.model.cuota.ValorCuota</value>
-				<value>cl.ml.ceppi.core.model.cuota.Cuota</value> -->
+				<value>cl.ml.ceppi.core.model.equipo.SkillJugador</value>
+				<value>cl.ml.ceppi.core.model.persona.Persona</value>
+				<value>cl.ml.ceppi.core.model.menu.Menu</value>
+				<value>cl.ml.ceppi.core.model.tipo.Profesion</value>
+				<value>cl.ml.ceppi.core.model.usuario.Usuario</value>
 			</list>
 		</property>
 

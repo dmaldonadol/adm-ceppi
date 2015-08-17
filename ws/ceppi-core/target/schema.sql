@@ -5,6 +5,8 @@
 
     drop table CENTRO_COSTO cascade constraints;
 
+    drop table CUOTA cascade constraints;
+
     drop table GASTO cascade constraints;
 
     drop table INGRESO cascade constraints;
@@ -21,6 +23,8 @@
 
     drop table PROFESION cascade constraints;
 
+    drop table REGISTRO_CUOTA cascade constraints;
+
     drop table SKILL cascade constraints;
 
     drop table SKILL_JUGADOR cascade constraints;
@@ -29,15 +33,21 @@
 
     drop table TIPO_GASTO cascade constraints;
 
+    drop table TIPO_INGRESO cascade constraints;
+
     drop table TIPO_SOCIO cascade constraints;
 
     drop table USUARIO cascade constraints;
+
+    drop table VALOR_CUOTA cascade constraints;
 
     drop sequence SEC_ACCESO;
 
     drop sequence SEC_CATEGORIA_SOCIO;
 
     drop sequence SEC_CENTRO_COSTO;
+
+    drop sequence SEC_CUOTA;
 
     drop sequence SEC_GASTO;
 
@@ -53,6 +63,8 @@
 
     drop sequence SEC_PROFESION;
 
+    drop sequence SEC_REGISTRO_CUOTA;
+
     drop sequence SEC_SKILL;
 
     drop sequence SEC_SKILL_JUGADOR;
@@ -61,9 +73,13 @@
 
     drop sequence SEC_TIPO_GASTO;
 
+    drop sequence SEC_TIPO_INGRESO;
+
     drop sequence SEC_TIPO_SOCIO;
 
     drop sequence SEC_USUARIO;
+
+    drop sequence SEC_VALOR_CUOTA;
 
     create table ACCESO (
         ID_ACCESO number(10,0) not null,
@@ -89,20 +105,31 @@
         primary key (ID_CENTRO_COSTO)
     );
 
+    create table CUOTA (
+        ID_CUOTA number(10,0) not null,
+        PERIODO varchar2(255 char) not null,
+        ID_VALOR_CUOTA number(10,0),
+        primary key (ID_CUOTA)
+    );
+
     create table GASTO (
         ID_GASTO number(10,0) not null,
         detalle varchar2(255 char),
-        fecha varchar2(255 char),
+        fecha date,
         monto varchar2(255 char),
         ID_CENTRO_COSTO number(10,0),
+        ID_SOCIO number(10,0),
         ID_TIPO_GASTO number(10,0),
         primary key (ID_GASTO)
     );
 
     create table INGRESO (
         ID_INGRESO number(10,0) not null,
-        fecha varchar2(255 char),
+        detalle varchar2(255 char),
+        fecha date,
+        monto varchar2(255 char),
         ID_SOCIO number(10,0),
+        ID_TIPO_INGRESO number(10,0),
         primary key (ID_INGRESO)
     );
 
@@ -162,6 +189,16 @@
         primary key (ID_PROFESION)
     );
 
+    create table REGISTRO_CUOTA (
+        ID_REGISTRO_CUOTA number(10,0) not null,
+        ESTADO varchar2(255 char),
+        FECHA_COBRO date not null,
+        ID_CUOTA number(10,0),
+        ID_SOCIO number(10,0),
+        ID_USUARIO number(10,0),
+        primary key (ID_REGISTRO_CUOTA)
+    );
+
     create table SKILL (
         ID_SKILL number(10,0) not null,
         descripcion varchar2(255 char),
@@ -193,6 +230,14 @@
         primary key (ID_TIPO_GASTO)
     );
 
+    create table TIPO_INGRESO (
+        ID_TIPO_INGRESO number(10,0) not null,
+        codigo varchar2(255 char),
+        descripcion varchar2(255 char),
+        nombre varchar2(255 char),
+        primary key (ID_TIPO_INGRESO)
+    );
+
     create table TIPO_SOCIO (
         ID_TIPO_SOCIO number(10,0) not null,
         codigo varchar2(255 char),
@@ -210,6 +255,14 @@
         primary key (ID_USUARIO)
     );
 
+    create table VALOR_CUOTA (
+        ID_VALOR_CUOTA number(10,0) not null,
+        VALOR varchar2(255 char) not null,
+        ID_CATEGORIA_SOCIO number(10,0),
+        ID_TIPO_SOCIO number(10,0),
+        primary key (ID_VALOR_CUOTA)
+    );
+
     alter table ACCESO 
         add constraint FK72BAA960D74BE1B 
         foreign key (ID_PERFIL) 
@@ -219,6 +272,16 @@
         add constraint FK72BAA960E165B58E 
         foreign key (ID_MENU) 
         references MENU;
+
+    alter table CUOTA 
+        add constraint FK3D7FD4A99F41B8 
+        foreign key (ID_VALOR_CUOTA) 
+        references VALOR_CUOTA;
+
+    alter table GASTO 
+        add constraint FK40752F44AD0DCF2 
+        foreign key (ID_SOCIO) 
+        references SOCIO;
 
     alter table GASTO 
         add constraint FK40752F4D932612 
@@ -234,6 +297,11 @@
         add constraint FK9ECFBE914AD0DCF2 
         foreign key (ID_SOCIO) 
         references SOCIO;
+
+    alter table INGRESO 
+        add constraint FK9ECFBE916AC5E4D0 
+        foreign key (ID_TIPO_INGRESO) 
+        references TIPO_INGRESO;
 
     alter table JUGADOR 
         add constraint FKDFA027A281EF84EF 
@@ -265,6 +333,21 @@
         foreign key (ID_TIPO_SOCIO) 
         references TIPO_SOCIO;
 
+    alter table REGISTRO_CUOTA 
+        add constraint FK533C4E3E4AD0DCF2 
+        foreign key (ID_SOCIO) 
+        references SOCIO;
+
+    alter table REGISTRO_CUOTA 
+        add constraint FK533C4E3E346C4D75 
+        foreign key (ID_USUARIO) 
+        references USUARIO;
+
+    alter table REGISTRO_CUOTA 
+        add constraint FK533C4E3E39CC1CA9 
+        foreign key (ID_CUOTA) 
+        references CUOTA;
+
     alter table SKILL 
         add constraint FK4B4D23193D2F06A 
         foreign key (ID_SKILL) 
@@ -295,11 +378,23 @@
         foreign key (ID_PERSONA) 
         references PERSONA;
 
+    alter table VALOR_CUOTA 
+        add constraint FKB5FAEDEF9A638CC8 
+        foreign key (ID_TIPO_SOCIO) 
+        references TIPO_SOCIO;
+
+    alter table VALOR_CUOTA 
+        add constraint FKB5FAEDEF46CAFBEE 
+        foreign key (ID_CATEGORIA_SOCIO) 
+        references CATEGORIA_SOCIO;
+
     create sequence SEC_ACCESO;
 
     create sequence SEC_CATEGORIA_SOCIO;
 
     create sequence SEC_CENTRO_COSTO;
+
+    create sequence SEC_CUOTA;
 
     create sequence SEC_GASTO;
 
@@ -315,6 +410,8 @@
 
     create sequence SEC_PROFESION;
 
+    create sequence SEC_REGISTRO_CUOTA;
+
     create sequence SEC_SKILL;
 
     create sequence SEC_SKILL_JUGADOR;
@@ -323,6 +420,10 @@
 
     create sequence SEC_TIPO_GASTO;
 
+    create sequence SEC_TIPO_INGRESO;
+
     create sequence SEC_TIPO_SOCIO;
 
     create sequence SEC_USUARIO;
+
+    create sequence SEC_VALOR_CUOTA;

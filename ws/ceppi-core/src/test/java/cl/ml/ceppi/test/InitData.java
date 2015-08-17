@@ -7,13 +7,13 @@ import cl.ml.ceppi.core.facade.PerfilFacade;
 import cl.ml.ceppi.core.facade.PersonaFacade;
 import cl.ml.ceppi.core.facade.TipoFacade;
 import cl.ml.ceppi.core.facade.UsuarioFacade;
-import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.estado.Genero;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.menu.MenuSimple;
-import cl.ml.ceppi.core.model.menu.Permiso;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.model.persona.Persona;
+import cl.ml.ceppi.core.model.tipo.TipoGasto;
+import cl.ml.ceppi.core.model.tipo.TipoIngreso;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.core.util.Crypt;
@@ -215,10 +215,19 @@ public class InitData {
 			perfil.setDescripcion("Ingresa cuotas al sistema");
 			perfilFacade.save(perfil);
 			
-			Acceso acceso = new Acceso();
-			acceso.setItemsMenu(itemsMenu);
-			acceso.setPerfil(perfil);
-			acceso.setPermiso(Permiso.ESCRITURA);
+			TipoGasto tipoGasto = new TipoGasto("0001", "Locomocion", "Locomocion");
+			TipoGasto tipoGasto1 = new TipoGasto("0002", "Colacion", "Colacion");
+			TipoGasto tipoGasto2 = new TipoGasto("0003", "Articulos de Oficina", "Articulos de Oficina");
+			tipoFacade.save(tipoGasto);
+			tipoFacade.save(tipoGasto1);
+			tipoFacade.save(tipoGasto2);
+			
+			TipoIngreso tipoIngreso = new TipoIngreso("0001", "Donacion", "Donacion");
+			TipoIngreso tipoIngreso1 = new TipoIngreso("0002", "Bingo", "Bingo");
+			TipoIngreso tipoIngreso2 = new TipoIngreso("0003", "Rifa", "Rifa");
+			tipoFacade.save(tipoIngreso);
+			tipoFacade.save(tipoIngreso1);
+			tipoFacade.save(tipoIngreso2);
 			
 			
 		} catch (Exception e) {

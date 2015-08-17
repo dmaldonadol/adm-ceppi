@@ -14,6 +14,7 @@ import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
 import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
+import cl.ml.ceppi.core.model.tipo.TipoIngreso;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.core.service.TipoService;
 
@@ -151,6 +152,31 @@ public class TipoServiceImpl implements TipoService
 	@Transactional
 	public TipoSocio findTipoSocioById(int id) {
 		return tipoDao.findTipoSocioById(id);
+	}
+	
+	@Transactional
+	public void save(TipoIngreso tipoIngreso) {
+		tipoDao.save(tipoIngreso);		
+	}
+
+	@Transactional
+	public void update(TipoIngreso tipoIngreso) {
+		tipoDao.update(tipoIngreso);		
+	}
+
+	@Transactional
+	public void delete(TipoIngreso tipoIngreso) {
+		tipoDao.delete(tipoIngreso);
+	}
+
+	@Transactional
+	public List<TipoIngreso> listTipoIngreso() {
+		return tipoDao.listTipoIngreso();
+	}
+
+	@Transactional
+	public TipoIngreso findTipoIngresoById(int id) {
+		return tipoDao.findTipoIngresoById(id);
 	}
 
 }
