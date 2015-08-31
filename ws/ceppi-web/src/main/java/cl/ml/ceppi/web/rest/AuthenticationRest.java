@@ -3,6 +3,8 @@
  */
 package cl.ml.ceppi.web.rest;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.Consumes;
@@ -17,8 +19,10 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
+import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.web.logic.UsuarioLogic;
+import cl.ml.ceppi.web.util.Constantes;
 
 /**
  * 
@@ -33,7 +37,6 @@ import cl.ml.ceppi.web.logic.UsuarioLogic;
 public class AuthenticationRest {
 	
 	private static final Logger LOGGER = Logger.getLogger(AuthenticationRest.class.getCanonicalName());
-	public static final String USER_SESSION = "USER";
 	
 	@Context
     private HttpServletRequest request;
@@ -49,10 +52,15 @@ public class AuthenticationRest {
 		{
 			Usuario usuario = UsuarioLogic.autenticar(user.getUsername(), user.getPassword());
 			
-			HttpSession session = request.getSession( true );
-			session.setAttribute( USER_SESSION , usuario );
 			if (null != usuario)
 			{
+				HttpSession session = request.getSession( true );
+				
+				List<Acceso> acceso = UsuarioLogic.acceso(usuario.getPerfil());
+				
+				session.setAttribute( Constantes.USER_SESSION , usuario );
+				session.setAttribute( Constantes.USER_ACCESS , acceso );
+				
 				return Response.status(Status.OK).build();
 			}
 			else

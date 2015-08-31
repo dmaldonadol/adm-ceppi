@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import cl.ml.ceppi.core.dao.PerfilDao;
+import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 
@@ -80,6 +81,14 @@ public class PerfilDaoImpl implements PerfilDao {
 		Criteria cr = getSession().createCriteria(Menu.class);
 		cr.add(Restrictions.eq("oid", id));
 		return (Menu) cr.list().get(0);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Acceso> listaAccesoByIdPerfil(int id)
+	{
+		Criteria cr = getSession().createCriteria(Acceso.class);
+		cr.add(Restrictions.eq("perfil.oid", id));
+		return (List<Acceso>)cr.list();
 	}
 
 }

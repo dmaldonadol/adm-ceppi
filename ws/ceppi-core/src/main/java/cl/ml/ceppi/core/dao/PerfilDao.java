@@ -5,6 +5,7 @@ package cl.ml.ceppi.core.dao;
 
 import java.util.List;
 
+import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 
@@ -28,4 +29,6 @@ public interface PerfilDao
 		
 	Perfil findPerfilById(int id);
 	Menu findMenuById(int id);
+	
+	List<Acceso> listaAccesoByIdPerfil(int id);
 }

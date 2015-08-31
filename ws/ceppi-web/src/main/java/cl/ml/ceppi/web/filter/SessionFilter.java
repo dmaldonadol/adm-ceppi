@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cl.ml.ceppi.web.rest.AuthenticationRest;
+import cl.ml.ceppi.web.util.Constantes;
 
 /**
  * Servlet Filter implementation class SessionFilter
@@ -39,7 +39,7 @@ public class SessionFilter implements Filter {
 
 		HttpServletRequest requestHttp = (HttpServletRequest)request;		
 		
-		if( null == requestHttp.getSession(false) || null == requestHttp.getSession(false).getAttribute( AuthenticationRest.USER_SESSION ) )
+		if( null == requestHttp.getSession(false) || null == requestHttp.getSession(false).getAttribute( Constantes.USER_SESSION ) )
 		{
 //			((HttpServletResponse)response).setStatus( HttpServletResponse.SC_UNAUTHORIZED  );
 			((HttpServletResponse)response).sendRedirect( ((HttpServletRequest)request).getContextPath() + "/public/pages/login.jsp");;
