@@ -14,11 +14,11 @@ import cl.ml.ceppi.web.logic.PerfilLogic;
 
 /**
  * 
- * @author Maldonado León
+ * @author Maldonado Leï¿½n
  * 
  */
 
-@Path("/perfil")
+@Path("/private/perfil")
 public class PerfilRest 
 {
 	private static final Logger LOGGER = Logger.getLogger(PerfilRest.class);

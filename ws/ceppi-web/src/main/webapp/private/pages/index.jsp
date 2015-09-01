@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html class="backend">
+<html ng-app="CeppiApp" class="backend">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,31 +19,18 @@
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/layout.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/uielement.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/themes/theme2.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/nprogress/css/nprogress.css">
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
     </head>
     
-    <body>
+    <body ng-controller="MainController">
         
-  		<jsp:include page="commons/header.jsp" />
-  		<jsp:include page="commons/menu.jsp" />
+  		<jsp:include page="/private/pages/commons/header.jsp" />
+  		<jsp:include page="/private/pages/commons/menu.jsp" />
 
-        <section id="main" role="main">
-            <div class="container-fluid">
-                <div class="page-header page-header-block">
-                    <div class="page-header-section">
-                        <h4 class="title semibold">Inicio</h4>
-                    </div>
-                    <div class="page-header-section">
-                        <div class="toolbar">
-                            <ol class="breadcrumb breadcrumb-transparent nm">
-                                <li><a href="#">Theme</a></li>
-                                <li class="active">Theme 2</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+        <section id="main" role="main" >
+        	<div ng-view></div>
+            <a href="javascript:void();" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
         </section>
         <script type="text/javascript">
         	var CONSTANTS = 
@@ -51,9 +38,22 @@
         		contextPath : "<%=request.getContextPath() %>"
         	};
         </script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/angular.min.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/angular-resource.min.js"></script>
+    	<script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/angular-route.min.js"></script>
+        <!-- Descomentar si ambiente tiene conexion a internet -->
+        <!-- script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script-->
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/vendor.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/core.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/backend/app.js"></script>
+        
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>
+        
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ApplicationCeppi.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/UsuarioController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/PerfilController.js"></script>
+        
     </body>
     <!--/ END Body -->
 </html>

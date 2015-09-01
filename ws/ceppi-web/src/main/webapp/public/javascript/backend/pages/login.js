@@ -3,7 +3,7 @@
  * Page/renders: page-login.html
  * Plugins used: parsley
  * ======================================================================== */
-var URL_PAGE_INDEX = CONSTANTS.contextPath + '/private/pages/index.jsp';
+var URL_PAGE_INDEX = CONSTANTS.contextPath + '/private/inicio';
 var URL_SERVICE_AUTHENTICATION = CONSTANTS.contextPath + '/api/authentication';
 
 
@@ -53,7 +53,9 @@ var URL_SERVICE_AUTHENTICATION = CONSTANTS.contextPath + '/api/authentication';
 						  }
 						  else
 						  {
-							  alert("Inicio de sesion no valido");
+							  $("#info-login").html("Usuario y/o contraseña no son validos.");
+							  $("#info-login").removeClass("alert-info");
+							  $("#info-login").addClass("alert-danger");
 							  $this.prop('disabled', false);
 						  }
 						  NProgress.done();

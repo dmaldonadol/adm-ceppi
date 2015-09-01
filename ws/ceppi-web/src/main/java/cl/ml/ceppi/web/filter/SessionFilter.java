@@ -42,7 +42,7 @@ public class SessionFilter implements Filter {
 		if( null == requestHttp.getSession(false) || null == requestHttp.getSession(false).getAttribute( AuthenticationRest.USER_SESSION ) )
 		{
 //			((HttpServletResponse)response).setStatus( HttpServletResponse.SC_UNAUTHORIZED  );
-			((HttpServletResponse)response).sendRedirect( ((HttpServletRequest)request).getContextPath() + "/public/pages/login.jsp");;
+			((HttpServletResponse)response).sendRedirect( ((HttpServletRequest)request).getContextPath() + "/login");;
 		}
 		else
 		{	

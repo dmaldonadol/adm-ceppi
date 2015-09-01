@@ -6,29 +6,25 @@
     <section class="content slimscroll">	
 	<h5 class="heading">Main Menu</h5>
     <ul class="topmenu topmenu-responsive" data-toggle="menu">
-                    <li >
-                        <a href="javascript:void(0);" data-target="#dashboard" data-toggle="submenu" data-parent=".topmenu">
-                            <span class="figure"><i class="ico-dashboard2"></i></span>
-                            <span class="text">Dashboard</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <!-- START 2nd Level Menu -->
-                        <ul id="dashboard" class="submenu collapse ">
-                            <li class="submenu-header ellipsis">Dashboard</li>
-                            <li >
-                                <a href="index.html">
-                                    <span class="text">Version 1</span>
-                                    <span class="number"><span class="label label-danger">10</span></span>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="dashboard-v2.html">
-                                    <span class="text">Version 2</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!--/ END 2nd Level Menu -->
-                    </li>
+    
+    
+    	<li >
+            <a href="javascript:void(0);" data-target="#dashboard" data-toggle="submenu" data-parent=".topmenu">
+                <span class="figure"><i class="ico-dashboard2"></i></span>
+                <span class="text">Administración</span>
+                <span class="arrow"></span>
+            </a>
+            <ul id="dashboard" class="submenu collapse ">
+                <li class="submenu-header ellipsis">Administración</li>
+                <li >
+                    <a href="inicio#/administracion/usuarios"><span class="text">Usuarios</span></a>
+                </li>
+                <li >
+                    <a href="inicio#/administracion/perfiles"><span class="text">Perfiles</span></a>
+                </li>
+            </ul>
+        </li>
+    
                     <li >
                         <a href="javascript:void(0);" data-target="#components" data-toggle="submenu" data-parent=".topmenu">
                             <span class="figure"><i class="ico-screwdriver"></i></span>

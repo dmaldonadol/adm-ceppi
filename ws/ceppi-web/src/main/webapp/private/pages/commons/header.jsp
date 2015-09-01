@@ -72,7 +72,7 @@
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-user-plus2"></i></span> Mi cuenta</a></li>
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-cog4"></i></span> Profile Setting</a></li>
                             <li class="divider"></li>
-                            <li><a id="logout" href="javascript:void(0);"><span class="icon"><i class="ico-exit"></i></span> Salir</a></li>
+                            <li><a id="logout" href="<%=request.getContextPath() %>/logout"><span class="icon"><i class="ico-exit"></i></span> Salir</a></li>
                         </ul>
                     </li>
                 </ul>

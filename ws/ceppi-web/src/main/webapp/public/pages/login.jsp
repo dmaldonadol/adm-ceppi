@@ -45,7 +45,7 @@
                         <form class="panel" name="form-login" action="">
                             <div class="panel-body">
                                 <!-- Alert message -->
-                                <div class="alert alert-info">
+                                <div class="alert alert-info" id="info-login">
                                 	Ingresa tus datos para acceder
                                 </div>
                                  
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a href="javascript:void(0);">No recuerdas tu passowrd?</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                         </form>
                         <!-- Login form -->
                         <hr><!-- horizontal line -->
-                        <p class="text-muted text-center">¿No tienes una cuenta? <a class="semibold" href="page-register.html">Registrate</a></p>
+                        
                     </div>
                 </div>
             </section>
