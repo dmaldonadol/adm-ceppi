@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cl.ml.ceppi.core.facade.PerfilFacade;
+import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.service.PerfilService;
@@ -69,6 +70,12 @@ public class PerfilFacadeImpl implements PerfilFacade
 	@Transactional
 	public Menu findMenuById(int id) {
 		return perfilService.findMenuById(id);
+	}
+	
+	@Transactional
+	public List<Acceso> listaAccesoByIdPerfil(int id)
+	{
+		return perfilService.listaAccesoByIdPerfil(id);
 	}
 
 	

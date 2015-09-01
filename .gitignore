@@ -18,3 +18,5 @@ ws/ceppi-web/.settings/org.eclipse.wst.common.project.facet.core.xml
 ws/ceppi-web/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 
 ws/ceppi-web/target/m2e-wtp/web-resources/META-INF/maven/cl.ml.ceppi/ceppi-web/pom.properties
+
+ws/ceppi-web/target/m2e-wtp/web-resources/META-INF/maven/cl.ml.ceppi/ceppi-web/pom.properties

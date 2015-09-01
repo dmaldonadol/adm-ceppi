@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cl.ml.ceppi.core.dao.PerfilDao;
+import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.service.PerfilService;
@@ -71,6 +72,11 @@ public class PerfilServiceImpl implements PerfilService {
 	@Transactional
 	public Menu findMenuById(int id) {
 		return perfilDao.findMenuById(id);
+	}
+	
+	public List<Acceso> listaAccesoByIdPerfil(int id)
+	{
+		return perfilDao.listaAccesoByIdPerfil(id);
 	}
 
 }

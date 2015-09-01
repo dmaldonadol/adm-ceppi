@@ -9,28 +9,28 @@ package cl.ml.ceppi.core.model.menu;
  */
 public enum Permiso {
 	
-	ESCRITURA
+	E
 	{
 		@Override
-		public String getCodigo()
+		public String getNombre()
 		{
-			return "E";
+			return "ESCRITURA";
 		}
 	}
-	, LECTURA
+	, L
 	{
 		@Override
-		public String getCodigo() {
-			return "L";
+		public String getNombre() {
+			return "LECTURA";
 		}
 	}
-	, SIN_ACCESO
+	, S
 	{
 		@Override
-		public String getCodigo() {
-			return "S";
+		public String getNombre() {
+			return "SIN_ACCESO";
 		}
 	};
 	
-	public abstract String getCodigo();
+	public abstract String getNombre();
 }
