@@ -1,8 +1,0 @@
-package cl.ml.ceppi.web.pojo;
-
-import java.io.Serializable;
-
-public class TipoPojo implements Serializable 
-{
-	
-}
