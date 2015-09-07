@@ -16,11 +16,11 @@ import cl.ml.ceppi.web.pojo.TipoPojo;
 
 /**
  * 
- * @author Maldonado León
+ * @author Maldonado Leon
  * 
  */
 
-@Path("/tipo")
+@Path("/private/tipo")
 public class TipoRest 
 {
 	private HttpServletRequest request;
@@ -76,6 +76,16 @@ public class TipoRest
 	public Response listaCentroCosto() 
 	{		
 		return TipoLogic.listaCentroCosto();
+		
+	}
+	
+	@GET
+	@Path("/ingreso")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaTipoIngreso() 
+	{		
+		return TipoLogic.listaTipoIngreso();
 		
 	}
 	

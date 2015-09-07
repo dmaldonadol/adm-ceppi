@@ -12,6 +12,7 @@ import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
 import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
+import cl.ml.ceppi.core.model.tipo.TipoIngreso;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 import cl.ml.ceppi.web.pojo.TipoPojo;
@@ -463,6 +464,28 @@ public class TipoLogic
 			LOGGER.error("Error al eliminar centro de costo.", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
 		}
+		return response;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static Response listaTipoIngreso() {
+		Response response;
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<TipoIngreso> lista =	facade.listTipoIngreso();
+			
+			response = Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Ingreso.", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+		
 		return response;
 	}
 
