@@ -13,8 +13,8 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.core.model.perfil.Perfil;
-import cl.ml.ceppi.web.logic.PerfilLogic;
+import cl.ml.ceppi.core.model.usuario.Usuario;
+import cl.ml.ceppi.web.logic.UsuarioLogic;
 
 /**
  * 
@@ -22,14 +22,14 @@ import cl.ml.ceppi.web.logic.PerfilLogic;
  * 
  */
 
-@Path("/private/perfil")
-public class PerfilRest 
+@Path("/private/usuario")
+public class UsuarioRest 
 {
-	private static final Logger LOGGER = Logger.getLogger(PerfilRest.class);
+	private static final Logger LOGGER = Logger.getLogger(UsuarioRest.class);
 
 	private HttpServletRequest request;
 
-	public PerfilRest() {
+	public UsuarioRest() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -37,10 +37,10 @@ public class PerfilRest
 	@Path("/listar")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response listaPerfiles() 
-	{		
-		LOGGER.info("[Init] - lista perfiles");
-		return PerfilLogic.listaPerfiles();
+	public Response listaUsuario() 
+	{
+		LOGGER.info("[ init - listar usuarios ]");
+		return UsuarioLogic.listaUsuarios();
 		
 	}
 	
@@ -48,20 +48,20 @@ public class PerfilRest
 	@Path("/save")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response save(Perfil perfil) 
+	public Response save(Usuario usuario) 
 	{		
-		LOGGER.info("[ init - guardar perfil ]");
-		return PerfilLogic.save(perfil);
+		LOGGER.info("[ init - guardar usuarios ]");
+		return UsuarioLogic.save(usuario);
 	}
 	
 	@PUT
 	@Path("/update")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response update(Perfil perfil) 
+	public Response update(Usuario usuario) 
 	{		
-		LOGGER.info("[ init - actualizar perfil ]");
-		return PerfilLogic.update(perfil);
+		LOGGER.info("[ init - actualizar usuarios ]");
+		return UsuarioLogic.update(usuario);
 		
 	}
 	
@@ -69,10 +69,10 @@ public class PerfilRest
 	@Path("/delete")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteGastos(Perfil perfil) 
+	public Response deleteGastos(Usuario usuario) 
 	{		
-		LOGGER.info("[ init - eliminar perfil ]");
-		return PerfilLogic.delete(perfil);
+		LOGGER.info("[ init - eliminar usuarios ]");
+		return UsuarioLogic.delete(usuario);
 		
 	}
 	
