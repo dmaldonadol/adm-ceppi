@@ -29,7 +29,9 @@
 	                </div>
 	                <div class="panel-toolbar-wrapper pl10 pr0 pt5 pb5">	                    
 	                    <div class="panel-toolbar text-right">
-	                    	<div class="col-sm-8" ></div>
+	                    	<div class="col-sm-8" >
+	                    		<a href="inicio#/mantenedor/categoriaform"><span class="text">Nuevo</span></a>
+	                    	</div>
 	                    	<div class="col-sm-4" >
 	                        	<input type="text" ng-model="q" placeholder="buscar" class="form-control" />
 	                        </div>
