@@ -2,7 +2,7 @@
  * @author 	: Juan Francisco ( juan.maldonado.leon@gmail.com )
  * @desc 	: Controlador de perfiles.
  *************************************************************/
-app.controller("PerfilController", function($scope, $http)
+app.controller("CentroCostoController", function($scope, $http)
 {
 	$scope.listaCentroCosto = [];
 	

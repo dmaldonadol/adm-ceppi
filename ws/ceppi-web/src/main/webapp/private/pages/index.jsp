@@ -55,6 +55,12 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/UsuarioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/PerfilController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/EquipoController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CategoriaController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CentroCostoController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ProfesionController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/TipoGastoController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/TipoIgresoController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/TipoSocioController.js"></script>
         
     </body>
     <!--/ END Body -->

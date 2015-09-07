@@ -29,11 +29,11 @@
 	                </div>
 	                <div class="panel-toolbar-wrapper pl0 pr0 pt5 pb5">	                    
 	                    <div class="panel-toolbar text-right">
-	                    	<div class="col-sm-8 text-left" >
+	                    	<div class="col-sm-4 text-left" >
 	                    		<input type="text" ng-model="q" placeholder="buscar" class="form-control" />
 	                    	</div>
-	                    	<div class="col-sm-4" >
-	                    		<a href="#/administracion/perfiles/crear" class="btn btn-default mb5" ><i class="ico-plus"></i> Nuevo</a>
+	                    	<div class="col-sm-8" >
+	                    		<a href="#/administracion/perfiles/crear" class="btn btn-default mb5" ><i class="ico-plus"></i></a>
 	                        </div>
 	                    </div>
 	                </div>
