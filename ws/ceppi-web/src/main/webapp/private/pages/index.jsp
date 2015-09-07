@@ -23,7 +23,7 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
     </head>
     
-    <body ng-controller="MainController">
+    <body>
         
   		<jsp:include page="/private/pages/commons/header.jsp" />
   		<jsp:include page="/private/pages/commons/menu.jsp" />
@@ -51,8 +51,10 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>
         
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ApplicationCeppi.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/DashboardController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/UsuarioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/PerfilController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/EquipoController.js"></script>
         
     </body>
     <!--/ END Body -->
