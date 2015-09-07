@@ -3,13 +3,16 @@ ws/ceppi-bussines/.classpath
 ws/ceppi-bussines/.project
 ws/ceppi-bussines/.settings/
 ws/ceppi-bussines/target/
+ws/ceppi-bussines/bin/
 
 ws/ceppi-core/.classpath
 ws/ceppi-core/.project
 ws/ceppi-core/.settings/
 ws/ceppi-core/target/
+ws/ceppi-core/bin/
 
 ws/ceppi-web/.classpath
 ws/ceppi-web/.project
 ws/ceppi-web/.settings/
 ws/ceppi-web/target/
+ws/ceppi-web/bin/

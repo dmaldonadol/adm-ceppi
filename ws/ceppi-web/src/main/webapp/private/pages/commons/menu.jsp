@@ -26,6 +26,23 @@
         </li>
         
         <li >
+            <a href="javascript:void(0);" data-target="#teams" data-toggle="submenu" data-parent=".topmenu">
+                <span class="figure"><i class="ico-dashboard2"></i></span>
+                <span class="text">Equipos</span>
+                <span class="arrow"></span>
+            </a>
+            <ul id="teams" class="submenu collapse ">
+                <li class="submenu-header ellipsis">Equipos</li>
+                <li >
+                    <a href="inicio#/mantenedores/equipos"><span class="text">Equipos</span></a>
+                </li>
+                <li >
+                    <a href="inicio#/mantenedores/jugadores"><span class="text">Jugadores</span></a>
+                </li>
+            </ul>
+        </li>
+            
+        <li>
             <a href="javascript:void(0);" data-target="#components" data-toggle="submenu" data-parent=".topmenu">
                 <span class="figure"><i class="ico-screwdriver"></i></span>
                 <span class="text">Mantenedores</span>

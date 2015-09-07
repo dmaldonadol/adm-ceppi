@@ -12,6 +12,7 @@ app.controller("PerfilController", function($scope, $http)
 	 *************************************************************/
 	$scope.initialize = function()
 	{
+		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/listar" );
 		request.success( function( response )
