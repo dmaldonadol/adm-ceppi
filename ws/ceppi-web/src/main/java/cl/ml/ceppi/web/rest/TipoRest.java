@@ -7,6 +7,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -99,8 +100,8 @@ public class TipoRest
 		
 	}
 	
-	@POST
-	@Path("/saveSocio")
+	@PUT
+	@Path("/socio")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response saveSocios(TipoPojo pojo) 
@@ -109,8 +110,8 @@ public class TipoRest
 		
 	}
 	
-	@POST
-	@Path("/saveCategoria")
+	@PUT
+	@Path("/categoria")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response saveCategoria(TipoPojo pojo) 
@@ -119,8 +120,8 @@ public class TipoRest
 		
 	}
 	
-	@POST
-	@Path("/saveProfesion")
+	@PUT
+	@Path("/profesion")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response saveProfesion(TipoPojo pojo) 
@@ -129,8 +130,8 @@ public class TipoRest
 		
 	}
 	
-	@POST
-	@Path("/saveCentroCosto")
+	@PUT
+	@Path("/centroCosto")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response saveCentroCosto(TipoPojo pojo) 
@@ -139,8 +140,8 @@ public class TipoRest
 		
 	}
 	
-	@PUT
-	@Path("/updateGasto")
+	@POST
+	@Path("/gasto")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response updateGastos(TipoPojo pojo) 
@@ -149,8 +150,8 @@ public class TipoRest
 		
 	}
 	
-	@PUT
-	@Path("/updateSocio")
+	@POST
+	@Path("/socio")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response updateSocios(TipoPojo pojo) 
@@ -159,8 +160,8 @@ public class TipoRest
 		
 	}
 	
-	@PUT
-	@Path("/updateCategoria")
+	@POST
+	@Path("/categoria")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response updateCategoria(TipoPojo pojo) 
@@ -169,8 +170,8 @@ public class TipoRest
 		
 	}
 	
-	@PUT
-	@Path("/updateProfesion")
+	@POST
+	@Path("/profesion")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response updateProfesion(TipoPojo pojo) 
@@ -179,8 +180,8 @@ public class TipoRest
 		
 	}
 	
-	@PUT
-	@Path("/updateCentroCosto")
+	@POST
+	@Path("/centroCosto")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response updateCentroCosto(TipoPojo pojo) 
@@ -190,52 +191,52 @@ public class TipoRest
 	}
 	
 	@DELETE
-	@Path("/deleteGasto")
+	@Path("/gasto/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteGastos(TipoPojo pojo) 
+	public Response deleteGastos(@PathParam("id") int id) 
 	{		
-		return TipoLogic.deleteGasto(pojo);
+		return TipoLogic.deleteGasto(new TipoPojo(id));
 		
 	}
 	
 	@DELETE
-	@Path("/deleteSocio")
+	@Path("/socio/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteSocios(TipoPojo pojo) 
+	public Response deleteSocios( @PathParam("id") int id) 
 	{		
-		return TipoLogic.deleteSocio(pojo);
+		return TipoLogic.deleteSocio( new TipoPojo(id) );
 		
 	}
 	
 	@DELETE
-	@Path("/deleteCategoria")
+	@Path("/categoria/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteCategoria(TipoPojo pojo) 
+	public Response deleteCategoria(@PathParam("id") int id) 
 	{		
-		return TipoLogic.deleteCategoria(pojo);
+		return TipoLogic.deleteCategoria(new TipoPojo(id));
 		
 	}
 	
 	@DELETE
-	@Path("/deleteProfesion")
+	@Path("/profesion/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteProfesion(TipoPojo pojo) 
+	public Response deleteProfesion(@PathParam("id") int id) 
 	{		
-		return TipoLogic.deleteProfesion(pojo);
+		return TipoLogic.deleteProfesion(new TipoPojo(id));
 		
 	}
 	
 	@DELETE
-	@Path("/deleteCentroCosto")
+	@Path("/centroCosto/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteCentroCosto(TipoPojo pojo) 
+	public Response deleteCentroCosto(@PathParam("id") int id) 
 	{		
-		return TipoLogic.deleteCentroCosto(pojo);
+		return TipoLogic.deleteCentroCosto(new TipoPojo(id));
 		
 	}
 	

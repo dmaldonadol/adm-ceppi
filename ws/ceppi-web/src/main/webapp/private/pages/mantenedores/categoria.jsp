@@ -33,7 +33,17 @@
 	                    		<a href="inicio#/mantenedor/categoriaform"><span class="text">Nuevo</span></a>
 	                    	</div>
 	                    	<div class="col-sm-4" >
-	                        	<input type="text" ng-model="q" placeholder="buscar" class="form-control" />
+	                        	<div class="panel-toolbar">
+	                                <div class="input-group">
+	                                    <div class="has-icon">
+	                                        <input type="text" ng-model="q" placeholder="buscar" class="form-control" />
+	                                        <i class="ico-search form-control-icon"></i>
+	                                    </div>
+	                                    <div class="input-group-btn">
+	                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-create"><i class="ico-plus"></i></button>	                                        
+	                                    </div>
+	                                </div>
+	                            </div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -61,10 +71,9 @@
 	                                                    <span class="caret"></span>
 	                                                </button>
 	                                                <ul class="dropdown-menu dropdown-menu-right">
-	                                                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Ver</a></li>
-	                                                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Editar</a></li>
+	                                                    <li><a href="javascript:void(0);" ng-click="selecionActualizar( c )"><i class="icon ico-pencil"></i>Editar</a></li>
 	                                                    <li class="divider"></li>
-	                                                    <li><a href="javascript:void(0);" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
+	                                                    <li><a href="javascript:void(0);" ng-click="eliminar( c )" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </div>
@@ -77,7 +86,85 @@
 	            </div>
 	        </div>
         
+        <div id="modal-create" class="modal fade" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h3 class="semibold modal-title">Nueva Categoria</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal form-bordered" action="">
+	                            <div class="form-group">
+	                                <label class="col-sm-3 control-label">Código</label>
+	                                <div class="col-sm-9">
+	                                    <input type="text" class="form-control" ng-model="codigo">
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="col-sm-3 control-label">Nombre</label>
+	                                <div class="col-sm-9">
+	                                    <input type="text" class="form-control" ng-model="nombre">
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="col-sm-3 control-label">Descripción</label>
+	                                <div class="col-sm-9">
+	                                    <!-- input type="text" class="form-control" ng-model="descripcion"-->
+	                                    <textarea class="form-control" ng-model="descripcion"></textarea>
+	                                </div>
+	                            </div>
+                            </form>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" ng-click="nuevo();">Guardar</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+            
+            
+            
+            <div id="modal-update" class="modal fade" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h3 class="semibold modal-title">Editar Categoria</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal form-bordered" action="">
+	                            <div class="form-group">
+	                                <label class="col-sm-3 control-label">Código</label>
+	                                <div class="col-sm-9">
+	                                    <input type="text" class="form-control" ng-model="objUpdate.codigo">
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="col-sm-3 control-label">Nombre</label>
+	                                <div class="col-sm-9">
+	                                    <input type="text" class="form-control" ng-model="objUpdate.nombre">
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="col-sm-3 control-label">Descripción</label>
+	                                <div class="col-sm-9">
+	                                    <!-- input type="text" class="form-control" ng-model="descripcion"-->
+	                                    <textarea class="form-control" ng-model="objUpdate.descripcion"></textarea>
+	                                </div>
+	                            </div>
+                            </form>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" ng-click="actualizar();">Guardar</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
         
     </div>
-    <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
 </section>

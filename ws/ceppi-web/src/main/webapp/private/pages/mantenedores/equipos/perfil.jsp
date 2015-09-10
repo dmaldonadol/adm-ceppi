@@ -7,8 +7,9 @@
             <div class="page-header-section">
                 <div class="toolbar">
                     <ol class="breadcrumb breadcrumb-transparent nm">
-                        <li><a href="#">Ceppi</a></li>
-                        <li class="active">Equipo</li>
+                        <li><a href="inicio#/">Ceppi</a></li>
+                        <li><a href="inicio#/mantenedores/equipos">Equipos</a></li>
+                        <li class="active">Perfil Equipo</li>
                     </ol>
                 </div>
             </div>
@@ -25,7 +26,7 @@
  	       	
  	       	<div class="panel panel-default" id="toolbar-showcase">
 	                <div class="panel-heading">
-	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span> Jugadores</h3>
+	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-list22"></i></span> Jugadores</h3>
 	                </div>
 	                
               

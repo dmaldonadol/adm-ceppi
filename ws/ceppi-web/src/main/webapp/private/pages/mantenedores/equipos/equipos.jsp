@@ -6,10 +6,21 @@
             </div>
             <div class="page-header-section">
                 <div class="toolbar">
-                    <ol class="breadcrumb breadcrumb-transparent nm">
-                        <li><a href="#">Ceppi</a></li>
-                        <li class="active">Equipos</li>
-                    </ol>
+                    <div class="col-md-6 col-md-offset-6">
+                        <div class="panel-toolbar">
+                            <div class="input-group">
+                                <div class="has-icon">
+                                    <input type="text" ng-model="q" placeholder="buscar" class="form-control" />
+                                    <i class="ico-search form-control-icon"></i>
+                                </div>
+                                <div class="input-group-btn">
+                                	<a href="inicio#/mantenedores/equipos/nuevo" class="btn btn-default">Nuevo</a>
+                                    	                                        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>

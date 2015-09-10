@@ -10,6 +10,15 @@ public class TipoPojo implements Serializable
 	private String nombre;
 	private String codigo;
 	private String descripcion;
+	
+	
+	public TipoPojo()
+	{}
+	
+	public TipoPojo( int oid )
+	{
+		this.setOid(oid);
+	}
 
 	public int getOid() {
 		return oid;

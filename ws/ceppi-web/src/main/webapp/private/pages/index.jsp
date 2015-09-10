@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/uielement.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/themes/theme2.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/nprogress/css/nprogress.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/steps/css/jquery-steps.css">
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
     </head>
     
@@ -48,6 +49,7 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/core.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/backend/app.js"></script>
         
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/steps/js/jquery-steps.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>
         
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ApplicationCeppi.js"></script>
