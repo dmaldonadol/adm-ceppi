@@ -31,7 +31,7 @@
 
 		<property name="annotatedClasses">
 			<list>
-<!-- 				<value>cl.ml.ceppi.core.model.equipo.Equipo</value> -->
+				<value>cl.ml.ceppi.core.model.equipo.Equipo</value>
 				<value>cl.ml.ceppi.core.model.socio.Socio</value>
 				<value>cl.ml.ceppi.core.model.tipo.CategoriaSocio</value>
 				<value>cl.ml.ceppi.core.model.tipo.TipoIngreso</value>

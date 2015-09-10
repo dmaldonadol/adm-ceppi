@@ -4,6 +4,7 @@
 package cl.ml.ceppi.core.model.persona;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import cl.ml.ceppi.core.model.estado.Genero;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
@@ -69,6 +72,9 @@ public class Persona implements Serializable {
 	@Column
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
+	
+	@Temporal(TemporalType.DATE)
+	private Date fechaNacimiento;
 
 	/**
 	 * 
@@ -163,6 +169,14 @@ public class Persona implements Serializable {
 
 	public void setGenero(Genero genero) {
 		this.genero = genero;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 }
