@@ -26,7 +26,7 @@
     
     <body>
         
-  		<!-- jsp:include page="/private/pages/commons/header.jsp" /-->
+  		<jsp:include page="/private/pages/commons/header.jsp" />
   		<jsp:include page="/private/pages/commons/menu.jsp" />
 
         <section id="main" role="main" >
