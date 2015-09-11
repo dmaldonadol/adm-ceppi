@@ -55,14 +55,14 @@
                                     <div class="form-stack has-icon pull-left">
                                         <input name="username" type="text" class="form-control input-lg" 
                                         	placeholder="Nombre usuario" data-parsley-errors-container="#error-container" 
-                                        	data-parsley-error-message="Por favor ingrese su Nombre de Usuario" data-parsley-required>
+                                        	data-parsley-error-message="Por favor ingrese su nombre de usuario" data-parsley-required>
                                         <i class="ico-user2 form-control-icon"></i>
                                     </div>
                                     <div class="form-stack has-icon pull-left">
                                         <input name="password" type="password" 
-                                        class="form-control input-lg" placeholder="Password" 
+                                        class="form-control input-lg" placeholder="Contraseña" 
                                         data-parsley-errors-container="#error-container" 
-                                        data-parsley-error-message="Por favor ingrese su password" data-parsley-required>
+                                        data-parsley-error-message="Por favor ingrese su contraseña" data-parsley-required>
                                         <i class="ico-lock2 form-control-icon"></i>
                                     </div>
                                 </div>
@@ -70,20 +70,7 @@
                                 <!-- Error container -->
                                 <div id="error-container"class="mb15"></div>
                                 <!--/ Error container -->
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="checkbox custom-checkbox">  
-                                                <input type="checkbox" name="remember" id="remember" value="1">  
-                                                <label for="remember">&nbsp;&nbsp;Recordarme</label>   
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6 text-right">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group nm">
                                     <button type="submit" class="btn btn-block btn-success"><span class="semibold">Iniciar Sesión</span></button>
                                 </div>

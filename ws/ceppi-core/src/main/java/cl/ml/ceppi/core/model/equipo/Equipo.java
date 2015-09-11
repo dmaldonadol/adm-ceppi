@@ -6,11 +6,15 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import cl.ml.ceppi.core.model.estado.Genero;
 
 /**
  * @author Maldonado León
@@ -37,6 +41,10 @@ public class Equipo implements Serializable
 	
 	@Column(length = 4, nullable = false)
 	private String anioLimite;
+	
+	@Column
+	@Enumerated(EnumType.STRING)
+	private Genero genero;
 	
 	@OneToMany
 	private List<Jugador> juagadores = new ArrayList<Jugador>();

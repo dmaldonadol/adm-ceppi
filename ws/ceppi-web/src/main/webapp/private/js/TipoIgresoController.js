@@ -73,7 +73,7 @@ app.controller("TipoIngresoController", function($scope, $http)
 	 *************************************************************/
 	$scope.selecionActualizar = function( objeto )
 	{
-		$scope.objUpdate = objeto;
+		$scope.objUpdate = angular.copy(objeto);
 		$('#modal-update').modal('show');
 		
 	};
@@ -86,7 +86,7 @@ app.controller("TipoIngresoController", function($scope, $http)
 	$scope.actualizar = function( objeto )
 	{
 		console.log( objeto );
-		var request = $http.post( CONSTANTS.contextPath + "/api/private/tipo/ingreso" , $scope.objUpdate );
+		var request = $http.post( CONSTANTS.contextPath + "/api/private/tipo/tipoIngreso" , $scope.objUpdate );
 		NProgress.configure({ parent: '.modal-body' });
 		NProgress.start();
 		request.success( function( response )
@@ -111,7 +111,7 @@ app.controller("TipoIngresoController", function($scope, $http)
 	 *************************************************************/
 	$scope.eliminar = function( objeto )
 	{
-		var request = $http.delete( CONSTANTS.contextPath + "/api/private/tipo/ingreso/"+objeto.oid );
+		var request = $http.delete( CONSTANTS.contextPath + "/api/private/tipo/tipoIngreso/"+objeto.oid );
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		request.success( function( response )
@@ -127,7 +127,13 @@ app.controller("TipoIngresoController", function($scope, $http)
 		});
 	};
 	
-	
+	$scope.clearform= function()
+	{
+		$scope.codigo = "";
+		$scope.nombre = "";
+		$scope.descripcion = "";
+		$scope.$apply;
+	};
 	
 	$scope.initialize();
 });

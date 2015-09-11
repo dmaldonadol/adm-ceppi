@@ -27,10 +27,10 @@ public class CentroCosto implements Serializable {
 	@Column(name = "ID_CENTRO_COSTO", nullable = false)
 	private int oid;
 	
-	@Column
+	@Column(unique = true, length = 10, nullable = false)
 	private String codigo;
 	
-	@Column
+	@Column(length = 50, nullable = false)
 	private String nombre;
 	
 	@Column

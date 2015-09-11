@@ -22,8 +22,8 @@
 	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span> Centro de Costo</h3>
 	                    <div class="panel-toolbar text-right">
 	                        <div class="option">
+	                            <button class="btn" ng-click="initialize()"><i class="reload"></i> </button>
 	                            <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button>
-	                            <button class="btn" data-toggle="panelremove" data-parent=".col-md-12"><i class="remove"></i></button>
 	                        </div>
 	                    </div>
 	                </div>
@@ -38,7 +38,7 @@
 	                                        <i class="ico-search form-control-icon"></i>
 	                                    </div>
 	                                    <div class="input-group-btn">
-	                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-create"><i class="ico-plus"></i></button>	                                        
+	                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-create" ng-click="clearform();"><i class="ico-plus"></i></button>	                                        
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -96,20 +96,20 @@
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Código</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="codigo">
+	                                    <input type="text" class="form-control" ng-model="codigo" maxlength="8">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Nombre</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="nombre">
+	                                    <input type="text" class="form-control" ng-model="nombre" maxlength="50">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Descripción</label>
 	                                <div class="col-sm-9">
 	                                    <!-- input type="text" class="form-control" ng-model="descripcion"-->
-	                                    <textarea class="form-control" ng-model="descripcion"></textarea>
+	                                    <textarea class="form-control" ng-model="descripcion" maxlength="255"></textarea>
 	                                </div>
 	                            </div>
                             </form>
@@ -137,7 +137,7 @@
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Código</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="objUpdate.codigo">
+	                                    <input type="text" class="form-control" ng-model="objUpdate.codigo" disabled="disabled">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">

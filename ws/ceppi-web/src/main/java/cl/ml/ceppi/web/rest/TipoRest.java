@@ -190,6 +190,16 @@ public class TipoRest
 		
 	}
 	
+	@POST
+	@Path("/tipoIngreso")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response updateTipoIngreso(TipoPojo pojo) 
+	{		
+		return TipoLogic.updateTipoIngreso(pojo);
+		
+	}
+	
 	@DELETE
 	@Path("/gasto/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
@@ -237,6 +247,16 @@ public class TipoRest
 	public Response deleteCentroCosto(@PathParam("id") int id) 
 	{		
 		return TipoLogic.deleteCentroCosto(new TipoPojo(id));
+		
+	}
+	
+	@DELETE
+	@Path("/tipoIngreso/{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response deleteTipoIngreso(@PathParam("id") int id) 
+	{		
+		return TipoLogic.deleteTipoIngreso(new TipoPojo(id));
 		
 	}
 	

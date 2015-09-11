@@ -73,7 +73,7 @@ app.controller("ProfesionController", function($scope, $http)
 	 *************************************************************/
 	$scope.selecionActualizar = function( objeto )
 	{
-		$scope.objUpdate = objeto;
+		$scope.objUpdate = angular.copy(objeto);
 		$('#modal-update').modal('show');
 		
 	};
@@ -125,6 +125,15 @@ app.controller("ProfesionController", function($scope, $http)
 			console.log(error);
 			NProgress.done();
 		});
-	};	
+	};
+	
+	$scope.clearform= function()
+	{
+		$scope.codigo = "";
+		$scope.nombre = "";
+		$scope.descripcion = "";
+		$scope.$apply;
+	};
+	
 	$scope.initialize();
 });

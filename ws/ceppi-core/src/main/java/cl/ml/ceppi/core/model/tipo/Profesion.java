@@ -24,10 +24,10 @@ public class Profesion implements Serializable {
 	@Column(name = "ID_PROFESION", nullable = false)
 	private int oid;
 	
-	@Column
+	@Column(unique = true, length = 10, nullable = false)
 	private String codigo;
 	
-	@Column
+	@Column(length = 50, nullable = false)
 	private String nombre;
 	
 	@Column

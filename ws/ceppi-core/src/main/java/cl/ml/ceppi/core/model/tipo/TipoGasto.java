@@ -25,10 +25,10 @@ public class TipoGasto implements Serializable{
 	@Column(name = "ID_TIPO_GASTO", nullable = false)
 	private int oid;
 	
-	@Column
+	@Column(unique = true, length = 10, nullable = false)
 	private String codigo;
 	
-	@Column
+	@Column(length = 50, nullable = false)
 	private String nombre;
 	
 	@Column

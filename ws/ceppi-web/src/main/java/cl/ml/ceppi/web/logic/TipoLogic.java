@@ -468,11 +468,12 @@ public class TipoLogic
 	}
 
 	/**
-	 * 
+	 * Elimina un tipo de ingreso
 	 * @return
 	 */
 	public static Response listaTipoIngreso() {
 		Response response;
+		
 		try 
 		{
 			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
@@ -487,6 +488,48 @@ public class TipoLogic
 		}
 		
 		return response;
+	}
+
+	/**
+	 * Actualiza un tipo de ingreso
+	 * @param pojo
+	 * @return
+	 */
+	public static Response updateTipoIngreso(TipoPojo pojo) 
+	{
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			TipoIngreso obj = new TipoIngreso(pojo.getOid(), pojo.getCodigo(), pojo.getNombre(), pojo.getDescripcion());
+			facade.update(obj);
+			return Response.status(Status.OK).entity(null).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al actualizar tipo de ingreso.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+
+	/**
+	 * Elimina un tipo de ingreso
+	 * @param pojo
+	 * @return
+	 */
+	public static Response deleteTipoIngreso(TipoPojo pojo) 
+	{
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			TipoIngreso obj = new TipoIngreso(pojo.getOid(), pojo.getCodigo(), pojo.getNombre(), pojo.getDescripcion());
+			facade.delete(obj);
+			return Response.status(Status.OK).entity(null).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al eliminar tipo ingreso.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
 	}
 
 }

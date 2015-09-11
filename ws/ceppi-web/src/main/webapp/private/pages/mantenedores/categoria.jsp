@@ -22,15 +22,14 @@
 	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span> Categoria de Socios</h3>
 	                    <div class="panel-toolbar text-right">
 	                        <div class="option">
+	                        	<button class="btn" ng-click="initialize()" ><i class="reload"></i> </button>
 	                            <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button>
-	                            <button class="btn" data-toggle="panelremove" data-parent=".col-md-12"><i class="remove"></i></button>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="panel-toolbar-wrapper pl10 pr0 pt5 pb5">	                    
 	                    <div class="panel-toolbar text-right">
 	                    	<div class="col-sm-8" >
-	                    		<a href="inicio#/mantenedor/categoriaform"><span class="text">Nuevo</span></a>
 	                    	</div>
 	                    	<div class="col-sm-4" >
 	                        	<div class="panel-toolbar">
@@ -40,7 +39,7 @@
 	                                        <i class="ico-search form-control-icon"></i>
 	                                    </div>
 	                                    <div class="input-group-btn">
-	                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-create"><i class="ico-plus"></i></button>	                                        
+	                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-create" ng-click="clearform();"><i class="ico-plus"></i></button>	                                        
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -91,27 +90,26 @@
                     <div class="modal-content">
                         <div class="modal-header text-center">
                             <button type="button" class="close" data-dismiss="modal">×</button>
-                            <h3 class="semibold modal-title">Nueva Categoria</h3>
+                            <h3 class="semibold modal-title">Nueva Categoria Socio</h3>
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal form-bordered" action="">
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Código</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="codigo">
+	                                    <input type="text" class="form-control" ng-model="codigo" maxlength="8">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Nombre</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="nombre">
+	                                    <input type="text" class="form-control" ng-model="nombre" maxlength="50">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Descripción</label>
 	                                <div class="col-sm-9">
-	                                    <!-- input type="text" class="form-control" ng-model="descripcion"-->
-	                                    <textarea class="form-control" ng-model="descripcion"></textarea>
+	                                    <textarea class="form-control" ng-model="descripcion" maxlength="255"></textarea>
 	                                </div>
 	                            </div>
                             </form>
@@ -132,27 +130,27 @@
                     <div class="modal-content">
                         <div class="modal-header text-center">
                             <button type="button" class="close" data-dismiss="modal">×</button>
-                            <h3 class="semibold modal-title">Editar Categoria</h3>
+                            <h3 class="semibold modal-title">Editar Categoria Socio</h3>
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal form-bordered" action="">
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Código</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="objUpdate.codigo">
+	                                    <input type="text" class="form-control" ng-model="objUpdate.codigo" disabled="disabled">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Nombre</label>
 	                                <div class="col-sm-9">
-	                                    <input type="text" class="form-control" ng-model="objUpdate.nombre">
+	                                    <input type="text" class="form-control" ng-model="objUpdate.nombre" maxlength="50">
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
 	                                <label class="col-sm-3 control-label">Descripción</label>
 	                                <div class="col-sm-9">
 	                                    <!-- input type="text" class="form-control" ng-model="descripcion"-->
-	                                    <textarea class="form-control" ng-model="objUpdate.descripcion"></textarea>
+	                                    <textarea class="form-control" ng-model="objUpdate.descripcion" maxlength="255"></textarea>
 	                                </div>
 	                            </div>
                             </form>
