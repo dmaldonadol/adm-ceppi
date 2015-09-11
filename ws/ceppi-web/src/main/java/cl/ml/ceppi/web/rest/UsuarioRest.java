@@ -75,13 +75,13 @@ public class UsuarioRest
 	}
 	
 	@DELETE
-	@Path("/delete")
+	@Path("/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteGastos(Usuario usuario) 
+	public Response deleteGastos(@PathParam("id") int id) 
 	{		
 		LOGGER.info("[ init - eliminar usuarios ]");
-		return UsuarioLogic.delete(usuario);
+		return UsuarioLogic.delete(new Usuario(id));
 		
 	}
 	
