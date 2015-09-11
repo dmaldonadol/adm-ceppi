@@ -9,7 +9,7 @@
                     <ol class="breadcrumb breadcrumb-transparent nm">
                     	<li><a href="">Administración</a></li>
                         <li><a href="#/administracion/perfiles">Perfiles</a></li>
-                        <li class="active">Crear</li>
+                        <li class="active">Editar</li>
                     </ol>
                 </div>
             </div>
@@ -20,7 +20,7 @@
 	        
 	    		<div class="panel panel-default" id="toolbar-showcase">
 	                <div class="panel-heading">
-	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-plus"></i></span> Nuevo Perfil</h3>
+	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-plus"></i></span> Editar Perfil</h3>
 	                </div>
 	                
               

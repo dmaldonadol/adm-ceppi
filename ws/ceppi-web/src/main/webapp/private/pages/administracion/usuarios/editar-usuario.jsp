@@ -9,7 +9,7 @@
                     <ol class="breadcrumb breadcrumb-transparent nm">
                     	<li><a href="">Administración</a></li>
                         <li><a href="#/administracion/usuarios">Usuarios</a></li>
-                        <li class="active">Crear</li>
+                        <li class="active">Editar</li>
                     </ol>
                 </div>
             </div>

@@ -29,11 +29,19 @@
 	                </div>
 	                <div class="panel-toolbar-wrapper pl0 pr0 pt5 pb5">	                    
 	                    <div class="panel-toolbar text-right">
-	                    	<div class="col-sm-8 text-left" >
-	                    		<input type="text" ng-model="q" placeholder="buscar" class="form-control" />
-	                    	</div>
+	                    	<div class="col-sm-8" ></div>
 	                    	<div class="col-sm-4" >
-	                    		<a href="#/administracion/usuarios/crear" class="btn btn-default mb5" ><i class="ico-plus"></i> Nuevo</a>
+	                        	<div class="panel-toolbar">
+	                                <div class="input-group">
+	                                    <div class="has-icon">
+	                                        <input type="text" ng-model="q" placeholder="buscar" class="form-control" />
+	                                        <i class="ico-search form-control-icon"></i>
+	                                    </div>
+	                                    <div class="input-group-btn">
+	                                    	<a href="#/administracion/usuarios/crear" class="btn btn-default">Nuevo</a>	                                        	                                       
+	                                    </div>
+	                                </div>
+	                            </div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -42,17 +50,17 @@
 	                    <table class="table table-bordered table-hover">
 	                        <thead>
 	                            <tr>
-	                                <th>Código</th>
-	                                <th>Nombre</th>
-	                                <th>Descripción</th>
+	                                <th>oid</th>
+	                                <th>Nombre Usuario</th>
+	                                <th>Perfil</th>
 	                                <th width="10%">Opciones</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>	                            
-	                            <tr ng-repeat="p in perfiles | filter:q as results">	                                                               
-	                                    <td>{{p.codigo}}</td>
-	                                    <td>{{p.nombre}}</td>
-	                                    <td>{{p.descripcion}}</td>
+	                            <tr ng-repeat="p in usuarios | filter:q as results">	                                                               
+	                                    <td>{{p.oid}}</td>
+	                                    <td>{{p.username}}</td>
+	                                    <td>{{p.perfil.nombre}}</td>
 	                                    <td class="text-center">
 	                                        <div class="toolbar">
 	                                            <div class="btn-group">
@@ -61,8 +69,8 @@
 	                                                    <span class="caret"></span>
 	                                                </button>
 	                                                <ul class="dropdown-menu dropdown-menu-right">
-	                                                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Ver</a></li>
-	                                                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Editar</a></li>
+	                                                    <li><a href="javascript:void(0);"><i class="icon ico-eye"></i>Ver</a></li>
+	                                                    <li><a href="#/administracion/usuarios/editar/{{p.oid}}"><i class="icon ico-pencil"></i>Editar</a></li>
 	                                                    <li class="divider"></li>
 	                                                    <li><a href="javascript:void(0);" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
 	                                                </ul>

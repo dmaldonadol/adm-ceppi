@@ -20,7 +20,7 @@
   </filter>
   <filter-mapping>
   	<filter-name>SessionFilter</filter-name>
-  	<url-pattern>/private/*</url-pattern>
+  	<url-pattern>/xprivate/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
   	<filter-name>SessionAPIFilter</filter-name>

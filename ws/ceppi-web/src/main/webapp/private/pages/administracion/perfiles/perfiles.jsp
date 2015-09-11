@@ -29,11 +29,19 @@
 	                </div>
 	                <div class="panel-toolbar-wrapper pl0 pr0 pt5 pb5">	                    
 	                    <div class="panel-toolbar text-right">
-	                    	<div class="col-sm-4 text-left" >
-	                    		<input type="text" ng-model="q" placeholder="buscar" class="form-control" />
-	                    	</div>
-	                    	<div class="col-sm-8" >
-	                    		<a href="#/administracion/perfiles/crear" class="btn btn-default mb5" ><i class="ico-plus"></i></a>
+	                    	<div class="col-sm-8" ></div>
+	                    	<div class="col-sm-4" >
+	                        	<div class="panel-toolbar">
+	                                <div class="input-group">
+	                                    <div class="has-icon">
+	                                        <input type="text" ng-model="q" placeholder="buscar" class="form-control" />
+	                                        <i class="ico-search form-control-icon"></i>
+	                                    </div>
+	                                    <div class="input-group-btn">
+	                                    	<a href="#/administracion/perfiles/crear" class="btn btn-default">Nuevo</a>	                                        	                                       
+	                                    </div>
+	                                </div>
+	                            </div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -62,7 +70,7 @@
 	                                                </button>
 	                                                <ul class="dropdown-menu dropdown-menu-right">
 	                                                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Ver</a></li>
-	                                                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Editar</a></li>
+	                                                    <li><a href="#/administracion/perfiles/editar/{{p.oid}}"><i class="icon ico-pencil"></i>Editar</a></li>
 	                                                    <li class="divider"></li>
 	                                                    <li><a href="javascript:void(0);" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
 	                                                </ul>

@@ -26,7 +26,7 @@
     
     <body>
         
-  		<jsp:include page="/private/pages/commons/header.jsp" />
+  		<!-- jsp:include page="/private/pages/commons/header.jsp" /-->
   		<jsp:include page="/private/pages/commons/menu.jsp" />
 
         <section id="main" role="main" >
@@ -48,9 +48,11 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/vendor.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/core.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/backend/app.js"></script>
-        
+       
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/parsley/js/parsley.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/steps/js/jquery-steps.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/inputmask/js/inputmask.js"></script>
         
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ApplicationCeppi.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/DashboardController.js"></script>

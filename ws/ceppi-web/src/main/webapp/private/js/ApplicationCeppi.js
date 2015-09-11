@@ -8,9 +8,11 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     	templateUrl:  CONSTANTS.contextPath + '/private/pages/inicio.jsp' 	
     })
     .when('/administracion/usuarios',{controller:'UsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/usuarios.jsp'})
-    .when('/administracion/usuarios/crear',{controller:'UsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/crear-usuario.jsp'})
+    .when('/administracion/usuarios/crear',{controller:'CrearUsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/crear-usuario.jsp'})
+    .when('/administracion/usuarios/editar/:id',{controller:'EditarUsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/editar-usuario.jsp'})
     .when('/administracion/perfiles',{controller:'PerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/perfiles/perfiles.jsp'})
-    .when('/administracion/perfiles/crear',{controller:'PerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/perfiles/crear-perfiles.jsp'})
+    .when('/administracion/perfiles/crear',{controller:'CrearPerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/perfiles/crear-perfiles.jsp'})
+    .when('/administracion/perfiles/editar/:id',{controller:'EditarPerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/perfiles/editar-perfiles.jsp'})
     
     .when('/mantenedores/equipos',{controller:'EquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/equipos.jsp'})
     .when('/mantenedores/equipos/nuevo',{controller:'EquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/nuevo.jsp'})
