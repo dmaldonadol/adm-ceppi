@@ -34,7 +34,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Rut</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.rut" placeholder="ej. 11.111.111-1"
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.rut" placeholder="ej. 11111111-1"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -42,7 +42,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Nombre</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.nombre" placeholder="Nombres"
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.nombre" placeholder="Nombres"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su nombre" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -50,7 +50,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Apellido <br> Paterno</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.apellidoPaterno" placeholder="Apellido Paterno"
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.apellidoPaterno" placeholder="Apellido Paterno"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido paterno" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -58,7 +58,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Apellido Materno</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.apellidoMaterno" placeholder="Apeliido Materno"
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.apellidoMaterno" placeholder="Apeliido Materno"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -66,7 +66,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Email</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="email" class="form-control" ng-model="persona.email" placeholder="ejemplo@mail.com"
+	                                        <input type="email" class="form-control" ng-model="usuario.persona.email" placeholder="ejemplo@mail.com"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su email" data-parsley-required data-parsley-type="email">
 	                                    </div>
 	                                </div>
@@ -74,26 +74,24 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Tipo Socio</label>
 	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="persona.tipoSocio"  ng-options="tipoSocio.nombre for tipoSocio in tiposSocio"></select>
+	                                        <select class="form-control" ng-model="usuario.persona.tipoSocio"  ng-options="tipoSocio.nombre for tipoSocio in tiposSocio"></select>
 	                                    </div>
 	                                </div>
 	                                
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Género</label>
 	                                    <div class="col-sm-9">
-                                            <label class="radio-inline">
-                                                <input type="radio" value="option1">Masculino
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" value="option1">Femenino
-                                            </label>
+                                           <div class="btn-group">
+	                                            <button type="button" class="btn btn-default" ng-click="usuario.persona.genero='MASCULINO' ">Masculino</button>	                                            
+	                                            <button type="button" class="btn btn-default" ng-click="usuario.persona.genero='FEMENINO'">Femenino</button>
+	                                        </div>
                                         </div>
 	                                </div>
 	                                
 	                                <div class="form-group">
-	                                    <label class="col-sm-3 control-label">Tipo Socio</label>
+	                                    <label class="col-sm-3 control-label">Fecha Nacimiento</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.fechaNacimiento" data-mask="99/99/9999" placeholder="dd/mm/yyyy"
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.fechaNacimiento" data-mask="9999-99-99" placeholder="yyyy/mm/dd"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -110,7 +108,7 @@
 		        					<div class="form-group">
 	                                    <label class="col-sm-3 control-label">Username</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="usuario.nombreUsuario" placeholder="Nombre de Usuario"
+	                                        <input type="text" class="form-control" ng-model="usuario.username" placeholder="Nombre de Usuario"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su ususario" data-parsley-required>
 	                                    </div>
 	                                </div>

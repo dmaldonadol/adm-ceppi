@@ -23,7 +23,7 @@ app.controller("UsuarioController", function($scope, $http)
 	 *************************************************************/
 	$scope.obtener = function( callback )
 	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/usuario/listar" );
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/usuario/" );
 		request.success( function( response )
 		{
 			$scope.usuarios = response;
@@ -201,10 +201,62 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams)
 		NProgress.start();
 		$scope.params = $routeParams;
 		$scope.params.id;
-		$scope.obtener( $scope.params.id, function()
+		
+		$scope.obtenerPerfiles( function()
 		{
-			NProgress.done();
+			$scope.obtenerTipoSocio( function()
+			{
+				$scope.obtener( $scope.params.id, function()
+				{
+					NProgress.done();
+				});
+			});
+			
+		});
+		
+		
+	};
+	
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.obtenerPerfiles = function( callback )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/listar" );
+		request.success( function( response )
+		{
+			$scope.perfiles = response;
+			callback();
 		} );
+		request.error( function( error )
+		{
+			console.log(error);
+			callback();
+		});
+	};
+	
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.obtenerTipoSocio = function( callback )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/socio" );
+		request.success( function( response )
+		{
+			$scope.tiposSocio = response;
+			callback();
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+			callback();
+		});
 	};
 	
 	
@@ -219,6 +271,7 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams)
 		request.success( function( response )
 		{
 			$scope.usuario = response;
+			$scope.usuario.persona.rut = $scope.usuario.persona.rut + "-" + $scope.usuario.persona.dv; 
 			console.log( response );
 			callback();
 		} );

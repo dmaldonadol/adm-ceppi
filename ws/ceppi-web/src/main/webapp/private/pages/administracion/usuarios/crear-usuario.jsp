@@ -33,9 +33,13 @@
 			        				
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Rut</label>
-	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.rut" placeholder="ej. 11.111.111-1"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
+	                                    <div class="col-sm-7">
+	                                        <input type="text" class="form-control" ng-model="persona.rut" placeholder="ej. 11111111"
+	                                        data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
+	                                    </div>
+	                                    <div class="col-sm-2">
+	                                        <input type="text" class="form-control" ng-model="persona.dv" placeholder="dv"
+	                                        data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                
@@ -43,7 +47,7 @@
 	                                    <label class="col-sm-3 control-label">Nombre</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="text" class="form-control" ng-model="persona.nombre" placeholder="Nombres"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su nombre" data-parsley-required>
+	                                        data-parsley-error-message="Por favor ingrese su nombre" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                
@@ -51,7 +55,7 @@
 	                                    <label class="col-sm-3 control-label">Apellido <br> Paterno</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="text" class="form-control" ng-model="persona.apellidoPaterno" placeholder="Apellido Paterno"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido paterno" data-parsley-required>
+	                                        data-parsley-error-message="Por favor ingrese su apellido paterno" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                
@@ -59,7 +63,7 @@
 	                                    <label class="col-sm-3 control-label">Apellido Materno</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="text" class="form-control" ng-model="persona.apellidoMaterno" placeholder="Apeliido Materno"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
+	                                        data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                
@@ -67,7 +71,7 @@
 	                                    <label class="col-sm-3 control-label">Email</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="email" class="form-control" ng-model="persona.email" placeholder="ejemplo@mail.com"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su email" data-parsley-required data-parsley-type="email">
+	                                        data-parsley-error-message="Por favor ingrese su email" data-parsley-required data-parsley-type="email">
 	                                    </div>
 	                                </div>
 	                                
@@ -81,20 +85,19 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Género</label>
 	                                    <div class="col-sm-9">
-                                            <label class="radio-inline">
-                                                <input type="radio" value="option1">Masculino
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" value="option1">Femenino
-                                            </label>
+                                            <div class="btn-group">
+	                                            <button type="button" class="btn btn-default" ng-click="usuario.persona.genero='MASCULINO' ">Masculino</button>	                                            
+	                                            <button type="button" class="btn btn-default" ng-click="usuario.persona.genero='FEMENINO'">Femenino</button>
+	                                        </div>
                                         </div>
 	                                </div>
 	                                
 	                                <div class="form-group">
-	                                    <label class="col-sm-3 control-label">Tipo Socio</label>
+	                                    <label class="col-sm-3 control-label">Fecha Nacimiento</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="persona.fechaNacimiento" data-mask="99/99/9999" placeholder="dd/mm/yyyy"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
+	                                        <input type="text" class="form-control" ng-model="persona.fechaNacimiento" placeholder="yyyy/mm/dd"
+	                                        data-parsley-error-message="Ingrese su Fecha de Nacimiento" data-parsley-required>
+	                                        {{persona.fechaNacimiento}}
 	                                    </div>
 	                                </div>
 	                                
@@ -110,8 +113,8 @@
 		        					<div class="form-group">
 	                                    <label class="col-sm-3 control-label">Username</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="usuario.nombreUsuario" placeholder="Nombre de Usuario"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su ususario" data-parsley-required>
+	                                        <input type="text" class="form-control" ng-model="usuario.username" placeholder="Nombre de Usuario"
+	                                        data-parsley-error-message="Ingrese el nombre de ususario" data-parsley-required>
 	                                    </div>
 	                                </div>
 		        					
@@ -119,7 +122,7 @@
 	                                    <label class="col-sm-3 control-label">Password</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="password" class="form-control" ng-model="usuario.password" placeholder="Password" 
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su password" data-parsley-required>
+	                                        data-parsley-error-message="Por favor ingrese su password" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                
@@ -127,7 +130,7 @@
 	                                    <label class="col-sm-3 control-label">Confirmar Password</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="password" class="form-control" ng-model="passwordConfirmed" placeholder="Confirmar Password"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor confirme su password" data-parsley-required>
+	                                        data-parsley-error-message="Por favor confirme su password" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                
