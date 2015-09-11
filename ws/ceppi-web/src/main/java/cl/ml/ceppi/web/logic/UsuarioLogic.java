@@ -18,7 +18,7 @@ import cl.ml.ceppi.web.util.Constantes;
 
 /**
  * 
- * @author Maldonado León
+ * @author Maldonado Leï¿½n
  *
  */
 public class UsuarioLogic {
@@ -157,6 +157,27 @@ public class UsuarioLogic {
 		catch (Exception e) 
 		{
 			LOGGER.error("Error al eliminar un usuario.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public static Response findUsuarioById(int id)
+	{
+		try 
+		{
+			UsuarioFacade facade = (UsuarioFacade) ServiceLocator.getInstance().getBean(Constantes.USUARIO_FACADE);
+			Usuario usuario = facade.findUsuarioById(id);
+			return Response.status(Status.OK).entity(usuario).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener el usuario " + id, e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
 		}
 	}

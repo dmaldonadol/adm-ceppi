@@ -68,11 +68,10 @@
 	                                                <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
 	                                                    <span class="caret"></span>
 	                                                </button>
-	                                                <ul class="dropdown-menu dropdown-menu-right">
-	                                                    <li><a href="javascript:void(0);"><i class="icon ico-eye"></i>Ver</a></li>
+	                                                <ul class="dropdown-menu dropdown-menu-right">	                                                    
 	                                                    <li><a href="#/administracion/usuarios/editar/{{p.oid}}"><i class="icon ico-pencil"></i>Editar</a></li>
 	                                                    <li class="divider"></li>
-	                                                    <li><a href="javascript:void(0);" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
+	                                                    <li><a href="javascript:void(0);" ng-click="eliminar(p)" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </div>

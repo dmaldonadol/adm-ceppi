@@ -5,6 +5,7 @@ package cl.ml.ceppi.core.model.usuario;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,7 +43,7 @@ public class Usuario implements Serializable {
 	@JoinColumn(name = "ID_PERFIL")
 	private Perfil perfil;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 
@@ -50,8 +51,17 @@ public class Usuario implements Serializable {
 	 * 
 	 */
 	public Usuario() {
-		// TODO Auto-generated constructor stub
 	}
+	
+	
+	/**
+	 * 
+	 * @param oid
+	 */
+	public Usuario(int oid) {
+		this.setOid(oid);
+	}
+	
 
 	public int getOid() {
 		return oid;
