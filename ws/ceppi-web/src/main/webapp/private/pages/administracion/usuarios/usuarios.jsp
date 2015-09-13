@@ -22,8 +22,8 @@
 	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span> Lista de Usuario</h3>
 	                    <div class="panel-toolbar text-right">
 	                        <div class="option">
+	                            <button class="btn" ng-click="initialize()"><i class="reload"></i> </button>
 	                            <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button>
-	                            <button class="btn" data-toggle="panelremove" data-parent=".col-md-12"><i class="remove"></i></button>
 	                        </div>
 	                    </div>
 	                </div>
@@ -50,7 +50,7 @@
 	                    <table class="table table-bordered table-hover">
 	                        <thead>
 	                            <tr>
-	                                <th>oid</th>
+	                                <th>ID</th>
 	                                <th>Nombre Usuario</th>
 	                                <th>Perfil</th>
 	                                <th width="10%">Opciones</th>

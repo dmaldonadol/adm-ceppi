@@ -22,8 +22,8 @@
 	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span> Perfiles</h3>
 	                    <div class="panel-toolbar text-right">
 	                        <div class="option">
+	                            <button class="btn" ng-click="initialize()"><i class="reload"></i> </button>
 	                            <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button>
-	                            <button class="btn" data-toggle="panelremove" data-parent=".col-md-12"><i class="remove"></i></button>
 	                        </div>
 	                    </div>
 	                </div>

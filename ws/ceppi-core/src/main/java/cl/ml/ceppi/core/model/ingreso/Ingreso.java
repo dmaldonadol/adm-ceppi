@@ -59,6 +59,11 @@ public class Ingreso implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Ingreso(int id) 
+	{
+		this.oid = id;
+	}
+
 	public int getOid() {
 		return oid;
 	}
