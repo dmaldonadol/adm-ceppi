@@ -33,14 +33,17 @@
 			        				
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Rut</label>
-	                                    <div class="col-sm-7">
+	                                    <div class="col-sm-3">
 	                                        <input type="text" class="form-control" ng-model="persona.rut" placeholder="ej. 11111111"
-	                                        data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
+	                                        data-parsley-error-message="Por favor ingrese rut" data-parsley-required maxlength="8">
 	                                    </div>
 	                                    <div class="col-sm-2">
 	                                        <input type="text" class="form-control" ng-model="persona.dv" placeholder="dv"
-	                                        data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
+	                                        data-parsley-error-message="Por favor ingrese dv" data-parsley-required maxlength="1">
 	                                    </div>
+	                                    <div>
+					        				<button class="btn btn-success mb5 mb5"  value="button"  ng-click="buscar(persona.rut)">Buscar<i class="ico-save"></i></button>
+					        			</div>
 	                                </div>
 	                                
 	                                <div class="form-group">
