@@ -156,23 +156,40 @@ app.controller("CrearUsuarioController", function($scope, $http)
 			$scope.usuario.persona = $scope.persona;
 			console.log( $scope.usuario );
 			
+			if( $scope.validate() )
+			{
+				var request = $http.put( CONSTANTS.contextPath + "/api/private/usuario", $scope.usuario );
+				request.success( function( response )
+				{
+					console.log( response );
+					NProgress.done();
+				} );
+				request.error( function( error )
+				{
+					console.log(error);
+					NProgress.done();
+				});
+			}
 			
-			var request = $http.put( CONSTANTS.contextPath + "/api/private/usuario", $scope.usuario );
-			request.success( function( response )
-			{
-				console.log( response );
-				NProgress.done();
-			} );
-			request.error( function( error )
-			{
-				console.log(error);
-				NProgress.done();
-			});
 		}
 		else
 		{
 			NProgress.done();
 		}
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.validate = function()
+	{
+		if( $scope.usuario.password != $scope.usuario.passwordConfirmed )
+			return false;
+		
+		return true;
+		
 	};
 	
 	$scope.initialize();

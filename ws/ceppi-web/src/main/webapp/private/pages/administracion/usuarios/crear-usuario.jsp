@@ -132,7 +132,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Confirmar Password</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="password" class="form-control" ng-model="passwordConfirmed" placeholder="Confirmar Password"
+	                                        <input type="password" class="form-control" ng-model="usuario.passwordConfirmed" placeholder="Confirmar Password"
 	                                        data-parsley-error-message="Por favor confirme su password" data-parsley-required>
 	                                    </div>
 	                                </div>
