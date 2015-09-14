@@ -43,5 +43,10 @@ public class SocioFacadeImpl implements SocioFacade {
 	public Socio findSocioById(int id) {
 		return socioService.findSocioById(id);
 	}
+	
+	@Transactional
+	public Socio findByRut(int rut){
+		return socioService.findByRut(rut);
+	}
 
 }

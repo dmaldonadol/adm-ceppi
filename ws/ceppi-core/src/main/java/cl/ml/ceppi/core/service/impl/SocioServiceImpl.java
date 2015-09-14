@@ -47,5 +47,9 @@ public class SocioServiceImpl implements SocioService
 	public Socio findSocioById(int id) {
 		return socioDao.findSocioById(id);
 	}
+	
+	public Socio findByRut(int rut) {
+		return socioDao.findByRut(rut);
+	}
 
 }

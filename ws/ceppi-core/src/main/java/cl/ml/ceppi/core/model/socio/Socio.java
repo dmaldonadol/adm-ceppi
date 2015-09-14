@@ -53,6 +53,11 @@ public class Socio implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Socio(int id) 
+	{
+		this.oid = id;
+	}
+
 	public int getOid() {
 		return oid;
 	}

@@ -52,5 +52,12 @@ public class SocioDaoImpl implements SocioDao {
 		cr.add(Restrictions.eq("oid", id));
 		return (Socio) cr.list().get(0);
 	}
+	
+	public Socio findByRut(int rut) 
+	{
+		Criteria cr = getSession().createCriteria(Socio.class);
+		cr.add(Restrictions.eq("persona.rut", rut));
+		return (Socio) cr.list().get(0);
+	}
 
 }

@@ -39,8 +39,9 @@
 	                                        data-parsley-error-message="Por favor ingrese dv" data-parsley-required maxlength="1">
 	                                    </div>
 	                                    <div>
-					        				<button class="btn btn-success mb5 mb5"  value="button"  ng-click="buscar(ingreso.rut)">Buscar <i class="ico-search"></i></button>
+					        				<button class="btn btn-success mb5 mb5"  value="button"  ng-click="buscar(ingreso.rut)"><i class="ico-search"></i></button>
 					        			</div>
+					        			{{socio.idPersona}}
 	                                </div>
 	                                
 	                                <div class="form-group">
@@ -62,7 +63,7 @@
 	                                    <label class="col-sm-3 control-label">Monto</label>
 	                                    <div class="col-sm-9">
 	                                        <input type="number" class="form-control" ng-model="ingreso.monto" placeholder="Monto"
-	                                        data-parsley-error-message="Por favor ingrese monto" data-parsley-required myMaxlength="7">
+	                                        data-parsley-error-message="Por favor ingrese monto" data-parsley-required>
 	                                    </div>
 	                                </div>
 	                                

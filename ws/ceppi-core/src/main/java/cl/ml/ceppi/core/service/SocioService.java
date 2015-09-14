@@ -19,4 +19,6 @@ public interface SocioService
 	List<Socio> listSocio();
 		
 	Socio findSocioById(int id);
+	
+	Socio findByRut(int rut);
 }
