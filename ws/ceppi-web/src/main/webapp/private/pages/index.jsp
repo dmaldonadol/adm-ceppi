@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/layout.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/uielement.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/stylesheet/themes/theme2.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/jquery-ui/css/jquery-ui.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/nprogress/css/nprogress.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/steps/css/jquery-steps.css">
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
@@ -49,6 +50,7 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/core.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/javascript/backend/app.js"></script>
        
+       	<script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/jquery-ui/js/jquery-ui.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/parsley/js/parsley.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/steps/js/jquery-steps.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>

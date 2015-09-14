@@ -71,7 +71,7 @@ app.controller("UsuarioController", function($scope, $http)
  * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
  * @desc 
  *************************************************************/
-app.controller("CrearUsuarioController", function($scope, $http)
+app.controller("CrearUsuarioController", function( $scope, $http, $location )
 {
 	
 	$scope.perfiles = [];
@@ -83,6 +83,7 @@ app.controller("CrearUsuarioController", function($scope, $http)
 	 *************************************************************/
 	$scope.initialize = function()
 	{
+		$('#fechaNacimiento').datepicker({altFormat: "yy-mm-dd", dateFormat: "yy-mm-dd"});
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		$scope.obtenerPerfiles( function()
@@ -147,32 +148,54 @@ app.controller("CrearUsuarioController", function($scope, $http)
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		
-		
 		var validateUser   = $("#form-create-user").parsley().validate();
 		var validatePeople = $("#form-create-person").parsley().validate();
 		
 		if( validateUser && validatePeople )
-		{
-			$scope.usuario.persona = $scope.persona;
+		{			
 			console.log( $scope.usuario );
 			
+			if( $scope.validate() )
+			{
+				delete $scope.usuario.passwordConfirmed;
+				var request = $http.put( CONSTANTS.contextPath + "/api/private/usuario", $scope.usuario );
+				request.success( function( response )
+				{
+					console.log( response );
+					NProgress.done();
+					$location.path('/administracion/usuarios');
+				} );
+				request.error( function( error )
+				{
+					console.log(error);
+					NProgress.done();
+					alert( "error al crear el usuario" );
+				});
+			}
 			
-			var request = $http.put( CONSTANTS.contextPath + "/api/private/usuario", $scope.usuario );
-			request.success( function( response )
-			{
-				console.log( response );
-				NProgress.done();
-			} );
-			request.error( function( error )
-			{
-				console.log(error);
-				NProgress.done();
-			});
 		}
 		else
 		{
 			NProgress.done();
 		}
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.validate = function()
+	{
+		if( $scope.usuario.password != $scope.usuario.passwordConfirmed )
+		{
+			alert( "las password no coinciden" );
+			return false;
+		}
+			
+		
+		return true;
+		
 	};
 	
 	$scope.initialize();
@@ -190,13 +213,14 @@ app.controller("CrearUsuarioController", function($scope, $http)
 app.controller("EditarUsuarioController", function($scope, $http, $routeParams)
 {
 	$scope.usuario = {};
-	
+	$scope.button = {};
 	/*************************************************************
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
 	 * @desc 
 	 *************************************************************/
 	$scope.initialize = function()
 	{
+		$('#fechaNacimiento').datepicker({altFormat: "yy-mm-dd", dateFormat: "yy-mm-dd"});
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		$scope.params = $routeParams;
@@ -208,6 +232,12 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams)
 			{
 				$scope.obtener( $scope.params.id, function()
 				{
+					$scope.usuario.password = "";
+					if($scope.usuario.persona.genero === "MASCULINO" )
+						$scope.button.male='btn-primary';
+					else
+						$scope.button.female='btn-primary';	
+					
 					NProgress.done();
 				});
 			});
