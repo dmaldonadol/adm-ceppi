@@ -81,7 +81,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Tipo Socio</label>
 	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="usuario.persona.tipoSocio"  ng-options="tipoSocio.nombre for tipoSocio in tiposSocio"></select>
+	                                        <select class="form-control" ng-model="usuario.persona.tipoSocio"  ng-options="tipoSocio.nombre for tipoSocio in tiposSocio track by tipoSocio.oid"></select>
 	                                    </div>
 	                                </div>
 	                                
@@ -140,9 +140,11 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Perfil</label>
 	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="usuario.perfil" ng-options="perfil.nombre for perfil in perfiles"></select>
+	                                        <select class="form-control" ng-model="usuario.perfil" ng-options="perfil.nombre for perfil in perfiles track by perfil.oid"></select>
 	                                    </div>
 	                                </div>
+	                                
+	                                <div ng-show="diplayError" class="alert alert-danger">{{errorMsg}}</div>
 		        					
 		        				</form>
 		        			</div>

@@ -154,9 +154,9 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 		if( validateUser && validatePeople )
 		{			
 			console.log( $scope.usuario );
-			
 			if( $scope.validate() )
 			{
+				$scope.usuario.persona.fechaNacimiento = $('#fechaNacimiento').val();
 				delete $scope.usuario.passwordConfirmed;
 				var request = $http.put( CONSTANTS.contextPath + "/api/private/usuario", $scope.usuario );
 				request.success( function( response )
@@ -168,9 +168,15 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 				request.error( function( error )
 				{
 					console.log(error);
+					$scope.errorMsg= "Ocurrio un error al ingresar el usuario, intente más tarde";
+					$scope.diplayError = true;
 					NProgress.done();
-					alert( "error al crear el usuario" );
+					
 				});
+			}
+			else
+			{
+				NProgress.done();
 			}
 			
 		}
@@ -189,11 +195,27 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 	{
 		if( $scope.usuario.password != $scope.usuario.passwordConfirmed )
 		{
-			alert( "las password no coinciden" );
+			$scope.errorMsg= "las password no coinciden";
+			$scope.diplayError = true;
+			return false;
+		}
+		
+		if(! $scope.usuario.perfil )
+		{
+			$scope.errorMsg= "Seleccione un perfil";
+			$scope.diplayError = true;
+			return false;
+		}
+		
+		if(! $scope.usuario.persona.tipoSocio )
+		{
+			$scope.errorMsg= "Seleccione el tipo de socio";
+			$scope.diplayError = true;
 			return false;
 		}
 			
-		
+		$scope.diplayError = false;
+		$scope.errorMsg="";
 		return true;
 		
 	};
