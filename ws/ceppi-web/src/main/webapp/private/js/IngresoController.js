@@ -12,6 +12,8 @@ app.controller("IngresoController", function($scope, $http)
 	 *************************************************************/
 	$scope.initialize = function()
 	{
+		$('#fecha').datepicker({altFormat: "yy-mm-dd", dateFormat: "yy-mm-dd"});		
+		$scope.obtenerTiposIngreso();
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		$scope.obtener( function()
@@ -134,6 +136,29 @@ app.controller("IngresoController", function($scope, $http)
 		});
 	};
 	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.obtenerTiposIngreso = function()
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/ingreso" );
+		request.success( function( response )
+		{
+			$scope.tipoIngresos = response;
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
 	$scope.clearform= function()
 	{
 		$scope.monto = "";

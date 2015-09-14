@@ -46,14 +46,15 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Tipo Ingreso</label>
 	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="ingreso.tipoIngreso"  ng-options="tipoIngreso.nombre for tipoIngreso in tipoIngreso"></select>
+	                                        <select class="form-control" ng-model="ingreso.tipoIngreso"  ng-options="tipoIngresos.nombre for tipoIngresos in tipoIngresos"></select>
 	                                    </div>
 	                                </div>
 	                                
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Fecha</label>
 	                                    <div class="col-sm-9">
-	                                        
+	                                        <input type="text" class="form-control" ng-model="ingreso.fecha" placeholder="yyyy-mm-dd" 
+	                                        	id="fecha" data-parsley-error-message="Ingrese fecha" data-parsley-required=""/>
 	                                    </div>
 	                                </div>
 	                                
