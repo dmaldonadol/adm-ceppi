@@ -34,6 +34,7 @@ public class IngresoRest
 	}
 	
 	@GET
+	@Path("/lista")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response listaIngresos() 
@@ -44,6 +45,7 @@ public class IngresoRest
 	
 	
 	@PUT
+	@Path("/save")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response save(Ingreso obj) 
@@ -64,7 +66,7 @@ public class IngresoRest
 	}
 	
 	@DELETE
-	@Path("/{id}")
+	@Path("/delete/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response delete(@PathParam("id") int id) 

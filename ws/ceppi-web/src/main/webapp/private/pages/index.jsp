@@ -66,6 +66,10 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/TipoIgresoController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/TipoSocioController.js"></script>
         
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/IngresoController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CuotaController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/GastoController.js"></script>
+        
     </body>
     <!--/ END Body -->
 </html>

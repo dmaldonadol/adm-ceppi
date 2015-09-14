@@ -28,8 +28,41 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     .when('/mantenedor/tipogasto', 		{controller:'TipoGastoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tipogasto.jsp'})
     .when('/mantenedor/tipoingreso', 	{controller:'TipoIngresoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tipoingreso.jsp'})
     .when('/mantenedor/tiposocio', 		{controller:'TipoSocioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tiposocio.jsp'})
+    
+    .when('/ingreso/otros',  {controller:'IngresoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/ingreso.jsp'})
+    .when('/ingreso/cuotas', {controller:'CuotaController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/cuota.jsp'})
+    .when('/ingreso/gastos', {controller:'GastoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/gasto.jsp'})
+    
     .otherwise(
     {
     	redirectTo:'/'
     });
+	
+	
+	app.directive('myMaxlength', function() 
+	{
+		var dir = 
+		{
+		    require: 'ngModel',
+		    link: function (scope, element, attrs, ngModelCtrl) 
+		    {
+		    	var maxlength = Number(attrs.myMaxlength);
+		    	function fromUser(text) 
+		    	{
+		    		if (text.length > maxlength) 
+		    		{
+		    			var transformedInput = text.substring(0, maxlength);
+		    			ngModelCtrl.$setViewValue(transformedInput);
+		    			ngModelCtrl.$render();
+		    			return transformedInput;
+		    		} 
+		    		return text;
+		    	}
+		    	ngModelCtrl.$parsers.push(fromUser);
+		    }
+		};
+		
+		return dir;
+	});
+	
 });
