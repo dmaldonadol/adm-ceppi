@@ -34,8 +34,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Rut</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="usuario.persona.rut" placeholder="ej. 11111111-1"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su rut" data-parsley-required>
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.rut" placeholder="ej. 11111111-1" disabled="disabled">
 	                                    </div>
 	                                </div>
 	                                
@@ -82,8 +81,8 @@
 	                                    <label class="col-sm-3 control-label">Género</label>
 	                                    <div class="col-sm-9">
                                            <div class="btn-group">
-	                                            <button type="button" class="btn btn-default" ng-click="usuario.persona.genero='MASCULINO' ">Masculino</button>	                                            
-	                                            <button type="button" class="btn btn-default" ng-click="usuario.persona.genero='FEMENINO'">Femenino</button>
+	                                            <button type="button" class="btn btn-default {{button.male}}"   ng-click="usuario.persona.genero='MASCULINO';button.male='btn-primary';button.female='';"  >Masculino</button>	                                            
+	                                            <button type="button" class="btn btn-default {{button.female}}" ng-click="usuario.persona.genero='FEMENINO';button.female='btn-primary';button.male='';">Femenino</button>
 	                                        </div>
                                         </div>
 	                                </div>
@@ -91,7 +90,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Fecha Nacimiento</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="usuario.persona.fechaNacimiento" data-mask="9999-99-99" placeholder="yyyy/mm/dd"
+	                                        <input type="text" class="form-control" ng-model="usuario.persona.fechaNacimiento" placeholder="yyyy-mm-dd" id="fechaNacimiento"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -108,8 +107,7 @@
 		        					<div class="form-group">
 	                                    <label class="col-sm-3 control-label">Username</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="usuario.username" placeholder="Nombre de Usuario"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor ingrese su ususario" data-parsley-required>
+	                                        <input type="text" class="form-control" ng-model="usuario.username" placeholder="Nombre de Usuario" disabled="disabled">
 	                                    </div>
 	                                </div>
 		        					
@@ -142,7 +140,8 @@
 		        		</div>
 		        		<div class="row" style="border-top:1px solid #e0e7e8;">
 		        			<div class="col-md-12 text-right pt5 pb0">
-		        				<button class="btn btn-success mb5 mb5"  value="button"  ng-click="guardar()">Guardar <i class="ico-save"></i></button>
+		        				<a href="#/administracion/usuarios" class="btn btn-default">Cancelar</a>
+		        				<button class="btn btn-success"  value="button"  ng-click="guardar()">Guardar</button>
 		        			</div>
 		        		</div>
 	               </div>   
