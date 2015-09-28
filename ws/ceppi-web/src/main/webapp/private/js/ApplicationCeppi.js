@@ -14,6 +14,11 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     .when('/administracion/perfiles/crear',{controller:'CrearPerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/perfiles/crear-perfiles.jsp'})
     .when('/administracion/perfiles/editar/:id',{controller:'EditarPerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/perfiles/editar-perfiles.jsp'})
     
+    .when('/administracion/socios',{controller:'SocioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/socio/socios.jsp'})
+    .when('/administracion/socios/crear',{controller:'CrearSocioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/socio/crear-socio.jsp'})
+    .when('/administracion/socios/editar/:id',{controller:'EditarSocioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/socio/editar-socio.jsp'})
+    
+    
     .when('/mantenedores/equipos',{controller:'EquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/equipos.jsp'})
     .when('/mantenedores/equipos/nuevo',{controller:'CrearEquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/nuevo.jsp'})
     .when('/mantenedores/equipos/:id',{controller:'PerfilEquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/perfil.jsp'})

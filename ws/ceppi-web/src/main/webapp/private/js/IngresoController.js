@@ -169,6 +169,22 @@ app.controller("IngresoController", function($scope, $http)
 		$scope.$apply;
 	};
 	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.buscar= function( rut )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/byRut/" + rut );
+		request.success( function( response )
+		{
+			$scope.socio = response;
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+		});
+	};
 	
 	$scope.initialize();
 });
