@@ -34,7 +34,6 @@ public class SocioRest
 	}
 	
 	@GET
-	@Path("/lista")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response lista() 
@@ -45,7 +44,6 @@ public class SocioRest
 	
 	
 	@PUT
-	@Path("/save")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response save(Socio obj) 

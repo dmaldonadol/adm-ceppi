@@ -7,9 +7,7 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.core.facade.IngresoFacade;
 import cl.ml.ceppi.core.facade.SocioFacade;
-import cl.ml.ceppi.core.model.ingreso.Ingreso;
 import cl.ml.ceppi.core.model.socio.Socio;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 import cl.ml.ceppi.web.util.Constantes;

@@ -60,6 +60,7 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/DashboardController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/UsuarioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/PerfilController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/SocioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/EquipoController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CategoriaController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CentroCostoController.js"></script>

@@ -22,6 +22,9 @@
                 <li >
                     <a href="inicio#/administracion/perfiles"><span class="text">Perfiles</span></a>
                 </li>
+                <li >
+                    <a href="inicio#/administracion/socios"><span class="text">Socios</span></a>
+                </li>
             </ul>
         </li>
         
