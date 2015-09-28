@@ -7,6 +7,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -30,11 +31,9 @@ public class PerfilRest
 	private HttpServletRequest request;
 
 	public PerfilRest() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	@GET
-	@Path("/listar")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response listaPerfiles() 
@@ -44,8 +43,18 @@ public class PerfilRest
 		
 	}
 	
-	@POST
-	@Path("/save")
+	@GET
+	@Path("/{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response findById( @PathParam("id") int id ) 
+	{		
+		LOGGER.info("[Init] - lista perfiles");
+		return PerfilLogic.findById(id);
+		
+	}
+	
+	@PUT	
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response save(Perfil perfil) 
@@ -54,8 +63,7 @@ public class PerfilRest
 		return PerfilLogic.save(perfil);
 	}
 	
-	@PUT
-	@Path("/update")
+	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response update(Perfil perfil) 
@@ -66,13 +74,13 @@ public class PerfilRest
 	}
 	
 	@DELETE
-	@Path("/delete")
+	@Path("/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response deleteGastos(Perfil perfil) 
+	public Response deleteGastos(@PathParam("id") int id) 
 	{		
 		LOGGER.info("[ init - eliminar perfil ]");
-		return PerfilLogic.delete(perfil);
+		return PerfilLogic.delete(new Perfil(id));
 		
 	}
 	

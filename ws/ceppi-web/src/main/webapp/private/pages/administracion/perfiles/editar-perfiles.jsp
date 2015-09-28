@@ -27,15 +27,14 @@
 	               <div class="panel-body panel-collapse pull out">
 	               		<div class="row">
 		        			<div class="col-md-6" style="border-right:1px solid #e0e7e8;">
-		        				<form class="form-horizontal form-bordered" id="form-crear-perfil">
+		        				<form class="form-horizontal form-bordered" id="form-update-profile">
 		        					<h4 class="text-primary mt0">Información Básica</h4>
 		        					<p class="pb10">Complete la informacion básica del perfil.</p>
 		        					
 		        					<div class="form-group">
 	                                    <label class="col-sm-3 control-label">Código</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="pefil.codigo"
-	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el código de perfil" data-parsley-required>
+	                                        <input type="text" class="form-control" ng-model="perfil.codigo" disabled="disabled">
 	                                    </div>
 	                                </div>
 		        					
@@ -80,7 +79,7 @@
 		        		</div>
 		        		<div class="row" style="border-top:1px solid #e0e7e8;">
 		        			<div class="col-md-12 text-right pt5 pb0">
-		        				<button class="btn btn-success mb5 mb5"  value="button" ng-click="guardar()">Guardar <i class="ico-save"></i></button>
+		        				<button class="btn btn-success mb5 mb5"  value="button" ng-click="actualizar()">Guardar <i class="ico-save"></i></button>
 		        			</div>
 		        		</div>
 	               </div>   

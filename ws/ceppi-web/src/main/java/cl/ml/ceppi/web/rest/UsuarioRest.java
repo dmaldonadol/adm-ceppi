@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -57,14 +58,13 @@ public class UsuarioRest
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response save(Usuario usuario) 
+	public Response save( Usuario usuario ) 
 	{		
 		LOGGER.info("[ init - guardar usuarios ]");
-		return UsuarioLogic.save(usuario);
+		return UsuarioLogic.update(usuario);
 	}
 	
-	@PUT
-	@Path("/update")
+	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response update(Usuario usuario) 

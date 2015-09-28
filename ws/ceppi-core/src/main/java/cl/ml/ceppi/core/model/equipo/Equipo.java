@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -46,14 +47,20 @@ public class Equipo implements Serializable
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Jugador> juagadores = new ArrayList<Jugador>();
 
 	/**
 	 * 
 	 */
 	public Equipo() {
-		// TODO Auto-generated constructor stub
+	}
+	
+	/**
+	 * 
+	 */
+	public Equipo(int oid) {
+		this.setOid(oid);
 	}
 
 	public int getOid() {
@@ -94,6 +101,20 @@ public class Equipo implements Serializable
 
 	public void setAnioLimite(String anioLimite) {
 		this.anioLimite = anioLimite;
+	}
+
+	/**
+	 * @return the genero
+	 */
+	public Genero getGenero() {
+		return genero;
+	}
+
+	/**
+	 * @param genero the genero to set
+	 */
+	public void setGenero(Genero genero) {
+		this.genero = genero;
 	}
 
 }

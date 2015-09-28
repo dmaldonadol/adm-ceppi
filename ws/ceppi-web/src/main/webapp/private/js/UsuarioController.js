@@ -232,7 +232,7 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
  * @author 	: Juan Francisco ( juan.maldonado.leon@gmail.com )
  * @desc 	: Controlador de perfiles.
  *************************************************************/
-app.controller("EditarUsuarioController", function($scope, $http, $routeParams)
+app.controller("EditarUsuarioController", function($scope, $http, $routeParams, $location)
 {
 	$scope.usuario = {};
 	$scope.button = {};
@@ -341,24 +341,70 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams)
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
 	 * @desc 
 	 *************************************************************/
-	$scope.actualizar = function( objeto )
+	$scope.actualizar = function( )
 	{
-		console.log( objeto );
-		var request = $http.post( CONSTANTS.contextPath + "/api/private/usuario" , $scope.objUpdate );
-		NProgress.configure({ parent: '.modal-body' });
-		NProgress.start();
-		request.success( function( response )
+		var validateUser   = $("#form-create-user").parsley().validate();
+		var validatePeople = $("#form-create-person").parsley().validate();
+		var validate = $scope.validate();
+		$scope.usuario.persona.fechaNacimiento = $('#fechaNacimiento').val();
+		delete $scope.usuario.passwordConfirmed;
+		
+		if( validateUser && validatePeople && validate )
 		{
-			console.log( response );
-			NProgress.done();
-			$('#modal-update').modal('hide');
-			$scope.initialize();
-		} );
-		request.error( function( error )
+			var request = $http.post( CONSTANTS.contextPath + "/api/private/usuario" , $scope.usuario );
+			NProgress.configure({ parent: '#main' });
+			NProgress.start();
+			request.success( function( response )
+			{
+				console.log( response );
+				NProgress.done();
+				$location.path('/administracion/usuarios');
+			} );
+			request.error( function( error )
+			{
+				console.log(error);
+				NProgress.done();
+			});
+		}
+		else
 		{
-			console.log(error);
 			NProgress.done();
-		});
+		}
+		
+	};
+	
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.validate = function()
+	{
+		if( $scope.usuario.password != $scope.usuario.passwordConfirmed )
+		{
+			$scope.errorMsg= "las password no coinciden";
+			$scope.diplayError = true;
+			return false;
+		}
+		
+		if(! $scope.usuario.perfil )
+		{
+			$scope.errorMsg= "Seleccione un perfil";
+			$scope.diplayError = true;
+			return false;
+		}
+		
+		if(! $scope.usuario.persona.tipoSocio )
+		{
+			$scope.errorMsg= "Seleccione el tipo de socio";
+			$scope.diplayError = true;
+			return false;
+		}
+			
+		$scope.diplayError = false;
+		$scope.errorMsg="";
+		return true;
 		
 	};
 	

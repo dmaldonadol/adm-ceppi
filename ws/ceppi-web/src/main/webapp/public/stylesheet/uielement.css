@@ -13194,9 +13194,18 @@ a.thumbnail.active {
 .jumbotron.jumbotron-bg6 {
   background: url("../image/stellar/background6.jpg") no-repeat center top fixed;
 }
-.jumbotron.jumbotron-bg7 {
-  background: url("../image/stellar/background7.jpg") no-repeat center top fixed;
-}
+.jumbotron.jumbotron-bg7 {background: url("../image/stellar/background7.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg8 {background: url("../image/stellar/background8.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg9 {background: url("../image/stellar/background9.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg10 {background: url("../image/stellar/background10.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg11 {background: url("../image/stellar/background11.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg12 {background: url("../image/stellar/background12.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg13 {background: url("../image/stellar/background13.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg14 {background: url("../image/stellar/background14.jpg") no-repeat center top fixed;}
+.jumbotron.jumbotron-bg15 {background: url("../image/stellar/background15.jpg") no-repeat center top fixed;}
+
+
+
 .jumbotron h1,
 .jumbotron .h1 {
   font-size: 28px;
