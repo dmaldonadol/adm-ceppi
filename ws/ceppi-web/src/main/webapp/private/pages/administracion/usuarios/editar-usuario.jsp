@@ -122,7 +122,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Confirmar Password</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="password" class="form-control" ng-model="passwordConfirmed" placeholder="Confirmar Password"
+	                                        <input type="password" class="form-control" ng-model="usuario.passwordConfirmed" placeholder="Confirmar Password"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="Por favor confirme su password" data-parsley-required>
 	                                    </div>
 	                                </div>
@@ -141,7 +141,7 @@
 		        		<div class="row" style="border-top:1px solid #e0e7e8;">
 		        			<div class="col-md-12 text-right pt5 pb0">
 		        				<a href="#/administracion/usuarios" class="btn btn-default">Cancelar</a>
-		        				<button class="btn btn-success"  value="button"  ng-click="guardar()">Guardar</button>
+		        				<button class="btn btn-success"  value="button"  ng-click="actualizar()">Guardar</button>
 		        			</div>
 		        		</div>
 	               </div>   

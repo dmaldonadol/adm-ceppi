@@ -14,12 +14,35 @@ app.controller("PerfilController", function($scope, $http)
 	{
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/listar" );
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/" );
 		request.success( function( response )
 		{
 			$scope.perfiles = response;
 			console.log( response );
 			NProgress.done();
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+			NProgress.done();
+		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.eliminar = function( objeto )
+	{
+		var request = $http.delete( CONSTANTS.contextPath + "/api/private/perfil/"+objeto.oid );
+		NProgress.configure({ parent: '#main' });
+		NProgress.start();
+		request.success( function( response )
+		{
+			console.log( response );
+			NProgress.done();
+			$scope.initialize();
 		} );
 		request.error( function( error )
 		{
@@ -38,7 +61,7 @@ app.controller("PerfilController", function($scope, $http)
  * @author 	: Juan Francisco ( juan.maldonado.leon@gmail.com )
  * @desc 	: Controlador de perfiles.
  *************************************************************/
-app.controller("CrearPerfilController", function($scope, $http)
+app.controller("CrearPerfilController", function($scope, $http, $location)
 {
 	
 	/*************************************************************
@@ -58,15 +81,15 @@ app.controller("CrearPerfilController", function($scope, $http)
 	{
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
-		var validate = $("#form-crear-perfil").parsley().validate();
-		if( validate )
+		if( $scope.validate() )
 		{
 			console.log( $scope.perfil );
-			var request = $http.put( CONSTANTS.contextPath + "/api/private/perfil", $scope.pefil );
+			var request = $http.put( CONSTANTS.contextPath + "/api/private/perfil", $scope.perfil );
 			request.success( function( response )
 			{
 				console.log( response );
 				NProgress.done();
+				$location.path('/administracion/perfiles');
 			} );
 			request.error( function( error )
 			{
@@ -79,6 +102,15 @@ app.controller("CrearPerfilController", function($scope, $http)
 			NProgress.done();
 		}
 		
+	};
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.validate = function()
+	{
+		return $("#form-crear-perfil").parsley().validate();
 	};
 	
 	$scope.initialize();
@@ -94,7 +126,7 @@ app.controller("CrearPerfilController", function($scope, $http)
  * @author 	: Juan Francisco ( juan.maldonado.leon@gmail.com )
  * @desc 	: Controlador Edicion de perfil.
  *************************************************************/
-app.controller("EditarPerfilController", function($scope, $http, $routeParams)
+app.controller("EditarPerfilController", function($scope, $http, $routeParams, $location)
 {
 	$scope.perfil = {};
 	
@@ -125,7 +157,7 @@ app.controller("EditarPerfilController", function($scope, $http, $routeParams)
 		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/"+oid );
 		request.success( function( response )
 		{
-			$scope.usuario = response;
+			$scope.perfil = response;
 			console.log( response );
 			callback();
 		} );
@@ -143,25 +175,40 @@ app.controller("EditarPerfilController", function($scope, $http, $routeParams)
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
 	 * @desc 
 	 *************************************************************/
-	$scope.actualizar = function( objeto )
+	$scope.actualizar = function(  )
 	{
-		console.log( objeto );
-		var request = $http.post( CONSTANTS.contextPath + "/api/private/perfil" , $scope.objUpdate );
-		NProgress.configure({ parent: '.modal-body' });
-		NProgress.start();
-		request.success( function( response )
+		if( $scope.validate() )
 		{
-			console.log( response );
-			NProgress.done();
-			$('#modal-update').modal('hide');
-			$scope.initialize();
-		} );
-		request.error( function( error )
+			var request = $http.post( CONSTANTS.contextPath + "/api/private/perfil" , $scope.perfil );
+			NProgress.configure({ parent: '#main' });
+			NProgress.start();
+			request.success( function( response )
+			{
+				console.log( response );
+				NProgress.done();			
+				$location.path('/administracion/perfiles');
+			} );
+			request.error( function( error )
+			{
+				console.log(error);
+				NProgress.done();
+			});
+		}
+		else
 		{
-			console.log(error);
 			NProgress.done();
-		});
+		}
 		
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.validate = function()
+	{
+		return $("#form-update-profile").parsley().validate();
 	};
 	
 	$scope.initialize();

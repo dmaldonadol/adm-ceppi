@@ -37,9 +37,21 @@ public class Perfil implements Serializable {
 	@Column
 	private String descripcion;
 
+	/**
+	 * 
+	 */
 	public Perfil() {
-		// TODO Auto-generated constructor stub
 	}
+	
+	
+	/**
+	 * 
+	 * @param oid
+	 */
+	public Perfil( int oid) {
+		this.setOid(oid);
+	}
+
 
 	public int getOid() {
 		return oid;

@@ -12,7 +12,7 @@ import cl.ml.ceppi.web.util.Constantes;
 
 /**
  * 
- * @author Maldonado León
+ * @author Maldonado Leï¿½n
  *
  */
 public class PerfilLogic {
@@ -32,6 +32,25 @@ public class PerfilLogic {
 		{
 			PerfilFacade perfilFacade = (PerfilFacade) ServiceLocator.getInstance().getBean("perfilFacade");
 			return Response.status(Response.Status.OK).entity(perfilFacade.listPerfil()).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Perfiles. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
+	
+	/**
+	 * Lista los perfiles del sistema
+	 * @return
+	 */
+	public static Response findById( int id ) 
+	{
+		try 
+		{
+			PerfilFacade perfilFacade = (PerfilFacade) ServiceLocator.getInstance().getBean("perfilFacade");
+			return Response.status(Response.Status.OK).entity(perfilFacade.findPerfilById(id)).build();
 		}
 		catch (Exception e) 
 		{

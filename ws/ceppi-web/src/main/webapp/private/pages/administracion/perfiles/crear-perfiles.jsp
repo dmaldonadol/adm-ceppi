@@ -34,7 +34,7 @@
 		        					<div class="form-group">
 	                                    <label class="col-sm-3 control-label">Código</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="pefil.codigo"
+	                                        <input type="text" class="form-control" ng-model="perfil.codigo"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el código de perfil" data-parsley-required>
 	                                    </div>
 	                                </div>

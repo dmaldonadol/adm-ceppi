@@ -406,7 +406,7 @@
 <!--                         </ul> -->
 <!--                         / END 2nd Level Menu -->
 <!--                     </li> -->
-<!--                 </ul> -->
+<!--                 </ul> 
                 
                 
                 <h5 class="heading">Summary</h5>
@@ -441,5 +441,6 @@
                         </div>
                     </div>
                 </div>
+                -->
             </section>
         </aside>

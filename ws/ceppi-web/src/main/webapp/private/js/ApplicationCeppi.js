@@ -20,9 +20,9 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     
     
     .when('/mantenedores/equipos',{controller:'EquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/equipos.jsp'})
-    .when('/mantenedores/equipos/nuevo',{controller:'EquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/nuevo.jsp'})
+    .when('/mantenedores/equipos/nuevo',{controller:'CrearEquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/nuevo.jsp'})
     .when('/mantenedores/equipos/:id',{controller:'PerfilEquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/perfil.jsp'})
-    .when('/mantenedores/equipos/edit/:id',{controller:'EquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/editar.jsp'})
+    .when('/mantenedores/equipos/edit/:id',{controller:'EditarEquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/editar.jsp'})
     
     
     .when('/mantenedores/jugadores',{controller:'PerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores.jsp'})
