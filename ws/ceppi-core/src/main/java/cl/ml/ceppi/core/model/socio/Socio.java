@@ -2,6 +2,7 @@ package cl.ml.ceppi.core.model.socio;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,7 +46,7 @@ public class Socio implements Serializable {
 	@JoinColumn(name = "ID_CATEGORIA_SOCIO")
 	private CategoriaSocio categoriaSocio;
 
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 

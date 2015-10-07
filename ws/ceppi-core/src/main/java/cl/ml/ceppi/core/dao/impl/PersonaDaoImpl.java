@@ -57,7 +57,14 @@ public class PersonaDaoImpl implements PersonaDao {
 	public Persona findPersonaByRut(String rut) {
 		Criteria cr = getSession().createCriteria(Persona.class);
 		cr.add(Restrictions.eq("rut", rut));
-		return (Persona) cr.list().get(0);
+		if ( cr.list().size() > 0 )
+		{
+			return (Persona) cr.list().get(0);
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 }

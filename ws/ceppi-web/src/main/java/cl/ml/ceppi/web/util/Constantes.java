@@ -12,5 +12,6 @@ public class Constantes {
 	public static final String CUOTA_FACADE = "cuotaFacade";
 	public static final String GASTO_FACADE = "gastoFacade";
 	public static final String SOCIO_FACADE = "socioFacade";
+	public static final String PERSONA_FACADE = "personaFacade";
 
 }

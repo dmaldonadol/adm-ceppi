@@ -7,7 +7,10 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
+import cl.ml.ceppi.core.facade.PersonaFacade;
 import cl.ml.ceppi.core.facade.SocioFacade;
+import cl.ml.ceppi.core.model.estado.Estado;
+import cl.ml.ceppi.core.model.persona.Persona;
 import cl.ml.ceppi.core.model.socio.Socio;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 import cl.ml.ceppi.web.util.Constantes;
@@ -53,6 +56,7 @@ public class SocioLogic {
 		try 
 		{
 			SocioFacade facade = (SocioFacade) ServiceLocator.getInstance().getBean(Constantes.SOCIO_FACADE);
+			obj.setEstado(Estado.ACTIVO);
 			facade.save(obj);
 			return Response.status(Status.CREATED).build();
 		}
@@ -108,13 +112,48 @@ public class SocioLogic {
 	 * @param rut
 	 * @return
 	 */
-	public static Response byRut(int rut) 
+	public static Response byRut(String rut) 
 	{
 		try 
 		{
 			SocioFacade facade = (SocioFacade) ServiceLocator.getInstance().getBean(Constantes.SOCIO_FACADE);
-			Socio socio = facade.findByRut(rut);
-			return Response.status(Status.OK).entity(socio).build();
+			Socio socio = facade.findByRut(Integer.parseInt(rut));
+			if ( null != socio )
+			{
+				return Response.status(Status.OK).entity(socio).build();
+			}
+			else
+			{
+				return Response.status(Status.NOT_FOUND).build();
+			}
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener socio por rut.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+	}
+
+	/**
+	 * 
+	 * @param rut
+	 * @return
+	 */
+	public static Response personaByRut(String rut) 
+	{
+		try 
+		{
+			PersonaFacade facade = (PersonaFacade) ServiceLocator.getInstance().getBean(Constantes.PERSONA_FACADE);
+			Persona p = facade.findPersonaByRut(rut);
+			if ( null != p )
+			{
+				return Response.status(Status.OK).entity(p).build();
+			}
+			else
+			{
+				return Response.status(Status.NOT_FOUND).build();
+			}
+			
 		}
 		catch (Exception e) 
 		{

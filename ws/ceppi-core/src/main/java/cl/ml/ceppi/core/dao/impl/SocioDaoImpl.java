@@ -27,7 +27,7 @@ public class SocioDaoImpl implements SocioDao {
 
 	@Override
 	public void save(Socio socio) {
-		getSession().persist(socio);
+		getSession().merge(socio);
 	}
 
 	@Override
@@ -58,7 +58,14 @@ public class SocioDaoImpl implements SocioDao {
 		Criteria cr = getSession().createCriteria(Socio.class);
 		cr.createAlias("persona", "socio");
 		cr.add(Restrictions.eq("socio.rut", String.valueOf(rut)));
-		return (Socio) cr.list().get(0);
+		if ( cr.list().size() > 0 )
+		{
+			return (Socio) cr.list().get(0);
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 }

@@ -27,7 +27,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public void save(Usuario usuario) {
-		getSession().persist(usuario);
+		getSession().merge(usuario);
 	}
 
 	@Override

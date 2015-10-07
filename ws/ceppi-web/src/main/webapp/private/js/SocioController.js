@@ -136,6 +136,71 @@ app.controller("CrearSocioController", function( $scope, $http, $location )
 		});
 	};
 	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.buscarSocio = function ( rut )
+	{
+		if ( $scope.continuar )
+		{
+			return;
+		}
+		$scope.msjSocioExiste = "";
+		$scope.socioExiste = false;
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/byRut/" + rut );
+		request.success( function( data, status )
+		{
+			if ( status == 200 )
+			{
+				$scope.continuar = false;
+				$scope.msjSocioExiste = "Socio ya existe en el sistema.";
+				$scope.socioExiste = true;
+			}
+		} );
+		request.error( function( data, status )
+		{
+			if ( status == 404 )
+			{
+				$scope.continuar = true;
+				$scope.buscarPersona(rut);
+			}
+			else
+			{
+				$scope.continuar = false;
+				console.log(error);
+			}
+		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.buscarPersona = function ( rut )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/personaByRut/" + rut );
+		request.success( function( data, status )
+		{
+			if ( status == 200 )
+			{
+				$scope.socio.persona = data;
+			}
+		} );
+		request.error( function( data, status )
+		{
+			if ( status == 404 )
+			{
+				$scope.continuar = true;
+			}
+			else
+			{
+				$scope.continuar = false;
+				console.log(error);
+			}
+		});
+	};
 	
 	/*************************************************************
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
@@ -145,18 +210,16 @@ app.controller("CrearSocioController", function( $scope, $http, $location )
 	{
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
-		
-		var validateUser   = $("#form-create-user").parsley().validate();
+				
 		var validatePeople = $("#form-create-person").parsley().validate();
 		
-		if( validateUser && validatePeople )
+		if( validatePeople )
 		{			
 			console.log( $scope.socio );
 			if( $scope.validate() )
 			{
 				$scope.socio.persona.fechaNacimiento = $('#fechaNacimiento').val();
-				delete $scope.usuario.passwordConfirmed;
-				var request = $http.put( CONSTANTS.contextPath + "/api/private/socio", $scope.usuario );
+				var request = $http.put( CONSTANTS.contextPath + "/api/private/socio/save", $scope.socio );
 				request.success( function( response )
 				{
 					console.log( response );

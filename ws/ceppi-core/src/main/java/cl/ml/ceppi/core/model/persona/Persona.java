@@ -14,15 +14,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import cl.ml.ceppi.core.model.estado.Genero;
-import cl.ml.ceppi.core.model.tipo.TipoSocio;
 
 /**
  * @author Maldonado León
@@ -58,10 +55,6 @@ public class Persona implements Serializable {
 
 	@Column(length = 50)
 	private String email;
-
-	@ManyToOne
-	@JoinColumn(name = "ID_TIPO_SOCIO")
-	private TipoSocio tipoSocio;
 
 	@Column
 	private String estatura;
@@ -137,14 +130,6 @@ public class Persona implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public TipoSocio getTipoSocio() {
-		return tipoSocio;
-	}
-
-	public void setTipoSocio(TipoSocio tipoSocio) {
-		this.tipoSocio = tipoSocio;
 	}
 
 	public String getEstatura() {

@@ -44,6 +44,7 @@ public class SocioRest
 	
 	
 	@PUT
+	@Path("/save")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response save(Socio obj) 
@@ -78,13 +79,23 @@ public class SocioRest
 	@Path("/byRut/{rut}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response byRut(@PathParam("rut") int rut) 
+	public Response byRut(@PathParam("rut") String rut) 
 	{		
 		LOGGER.info("[ init - buscar Socio por rut ]");
 		return SocioLogic.byRut(rut);
 		
 	}
 	
+	@GET
+	@Path("/personaByRut/{rut}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response personaByRut(@PathParam("rut") String rut) 
+	{		
+		LOGGER.info("[ init - buscar persona por rut ]");
+		return SocioLogic.personaByRut(rut);
+		
+	}
 
 	public HttpServletRequest getRequest() {
 		return request;

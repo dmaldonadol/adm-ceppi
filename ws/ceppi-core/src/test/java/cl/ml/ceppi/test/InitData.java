@@ -11,6 +11,7 @@ import cl.ml.ceppi.core.facade.PersonaFacade;
 import cl.ml.ceppi.core.facade.TipoFacade;
 import cl.ml.ceppi.core.facade.UsuarioFacade;
 import cl.ml.ceppi.core.model.acceso.Acceso;
+import cl.ml.ceppi.core.model.estado.Genero;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.menu.MenuSimple;
 import cl.ml.ceppi.core.model.perfil.Perfil;
@@ -20,13 +21,13 @@ import cl.ml.ceppi.core.model.tipo.TipoIngreso;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.core.util.Crypt;
-import cl.ml.ceppi.core.model.estado.Genero;
 
 public class InitData {
 
-	public static void main(String[] args) {
-
-		try {
+	public static void main(String[] args) 
+	{
+		try 
+		{
 			ApplicationContext appContext = new ClassPathXmlApplicationContext("ceppi-beanLocations-admin.xml");
 			TipoFacade tipoFacade = (TipoFacade) appContext.getBean("tipoFacade");
 			PersonaFacade personaFacade = (PersonaFacade) appContext.getBean("personaFacade");
@@ -52,7 +53,6 @@ public class InitData {
 			persona.setGenero(Genero.MASCULINO);
 			persona.setEstatura("170");
 			persona.setPeso("65");
-			persona.setTipoSocio(tipoSocio);
 			persona.setFechaNacimiento(new Date());
 			personaFacade.save(persona);
 			
