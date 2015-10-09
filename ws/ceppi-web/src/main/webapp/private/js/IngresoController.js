@@ -27,6 +27,25 @@ app.controller("IngresoController", function($scope, $http)
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
 	 * @desc 
 	 *************************************************************/
+	$scope.obtenerSocios = function( )
+	{
+		$scope.continuar = true;
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/" );
+		request.success( function( response )
+		{
+			$scope.socios = response;
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
 	$scope.obtener = function( callback )
 	{
 		var request = $http.get( CONSTANTS.contextPath + "/api/private/ingreso/lista" );
@@ -184,6 +203,17 @@ app.controller("IngresoController", function($scope, $http)
 		{
 			console.log(error);
 		});
+	};
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.selectSocio = function ( socio )
+	{
+		$('#modal-create').modal('hide');
+		$scope.socio = socio;
+		$scope.continuar = true;
 	};
 	
 	$scope.initialize();
