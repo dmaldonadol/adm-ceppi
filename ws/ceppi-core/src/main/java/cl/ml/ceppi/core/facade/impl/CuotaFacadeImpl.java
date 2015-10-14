@@ -78,8 +78,8 @@ public class CuotaFacadeImpl implements CuotaFacade
 	}
 
 	@Transactional
-	public List<RegistroCuota> listaRegistroCuotas() {
-		return cuotaService.listaRegistroCuotas();
+	public List<RegistroCuota> listaRegistroCuotas(int idsocio, int anio) {
+		return cuotaService.listaRegistroCuotas(idsocio, anio);
 	}
 
 	@Transactional
@@ -95,5 +95,15 @@ public class CuotaFacadeImpl implements CuotaFacade
 	@Transactional
 	public RegistroCuota findRegistroCuotaById(int id) {
 		return cuotaService.findRegistroCuotaById(id);
+	}
+
+	@Transactional
+	public ValorCuota findValorCuota(ValorCuota obj) {
+		return cuotaService.findValorCuota(obj);
+	}
+
+	@Transactional
+	public RegistroCuota findRegistroCuota(String anio, String mes, int idsocio) {
+		return cuotaService.findRegistroCuota(anio, mes, idsocio);
 	}
 }

@@ -81,9 +81,11 @@
 		        <span class="arrow"></span>
 		    </a>
 		    <ul id="form" class="submenu collapse ">
-		        <li class="submenu-header ellipsis">Registro</li>
 		        <li >
 		            <a href="inicio#/ingreso/cuotas"> <span class="text">Cuotas</span> </a>
+		        </li>
+		        <li >
+		            <a href="inicio#/ingreso/valorCuota"> <span class="text">Valor Cuotas</span> </a>
 		        </li>
 		        <li >
 		            <a href="inicio#/ingreso/otros"> <span class="text">Otros Ingresos</span> </a>

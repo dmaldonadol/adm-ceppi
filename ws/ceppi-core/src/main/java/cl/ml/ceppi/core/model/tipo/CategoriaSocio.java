@@ -59,6 +59,10 @@ public class CategoriaSocio implements Serializable {
 		this.descripcion = descripcion;
 	}
 
+	public CategoriaSocio(int oid) {
+		this.oid = oid;
+	}
+
 	public int getOid() {
 		return oid;
 	}

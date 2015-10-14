@@ -1,10 +1,10 @@
 /*************************************************************
  * @author 	: Juan Francisco ( juan.maldonado.leon@gmail.com )
- * @desc 	: Controlador de perfiles.
+ * @desc 	: Controlador de gastos.
  *************************************************************/
-app.controller("IngresoController", function($scope, $http, $location)
+app.controller("GastoController", function($scope, $http, $location)
 {
-	$scope.listaIngreso = [];
+	$scope.listaGasto = [];
 	
 	/*************************************************************
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
@@ -13,11 +13,12 @@ app.controller("IngresoController", function($scope, $http, $location)
 	$scope.initialize = function()
 	{
 		$('#fecha').datepicker({altFormat: "yy-mm-dd", dateFormat: "yy-mm-dd"});		
-		$scope.obtenerTiposIngreso();
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		$scope.obtener( function()
 		{
+			$scope.obtenerTipoGasto();
+			$scope.obtenerCentroCosto();
 			NProgress.done();
 		});
 	};
@@ -48,10 +49,10 @@ app.controller("IngresoController", function($scope, $http, $location)
 	 *************************************************************/
 	$scope.obtener = function( callback )
 	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/ingreso/lista" );
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/gasto/lista" );
 		request.success( function( response )
 		{
-			$scope.listaIngreso = response;
+			$scope.listaGasto = response;
 			callback();
 		} );
 		request.error( function( error )
@@ -61,38 +62,6 @@ app.controller("IngresoController", function($scope, $http, $location)
 		});
 	};
 	
-	
-	
-	/*************************************************************
-	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
-	 * @desc 
-	 *************************************************************/
-	$scope.nuevo = function()
-	{
-		var objeto = 
-		{ 
-			monto: $scope.monto, 
-			fecha : $scope.nombre, 
-			detalle : $scope.descripcion,
-			tipoIngreso: $scope.tipoIngreso,
-			idSocio: $scope.socio
-		};
-		var request = $http.put( CONSTANTS.contextPath + "/api/private/ingreso/save", objeto );
-		NProgress.configure({ parent: '.modal-body' });
-		NProgress.start();
-		request.success( function( response )
-		{
-			console.log( response );
-			NProgress.done();
-			$('#modal-find').modal('hide');
-			$scope.initialize();
-		} );
-		request.error( function( error )
-		{
-			console.log(error);
-			NProgress.done();
-		});
-	};
 	
 	
 	/*************************************************************
@@ -139,7 +108,7 @@ app.controller("IngresoController", function($scope, $http, $location)
 	 *************************************************************/
 	$scope.eliminar = function( objeto )
 	{
-		var request = $http.delete( CONSTANTS.contextPath + "/api/private/ingreso/delete/" + objeto.oid );
+		var request = $http.delete( CONSTANTS.contextPath + "/api/private/gasto/delete/" + objeto.oid );
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		request.success( function( response )
@@ -160,12 +129,29 @@ app.controller("IngresoController", function($scope, $http, $location)
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
 	 * @desc 
 	 *************************************************************/
-	$scope.obtenerTiposIngreso = function()
+	$scope.obtenerTipoGasto = function()
 	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/ingreso" );
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/gasto" );
 		request.success( function( response )
 		{
-			$scope.tipoIngresos = response;
+			$scope.tipoGastos = response;
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+		});
+	};
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.obtenerCentroCosto = function()
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/centroCosto" );
+		request.success( function( response )
+		{
+			$scope.centroCostos = response;
 		} );
 		request.error( function( error )
 		{
@@ -182,7 +168,7 @@ app.controller("IngresoController", function($scope, $http, $location)
 	{
 		$scope.continuar = false;
 		$('#fecha').datepicker({altFormat: "yy-mm-dd", dateFormat: "yy-mm-dd"});
-		$scope.ingreso = undefined;
+		$scope.gasto = undefined;
 		$scope.socio = undefined;
 		$scope.$apply;
 	};
@@ -191,7 +177,7 @@ app.controller("IngresoController", function($scope, $http, $location)
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
 	 * @desc 
 	 *************************************************************/
-	$scope.buscar= function( rut )
+	$scope.buscar = function( rut )
 	{
 		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/byRut/" + rut );
 		request.success( function( response )
@@ -228,18 +214,18 @@ app.controller("IngresoController", function($scope, $http, $location)
 		
 		if( validateUser )
 		{			
-			console.log( $scope.ingreso );
+			console.log( $scope.gasto );
 			if( $scope.validate() )
 			{
-				$scope.ingreso.fecha = $('#fecha').val();
-				$scope.ingreso.socio = $scope.socio;
-				var request = $http.put( CONSTANTS.contextPath + "/api/private/ingreso/save", $scope.ingreso );
+				$scope.gasto.fecha = $('#fecha').val();
+				$scope.gasto.socio = $scope.socio;
+				var request = $http.put( CONSTANTS.contextPath + "/api/private/gasto/save", $scope.gasto );
 				request.success( function( response )
 				{
 					console.log( response );
 					NProgress.done();
 					$scope.continuar = false;
-					$scope.ingreso = undefined;
+					$scope.gasto = undefined;
 					$('#modal-find').modal('hide');
 					$('#modal-create').modal('hide');
 					$scope.initialize();
@@ -272,9 +258,16 @@ app.controller("IngresoController", function($scope, $http, $location)
 	$scope.validate = function()
 	{
 		
-		if(! $scope.ingreso.tipoIngreso )
+		if(! $scope.gasto.tipoGasto )
 		{
 			$scope.errorMsg= "Seleccione el tipo de ingreso";
+			$scope.diplayError = true;
+			return false;
+		}
+		
+		if(! $scope.gasto.centroCosto )
+		{
+			$scope.errorMsg= "Seleccione el Centro de Costo";
 			$scope.diplayError = true;
 			return false;
 		}

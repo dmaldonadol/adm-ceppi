@@ -2,6 +2,7 @@ package cl.ml.ceppi.core.model.cuota;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import cl.ml.ceppi.core.model.socio.Socio;
 
 /**
  * 
@@ -28,15 +31,34 @@ public class Cuota implements Serializable {
 	@Column(name = "ID_CUOTA", nullable = false)
 	private int oid;
 	
-	@ManyToOne
-	@JoinColumn(name = "ID_VALOR_CUOTA")
-	private ValorCuota valorCuota;
+	@ManyToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name = "ID_VALOR")
+	private Valor valor;
 	
-	@Column(name = "PERIODO", nullable = false)
-	private String periodo;
+	@Column(name = "ANIO", nullable = false)
+	private String anio;
+	
+	@Column(name = "MES", nullable = false)
+	private String mes;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_SOCIO")
+	private Socio socio;
 
 	public Cuota() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Cuota(Valor valor, String anio, String mes, Socio socio) {
+		super();
+		this.valor = valor;
+		this.anio = anio;
+		this.mes = mes;
+		this.socio = socio;
+	}
+
+	public Cuota(int id) {
+		this.oid = id;
 	}
 
 	public int getOid() {
@@ -47,20 +69,36 @@ public class Cuota implements Serializable {
 		this.oid = oid;
 	}
 
-	public ValorCuota getValorCuota() {
-		return valorCuota;
+	public String getAnio() {
+		return anio;
 	}
 
-	public void setValorCuota(ValorCuota valorCuota) {
-		this.valorCuota = valorCuota;
+	public void setAnio(String anio) {
+		this.anio = anio;
 	}
 
-	public String getPeriodo() {
-		return periodo;
+	public String getMes() {
+		return mes;
 	}
 
-	public void setPeriodo(String periodo) {
-		this.periodo = periodo;
+	public void setMes(String mes) {
+		this.mes = mes;
+	}
+
+	public Socio getSocio() {
+		return socio;
+	}
+
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
+
+	public Valor getValor() {
+		return valor;
+	}
+
+	public void setValor(Valor valor) {
+		this.valor = valor;
 	}
 
 }

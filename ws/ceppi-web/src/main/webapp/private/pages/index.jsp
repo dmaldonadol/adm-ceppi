@@ -72,6 +72,7 @@
         
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/IngresoController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CuotaController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ValorCuotaController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/GastoController.js"></script>
         
     </body>

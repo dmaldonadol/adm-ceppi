@@ -59,6 +59,10 @@ public class TipoSocio implements Serializable {
 		this.descripcion = descripcion;
 	}
 
+	public TipoSocio(int oid) {
+		this.oid = oid;
+	}
+
 	public int getOid() {
 		return oid;
 	}

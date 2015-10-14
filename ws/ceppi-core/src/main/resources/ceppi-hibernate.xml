@@ -39,6 +39,7 @@
 				<value>cl.ml.ceppi.core.model.GenericResponse</value>
 				<value>cl.ml.ceppi.core.model.equipo.Jugador</value>
 				<value>cl.ml.ceppi.core.model.cuota.Cuota</value>
+				<value>cl.ml.ceppi.core.model.cuota.Valor</value>
 				<value>cl.ml.ceppi.core.model.gasto.Gasto</value>
 				<value>cl.ml.ceppi.core.model.menu.MenuCompuesto</value>
 				<value>cl.ml.ceppi.core.model.tipo.CentroCosto</value>

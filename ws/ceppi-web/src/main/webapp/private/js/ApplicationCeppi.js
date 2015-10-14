@@ -36,6 +36,8 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     
     .when('/ingreso/otros',  {controller:'IngresoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/ingreso.jsp'})
     .when('/ingreso/cuotas', {controller:'CuotaController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/cuota.jsp'})
+    .when('/ingreso/cuotas/adm/:id',{controller:'AdmCuotaController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/create-cuota.jsp'})
+    .when('/ingreso/valorCuota', {controller:'ValorCuotaController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/valorcuota.jsp'})
     .when('/ingreso/gastos', {controller:'GastoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/gasto.jsp'})
     
     .otherwise(

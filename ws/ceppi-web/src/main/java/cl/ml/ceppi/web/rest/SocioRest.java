@@ -87,6 +87,17 @@ public class SocioRest
 	}
 	
 	@GET
+	@Path("/byID/{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response byID(@PathParam("id") int id) 
+	{		
+		LOGGER.info("[ init - buscar Socio por ID ]");
+		return SocioLogic.byID(id);
+		
+	}
+	
+	@GET
 	@Path("/personaByRut/{rut}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })

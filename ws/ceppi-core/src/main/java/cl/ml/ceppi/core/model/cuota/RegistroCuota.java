@@ -3,6 +3,7 @@ package cl.ml.ceppi.core.model.cuota;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -17,7 +18,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import cl.ml.ceppi.core.model.estado.EstadoCuota;
-import cl.ml.ceppi.core.model.socio.Socio;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 
 /**
@@ -37,7 +37,7 @@ public class RegistroCuota implements Serializable {
 	@Column(name = "ID_REGISTRO_CUOTA", nullable = false)
 	private int oid;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "ID_CUOTA")
 	private Cuota cuota;
 	
@@ -45,20 +45,25 @@ public class RegistroCuota implements Serializable {
 	@JoinColumn(name = "ID_USUARIO")
 	private Usuario usuario;
 	
-	@OneToOne
-	@JoinColumn(name = "ID_SOCIO")
-	private Socio socio;
-	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "ESTADO")
 	private EstadoCuota estadoCuota;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "FECHA_COBRO", nullable = false)
 	private Date fechaCobro;
 
 	public RegistroCuota() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public RegistroCuota(Cuota cuota, Usuario usuario, EstadoCuota estadoCuota, Date fechaCobro) 
+	{
+		super();
+		this.cuota = cuota;
+		this.usuario = usuario;
+		this.estadoCuota = estadoCuota;
+		this.fechaCobro = fechaCobro;
 	}
 
 	public int getOid() {
@@ -83,14 +88,6 @@ public class RegistroCuota implements Serializable {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	public Socio getSocio() {
-		return socio;
-	}
-
-	public void setSocio(Socio socio) {
-		this.socio = socio;
 	}
 
 	public EstadoCuota getEstadoCuota() {

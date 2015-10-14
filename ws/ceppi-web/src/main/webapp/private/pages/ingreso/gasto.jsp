@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="page-header page-header-block">
             <div class="page-header-section">
-                <h4 class="title semibold">Ingresos</h4>
+                <h4 class="title semibold">Gastos</h4>
             </div>
             <div class="page-header-section">
                 <div class="toolbar">
                     <ol class="breadcrumb breadcrumb-transparent nm">
-                    	<li><a class="active">Otros Ingresos</a></li>
+                    	<li><a class="active">Gastos</a></li>
                     </ol>
                 </div>
             </div>
@@ -19,7 +19,7 @@
 	    		<div class="panel panel-default" id="toolbar-showcase">
 	    			
 	    			<div class="panel-heading">
-	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span> Otros ingresos</h3>
+	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-equalizer"></i></span>Gastos</h3>
 	                    <div class="panel-toolbar text-right">
 	                        <div class="option">
 	                            <button class="btn" ng-click="initialize()" ><i class="reload"></i></button>
@@ -50,44 +50,41 @@
 	                    <table class="table table-bordered table-hover">
 	                        <thead>
 	                            <tr>
+	                            	<th>Socio</th>
+	                            	<th>Tipo Gasto</th>
+	                            	<th>Centro Costo</th>
 	                                <th>Fecha</th>
-	                                <th>Tipo Ingreso</th>
-	                                <th>Socio</th>
 	                                <th width="10%">Opciones</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>	                            
-	                            <tr ng-repeat="c in listaIngreso | filter:q as results">	                                                               
-	                                    <td>{{c.fecha}}</td>
-	                                    <td>{{c.tipoIngreso.nombre}}</td>
-	                                    <td>{{c.socio.persona.nombre}}&nbsp;{{c.socio.persona.apellidoPaterno}}</td>
-	                                    <td class="text-center">
-	                                        <div class="toolbar">
-	                                            <div class="btn-group">
-	                                                <button type="button" class="btn btn-sm btn-default">Acción</button>
-	                                                <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-	                                                    <span class="caret"></span>
-	                                                </button>
-	                                                <ul class="dropdown-menu dropdown-menu-right">
-	                                                    <li><a href="javascript:void(0);" ng-click="selecionVer( c )"><i class="icon ico-pencil"></i>Ver</a></li>
-	                                                    <li class="divider"></li>
-	                                                    <li><a href="javascript:void(0);" ng-click="eliminar( c )" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
-	                                                </ul>
-	                                            </div>
+	                            <tr ng-repeat="c in listaGasto | filter:q as results">	                                                               
+	                                <td>{{ c.socio.persona.nombre }}&nbsp;{{c.socio.persona.apellidoPaterno}}</td>
+	                                <td>{{ c.tipoGasto.nombre }}</td>
+	                                <td>{{ c.centroCosto.nombre }}</td>
+	                                <td>{{ c.fecha }}</td>
+	                                <td class="text-center">
+	                                    <div class="toolbar">
+	                                        <div class="btn-group">
+	                                            <button type="button" class="btn btn-sm btn-default">Acción</button>
+	                                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+	                                                <span class="caret"></span>
+	                                            </button>
+	                                            <ul class="dropdown-menu dropdown-menu-right">
+	                                                <li><a href="javascript:void(0);" ng-click="selecionVer( c )"><i class="icon ico-pencil"></i>Ver</a></li>
+	                                                <li class="divider"></li>
+	                                                <li><a href="javascript:void(0);" ng-click="eliminar( c )" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
+	                                            </ul>
 	                                        </div>
-	                                    </td>
-	                                </tr>
-	                            </tbody>
-	                        </table>
-	                    </div>
-	    		
-	    			                
-	                
-              
-	               <div class="panel-body panel-collapse pull out">
+	                                    </div>
+	                                </td>
+								</tr>
+							</tbody>
+                        </table>
+                    </div>
+					<div class="panel-body panel-collapse pull out">
 	               		<div class="row">
-		        			<div class="col-md-6">
-		        				
+		        			<div class="col-md-6">		        				
 		        			</div>
 		        		</div>
 	               </div>   
@@ -101,7 +98,7 @@
             	<div class="modal-content">
                 	<div class="modal-header text-center">
                     	<button type="button" class="close" data-dismiss="modal">×</button>
-                        <h3 class="semibold modal-title">Nuevo Ingreso</h3>
+                        <h3 class="semibold modal-title">Nuevo Gasto</h3>
 					</div>
                     <div class="modal-body">
                			<form class="form-horizontal form-bordered" id="form-create">
@@ -118,16 +115,23 @@
                                <div ng-show="continuar">
                                 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Tipo Ingreso</label>
+                                    <label class="col-sm-3 control-label">Centro de Costo</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" ng-model="ingreso.tipoIngreso"  ng-options="tipoIngresos.nombre for tipoIngresos in tipoIngresos"></select>
+                                        <select class="form-control" ng-model="gasto.centroCosto"  ng-options="centroCostos.nombre for centroCostos in centroCostos"></select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Tipo Gasto</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" ng-model="gasto.tipoGasto"  ng-options="tipoGastos.nombre for tipoGastos in tipoGastos"></select>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Fecha</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" ng-model="ingreso.fecha" placeholder="yyyy-mm-dd" 
+                                        <input type="text" class="form-control" ng-model="gasto.fecha" placeholder="yyyy-mm-dd" 
                                         	id="fecha" data-parsley-error-message="Ingrese fecha" data-parsley-required=""/>
                                     </div>
                                 </div>
@@ -135,7 +139,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Monto</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" ng-model="ingreso.monto" placeholder="Monto" 
+                                        <input type="text" class="form-control" ng-model="gasto.monto" placeholder="Monto" 
                                         data-parsley-error-message="Por favor ingrese monto" data-parsley-required is-number maxlength="9">
                                     </div>
                                 </div>
@@ -143,7 +147,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Detalle</label>
                                     <div class="col-sm-9">
-                                        <textarea class="form-control" ng-model="ingreso.detalle" maxlength="255"></textarea>
+                                        <textarea class="form-control" ng-model="gasto.detalle" maxlength="255"></textarea>
                                     </div>
                                 </div>
                                 
@@ -212,54 +216,64 @@
 		</div>
 		
 		
+		
 		<div id="modal-view" class="modal fade" aria-hidden="true">
 			<div class="modal-dialog">
             	<div class="modal-content">
                 	<div class="modal-header text-center">
                     	<button type="button" class="close" data-dismiss="modal">×</button>
-                        <h3 class="semibold modal-title">Detalle Ingreso</h3>
+                        <h3 class="semibold modal-title">Detalle Gasto</h3>
 					</div>
                     <div class="modal-body">
                			<form class="form-horizontal form-bordered" id="form-create">
-               				<div class="form-group">
-                            	<label class="col-sm-3 control-label">Socio:</label>
-                               	<div class="col-sm-9">
-                               		<label class="control-label">{{objView.socio.persona.nombre}}&nbsp;{{objView.socio.persona.apellidoPaterno}}</label>
-                              	</div>
-							</div>
-							
-							<div class="form-group">
-                            	<label class="col-sm-3 control-label">Tipo Ingreso:</label>
-                                <div class="col-sm-9">
-                                	<label class="control-label">{{objView.tipoIngreso.nombre}}</label>
-                                </div>
-							</div>
-                                
-							<div class="form-group">
-                            	<label class="col-sm-3 control-label">Fecha:</label>
-                                <div class="col-sm-9">
-                                	<label class="control-label">{{objView.fecha}}</label>
-                                </div>
-							</div>
-                                
-							<div class="form-group">
-                            	<label class="col-sm-3 control-label">Monto:</label>
-                                <div class="col-sm-9">
-                                	<label class="control-label">{{formatNumber(objView.monto)}}</label>
-                                </div>
-							</div>
-                                
-                            <div class="form-group">
-                            	<label class="col-sm-3 control-label">Detalle:</label>
-                                <div class="col-sm-9">
-                                	<label class="control-label">{{objView.detalle}}</label>
-                                </div>
-							</div>
+	        				
+	                       <div class="form-group">
+	                       		<label class="col-sm-3 control-label">Socio:</label>
+	   							<div class="col-sm-9">
+	                               <label class="control-label">{{objView.socio.persona.nombre}}&nbsp;{{objView.socio.persona.apellidoPaterno}}</label>
+	                           </div>
+	                       </div>
+	                       
+	                       <div class="form-group">
+	                            <label class="col-sm-3 control-label">Centro de Costo:</label>
+	                            <div class="col-sm-9">
+	                                <label class="control-label">{{objView.centroCosto.nombre}}</label>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">Tipo Gasto:</label>
+	                            <div class="col-sm-9">
+	                                <label class="control-label">{{objView.tipoGasto.nombre}}</label>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">Fecha:</label>
+	                            <div class="col-sm-9">
+	                                <label class="control-label">{{objView.fecha}}</label>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">Monto:</label>
+	                            <div class="col-sm-9">
+	                                <label class="control-label">{{formatNumber(objView.monto)}}</label>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">Detalle:</label>
+	                            <div class="col-sm-9">
+	                                <label class="control-label">{{objView.detalle}}</label>
+	                            </div>
+	                        </div>
         				</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		
     </div>
 </section>

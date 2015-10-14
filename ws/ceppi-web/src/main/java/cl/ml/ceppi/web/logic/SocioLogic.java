@@ -162,4 +162,25 @@ public class SocioLogic {
 		}
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public static Response byID(int id) 
+	{
+		try 
+		{
+			SocioFacade facade = (SocioFacade) ServiceLocator.getInstance().getBean(Constantes.SOCIO_FACADE);
+			Socio socio = facade.findSocioById(id);
+			
+			return Response.status(Status.OK).entity(socio).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener socio por ID.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+	}
+
 }

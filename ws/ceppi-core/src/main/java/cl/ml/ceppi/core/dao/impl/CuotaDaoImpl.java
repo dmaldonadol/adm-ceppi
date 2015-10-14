@@ -86,8 +86,22 @@ public class CuotaDaoImpl implements CuotaDao {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<RegistroCuota> listaRegistroCuotas() {
-		return (List<RegistroCuota>) getSession().createQuery("from RegistroCuota").list();
+	public List<RegistroCuota> listaRegistroCuotas(int idsocio, int anio) 
+	{
+		Criteria criteria = getSession().createCriteria(RegistroCuota.class);
+		criteria.createAlias("cuota", "cuota");
+		criteria.createAlias("cuota.socio", "socio");
+		criteria.add(Restrictions.eq("cuota.anio", String.valueOf(anio)));
+		criteria.add(Restrictions.eq("socio.oid", idsocio));
+		
+		if ( criteria.list().size() > 0 )
+		{
+			return (List<RegistroCuota>) criteria.list();
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	@Override
@@ -108,6 +122,38 @@ public class CuotaDaoImpl implements CuotaDao {
 	public RegistroCuota findRegistroCuotaById(int id) {
 		Criteria criteria = getSession().createCriteria(RegistroCuota.class);
 		criteria.add(Restrictions.eq("oid", id));
+		return (RegistroCuota) criteria.list().get(0);
+	}
+
+	@Override
+	public ValorCuota findValorCuota(ValorCuota obj) 
+	{
+		Criteria criteria = getSession().createCriteria(ValorCuota.class);
+		criteria.createAlias("tipoSocio", "tipo");
+		criteria.createAlias("categoriaSocio", "categoria");
+		criteria.add(Restrictions.eq("tipo.oid", obj.getTipoSocio().getOid()));
+		criteria.add(Restrictions.eq("categoria.oid", obj.getCategoriaSocio().getOid()));
+		
+		if ( criteria.list().size() > 0 )
+		{
+			return (ValorCuota) criteria.list().get(0);
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	@Override
+	public RegistroCuota findRegistroCuota(String anio, String mes, int idsocio) 
+	{
+		Criteria criteria = getSession().createCriteria(RegistroCuota.class);
+		criteria.createAlias("cuota", "cuota");
+		criteria.createAlias("cuota.socio", "socio");
+		criteria.add(Restrictions.eq("cuota.anio", anio));
+		criteria.add(Restrictions.eq("cuota.mes", mes));
+		criteria.add(Restrictions.eq("socio.oid", idsocio));
+		
 		return (RegistroCuota) criteria.list().get(0);
 	}
 }

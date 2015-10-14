@@ -21,15 +21,15 @@ import cl.ml.ceppi.core.model.tipo.TipoSocio;
  */
 
 @Entity
-@SequenceGenerator(name = "SEC_VALOR_CUOTA", sequenceName = "SEC_VALOR_CUOTA")
-@Table(name = "VALOR_CUOTA")
-public class ValorCuota implements Serializable {
+@SequenceGenerator(name = "SEC_VALOR", sequenceName = "SEC_VALOR")
+@Table(name = "VALOR")
+public class Valor implements Serializable {
 
 	private static final long serialVersionUID = 2888630646540937616L;
 	
 	@Id
-	@GeneratedValue(generator = "SEC_VALOR_CUOTA")
-	@Column(name = "ID_VALOR_CUOTA", nullable = false)
+	@GeneratedValue(generator = "SEC_VALOR")
+	@Column(name = "ID_VALOR", nullable = false)
 	private int oid;
 	
 	@Column(name = "VALOR", nullable = false)
@@ -43,18 +43,19 @@ public class ValorCuota implements Serializable {
 	@JoinColumn(name = "ID_CATEGORIA_SOCIO")
 	private CategoriaSocio categoriaSocio;
 
-	public ValorCuota() {
+	public Valor() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ValorCuota(int id) {
+	public Valor(int id) {
 		this.oid = id;
 	}
 	
-	public ValorCuota(int id, TipoSocio tipoSocio, CategoriaSocio categoriaSocio) {
+	public Valor(int id, String valor, TipoSocio tipoSocio, CategoriaSocio categoriaSocio) {
 		this.oid = id;
 		this.tipoSocio = tipoSocio;
 		this.categoriaSocio = categoriaSocio;
+		this.valor = valor;
 	}
 
 	public int getOid() {

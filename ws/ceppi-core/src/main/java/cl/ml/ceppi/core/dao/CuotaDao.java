@@ -30,9 +30,11 @@ public interface CuotaDao
 	
 	List<Cuota> listaCuotas();
 	List<ValorCuota> listaValorCuotas();
-	List<RegistroCuota> listaRegistroCuotas();
+	List<RegistroCuota> listaRegistroCuotas(int idsocio, int anio);
 		
 	Cuota findCuotaById(int id);
 	ValorCuota findValorCuotaById(int id);
 	RegistroCuota findRegistroCuotaById(int id);
+	ValorCuota findValorCuota(ValorCuota obj);
+	RegistroCuota findRegistroCuota(String anio, String mes, int idsocio);
 }

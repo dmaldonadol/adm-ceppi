@@ -65,6 +65,11 @@ public class Gasto implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Gasto(int id) 
+	{
+		this.oid = id;
+	}
+
 	public int getOid() {
 		return oid;
 	}

@@ -80,8 +80,8 @@ public class CuotaServiceImpl implements CuotaService {
 	}
 
 	@Transactional
-	public List<RegistroCuota> listaRegistroCuotas() {
-		return cuotaDao.listaRegistroCuotas();
+	public List<RegistroCuota> listaRegistroCuotas(int idsocio, int anio) {
+		return cuotaDao.listaRegistroCuotas(idsocio, anio);
 	}
 
 	@Transactional
@@ -97,6 +97,16 @@ public class CuotaServiceImpl implements CuotaService {
 	@Transactional
 	public RegistroCuota findRegistroCuotaById(int id) {
 		return cuotaDao.findRegistroCuotaById(id);
+	}
+
+	@Transactional
+	public ValorCuota findValorCuota(ValorCuota obj) {
+		return cuotaDao.findValorCuota(obj);
+	}
+
+	@Transactional
+	public RegistroCuota findRegistroCuota(String anio, String mes, int idsocio) {
+		return cuotaDao.findRegistroCuota(anio, mes, idsocio);
 	}
 
 }
