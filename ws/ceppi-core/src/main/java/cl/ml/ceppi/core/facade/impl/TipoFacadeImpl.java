@@ -12,6 +12,7 @@ import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
 import cl.ml.ceppi.core.model.tipo.TipoIngreso;
+import cl.ml.ceppi.core.model.tipo.TipoProfesor;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.core.service.TipoService;
 
@@ -173,6 +174,26 @@ public class TipoFacadeImpl implements TipoFacade
 	@Transactional
 	public TipoIngreso findTipoIngresoById(int id) {
 		return tipoService.findTipoIngresoById(id);
+	}
+
+	@Transactional
+	public List<TipoProfesor> listTipoProfesor() {
+		return tipoService.listTipoProfesor();
+	}
+
+	@Override
+	public void save(TipoProfesor obj) {
+		tipoService.save(obj);
+	}
+
+	@Override
+	public void update(TipoProfesor obj) {
+		tipoService.update(obj);		
+	}
+
+	@Override
+	public void delete(TipoProfesor obj) {
+		tipoService.delete(obj);
 	}
 
 }

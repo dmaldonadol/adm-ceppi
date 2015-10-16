@@ -15,6 +15,7 @@ import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
 import cl.ml.ceppi.core.model.tipo.TipoIngreso;
+import cl.ml.ceppi.core.model.tipo.TipoProfesor;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 
 /**
@@ -197,6 +198,27 @@ public class TipoDaoImpl implements TipoDao
 		Criteria cr = getSession().createCriteria(TipoIngreso.class);
 		cr.add(Restrictions.eq("oid", id));
 		return (TipoIngreso) cr.list().get(0);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TipoProfesor> listTipoProfesor() {
+		return (List<TipoProfesor>) getSession().createQuery("from TipoProfesor").list();
+	}
+
+	@Override
+	public void save(TipoProfesor obj) {
+		getSession().persist(obj);		
+	}
+
+	@Override
+	public void update(TipoProfesor obj) {
+		getSession().update(obj);		
+	}
+
+	@Override
+	public void delete(TipoProfesor obj) {
+		getSession().delete(obj);		
 	}
 
 }

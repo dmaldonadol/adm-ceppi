@@ -49,6 +49,9 @@ public class Equipo implements Serializable
 	
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Jugador> juagadores = new ArrayList<Jugador>();
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Profesor> profesores = new ArrayList<Profesor>();
 
 	/**
 	 * 

@@ -27,12 +27,17 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     
     .when('/mantenedores/jugadores',{controller:'PerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores.jsp'})
     
+    .when('/mantenedores/profesores',{controller:'ProfesorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/profesor/profesores.jsp'})
+    .when('/mantenedores/profesores/crear',{controller:'CrearProfesorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/profesor/crear-profesor.jsp'})
+    .when('/mantenedores/profesores/editar/:id',{controller:'EditarProfesorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/profesor/editar-profesor.jsp'})
+    
     .when('/mantenedor/categoria', 		{controller:'CategoriaController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/categoria.jsp'})
     .when('/mantenedor/centrocosto', 	{controller:'CentroCostoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/centrocosto.jsp'})
     .when('/mantenedor/profesion', 		{controller:'ProfesionController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/profesion.jsp'})
     .when('/mantenedor/tipogasto', 		{controller:'TipoGastoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tipogasto.jsp'})
     .when('/mantenedor/tipoingreso', 	{controller:'TipoIngresoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tipoingreso.jsp'})
     .when('/mantenedor/tiposocio', 		{controller:'TipoSocioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tiposocio.jsp'})
+    .when('/mantenedor/tipoprofesor', 	{controller:'TipoProfesorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/tipoprofesor.jsp'})
     
     .when('/ingreso/otros',  {controller:'IngresoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/ingreso.jsp'})
     .when('/ingreso/cuotas', {controller:'CuotaController',templateUrl:  CONSTANTS.contextPath + '/private/pages/ingreso/cuota.jsp'})

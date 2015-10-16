@@ -10,6 +10,7 @@ import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
 import cl.ml.ceppi.core.model.tipo.TipoIngreso;
+import cl.ml.ceppi.core.model.tipo.TipoProfesor;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 
 /**
@@ -52,4 +53,8 @@ public interface TipoFacade
 	TipoGasto findTipoGastoById(int id);
 	TipoSocio findTipoSocioById(int id);
 	TipoIngreso findTipoIngresoById(int id);
+	List<TipoProfesor> listTipoProfesor();
+	void save(TipoProfesor obj);
+	void update(TipoProfesor obj);
+	void delete(TipoProfesor obj);
 }

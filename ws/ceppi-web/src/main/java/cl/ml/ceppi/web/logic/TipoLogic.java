@@ -13,6 +13,7 @@ import cl.ml.ceppi.core.model.tipo.CentroCosto;
 import cl.ml.ceppi.core.model.tipo.Profesion;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
 import cl.ml.ceppi.core.model.tipo.TipoIngreso;
+import cl.ml.ceppi.core.model.tipo.TipoProfesor;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 import cl.ml.ceppi.web.pojo.TipoPojo;
@@ -528,6 +529,89 @@ public class TipoLogic
 		catch (Exception e) 
 		{
 			LOGGER.error("Error al eliminar tipo ingreso.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static Response listaProfesores() 
+	{
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			List<TipoProfesor> lista =	facade.listTipoProfesor();
+			
+			return Response.status(Status.OK).entity(lista).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de Profesores.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+
+	/**
+	 * 
+	 * @param pojo
+	 * @return
+	 */
+	public static Response saveProfesor(TipoPojo pojo) 
+	{
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			TipoProfesor obj = new TipoProfesor(pojo.getCodigo(), pojo.getNombre(), pojo.getDescripcion());
+			facade.save(obj);
+			return Response.status(Status.CREATED).entity(null).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al guardar tipo de profesor.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+
+	/**
+	 * 
+	 * @param pojo
+	 * @return
+	 */
+	public static Response updateProfesor(TipoPojo pojo) 
+	{
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			TipoProfesor obj = new TipoProfesor(pojo.getOid(), pojo.getCodigo(), pojo.getNombre(), pojo.getDescripcion());
+			facade.update(obj);
+			return Response.status(Status.OK).entity(null).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al actualizar tipo de profesor.", e);
+			return  Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+
+	/**
+	 * 
+	 * @param tipoPojo
+	 * @return
+	 */
+	public static Response deleteTipoProfesor(TipoPojo pojo) 
+	{
+		try 
+		{
+			TipoFacade facade = (TipoFacade) ServiceLocator.getInstance().getBean(Constantes.TIPO_FACADE);
+			TipoProfesor obj = new TipoProfesor(pojo.getOid(), pojo.getCodigo(), pojo.getNombre(), pojo.getDescripcion());
+			facade.delete(obj);
+			return Response.status(Status.OK).entity(null).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al eliminar tipo profesor.", e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
 		}
 	}

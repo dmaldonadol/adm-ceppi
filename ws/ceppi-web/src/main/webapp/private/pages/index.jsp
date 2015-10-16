@@ -75,6 +75,9 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ValorCuotaController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/GastoController.js"></script>
         
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ProfesorController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/TipoProfesorController.js"></script>
+        
     </body>
     <!--/ END Body -->
 </html>

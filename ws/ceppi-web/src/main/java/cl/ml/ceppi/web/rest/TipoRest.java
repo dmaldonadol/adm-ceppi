@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import cl.ml.ceppi.core.model.tipo.TipoProfesor;
 import cl.ml.ceppi.web.logic.TipoLogic;
 import cl.ml.ceppi.web.pojo.TipoPojo;
 
@@ -37,6 +38,46 @@ public class TipoRest
 	public Response listaGastos() 
 	{		
 		return TipoLogic.listaGastos();
+		
+	}
+	
+	@GET
+	@Path("/profesor")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response listaProfesores() 
+	{		
+		return TipoLogic.listaProfesores();
+		
+	}
+	
+	@PUT
+	@Path("/profesor")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response saveProfesor(TipoPojo pojo) 
+	{		
+		return TipoLogic.saveProfesor(pojo);
+		
+	}
+	
+	@POST
+	@Path("/profesor")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response updateProfesor(TipoPojo pojo) 
+	{		
+		return TipoLogic.updateProfesor(pojo);
+		
+	}
+	
+	@DELETE
+	@Path("/profesor/{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response deleteProfesor(@PathParam("id") int id) 
+	{		
+		return TipoLogic.deleteTipoProfesor(new TipoPojo(id));
 		
 	}
 	
