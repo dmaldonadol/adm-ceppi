@@ -12,7 +12,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import cl.ml.ceppi.core.model.tipo.TipoProfesor;
 import cl.ml.ceppi.web.logic.TipoLogic;
 import cl.ml.ceppi.web.pojo.TipoPojo;
 

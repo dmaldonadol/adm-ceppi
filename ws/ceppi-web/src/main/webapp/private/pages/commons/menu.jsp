@@ -40,6 +40,9 @@
                     <a href="inicio#/mantenedores/equipos"><span class="text">Equipos</span></a>
                 </li>
                 <li >
+                    <a href="inicio#/mantenedores/profesores"><span class="text">Profesores</span></a>
+                </li>
+                <li >
                     <a href="inicio#/mantenedores/jugadores"><span class="text">Jugadores</span></a>
                 </li>
             </ul>
@@ -70,6 +73,9 @@
                 </li>
                 <li >
                     <a href="inicio#/mantenedor/tiposocio"><span class="text">Tipo Socio</span></a>
+                </li>
+                <li >
+                    <a href="inicio#/mantenedor/tipoprofesor"><span class="text">Tipo Profesor</span></a>
                 </li>
             </ul>
         </li>

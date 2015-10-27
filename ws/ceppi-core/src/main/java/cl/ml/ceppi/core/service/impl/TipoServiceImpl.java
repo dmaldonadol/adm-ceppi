@@ -180,22 +180,22 @@ public class TipoServiceImpl implements TipoService
 		return tipoDao.findTipoIngresoById(id);
 	}
 
-	@Override
+	@Transactional
 	public List<TipoProfesor> listTipoProfesor() {
 		return tipoDao.listTipoProfesor();
 	}
 
-	@Override
+	@Transactional
 	public void save(TipoProfesor obj) {
 		tipoDao.save(obj);		
 	}
 
-	@Override
+	@Transactional
 	public void update(TipoProfesor obj) {
 		tipoDao.update(obj);		
 	}
 
-	@Override
+	@Transactional
 	public void delete(TipoProfesor obj) {
 		tipoDao.delete(obj);		
 	}

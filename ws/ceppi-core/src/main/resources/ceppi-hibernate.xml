@@ -57,6 +57,8 @@
 				<value>cl.ml.ceppi.core.model.menu.Menu</value>
 				<value>cl.ml.ceppi.core.model.tipo.Profesion</value>
 				<value>cl.ml.ceppi.core.model.usuario.Usuario</value>
+				<value>cl.ml.ceppi.core.model.tipo.TipoProfesor</value>
+				<value>cl.ml.ceppi.core.model.equipo.Profesor</value>
 			</list>
 		</property>
 

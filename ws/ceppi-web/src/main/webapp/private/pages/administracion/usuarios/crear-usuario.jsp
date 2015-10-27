@@ -79,13 +79,6 @@
 	                                </div>
 	                                
 	                                <div class="form-group">
-	                                    <label class="col-sm-3 control-label">Tipo Socio</label>
-	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="usuario.persona.tipoSocio"  ng-options="tipoSocio.nombre for tipoSocio in tiposSocio track by tipoSocio.oid"></select>
-	                                    </div>
-	                                </div>
-	                                
-	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Género</label>
 	                                    <div class="col-sm-9">
                                             <div class="btn-group">

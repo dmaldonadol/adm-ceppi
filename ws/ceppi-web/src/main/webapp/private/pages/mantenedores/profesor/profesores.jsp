@@ -38,7 +38,7 @@
 	                                        <i class="ico-search form-control-icon"></i>
 	                                    </div>
 	                                    <div class="input-group-btn">
-	                                    	<a href="#/mantenedores/profesor/crear" class="btn btn-default">Nuevo</a>	                                        	                                       
+	                                    	<a href="#/mantenedores/profesores/crear" class="btn btn-default">Nuevo</a>	                                        	                                       
 	                                    </div>
 	                                </div>
 	                            </div>

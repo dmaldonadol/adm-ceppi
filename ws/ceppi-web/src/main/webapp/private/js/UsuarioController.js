@@ -75,7 +75,6 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 {
 	
 	$scope.perfiles = [];
-	$scope.tiposSocio = [];
 	
 	/*************************************************************
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
@@ -88,14 +87,11 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 		NProgress.start();
 		$scope.obtenerPerfiles( function()
 		{
-			$scope.obtenerTipoSocio( function()
-			{
-				NProgress.done();
-			} );
+			
+			NProgress.done();
 			
 		});
 	};
-	
 	
 	
 	/*************************************************************
@@ -117,26 +113,6 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 		});
 	};
 	
-	
-	
-	/*************************************************************
-	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
-	 * @desc 
-	 *************************************************************/
-	$scope.obtenerTipoSocio = function( callback )
-	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/socio" );
-		request.success( function( response )
-		{
-			$scope.tiposSocio = response;
-			callback();
-		} );
-		request.error( function( error )
-		{
-			console.log(error);
-			callback();
-		});
-	};
 	
 	
 	/*************************************************************
@@ -206,13 +182,6 @@ app.controller("CrearUsuarioController", function( $scope, $http, $location )
 			$scope.diplayError = true;
 			return false;
 		}
-		
-		if(! $scope.usuario.persona.tipoSocio )
-		{
-			$scope.errorMsg= "Seleccione el tipo de socio";
-			$scope.diplayError = true;
-			return false;
-		}
 			
 		$scope.diplayError = false;
 		$scope.errorMsg="";
@@ -250,22 +219,17 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams, 
 		
 		$scope.obtenerPerfiles( function()
 		{
-			$scope.obtenerTipoSocio( function()
+			$scope.obtener( $scope.params.id, function()
 			{
-				$scope.obtener( $scope.params.id, function()
-				{
-					$scope.usuario.password = "";
-					if($scope.usuario.persona.genero === "MASCULINO" )
-						$scope.button.male='btn-primary';
-					else
-						$scope.button.female='btn-primary';	
-					
-					NProgress.done();
-				});
+				$scope.usuario.password = "";
+				if($scope.usuario.persona.genero === "MASCULINO" )
+					$scope.button.male='btn-primary';
+				else
+					$scope.button.female='btn-primary';	
+				
+				NProgress.done();
 			});
-			
 		});
-		
 		
 	};
 	
@@ -289,29 +253,6 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams, 
 			callback();
 		});
 	};
-	
-	
-	
-	/*************************************************************
-	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
-	 * @desc 
-	 *************************************************************/
-	$scope.obtenerTipoSocio = function( callback )
-	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/tipo/socio" );
-		request.success( function( response )
-		{
-			$scope.tiposSocio = response;
-			callback();
-		} );
-		request.error( function( error )
-		{
-			console.log(error);
-			callback();
-		});
-	};
-	
-	
 
 	/*************************************************************
 	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
@@ -395,13 +336,6 @@ app.controller("EditarUsuarioController", function($scope, $http, $routeParams, 
 			return false;
 		}
 		
-		if(! $scope.usuario.persona.tipoSocio )
-		{
-			$scope.errorMsg= "Seleccione el tipo de socio";
-			$scope.diplayError = true;
-			return false;
-		}
-			
 		$scope.diplayError = false;
 		$scope.errorMsg="";
 		return true;

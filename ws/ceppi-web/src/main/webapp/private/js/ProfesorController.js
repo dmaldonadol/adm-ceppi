@@ -177,6 +177,29 @@ app.controller("CrearProfesorController", function( $scope, $http, $location )
 		
 	};
 	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.buscar = function ( rut )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/personaByRut/" + rut );
+		request.success( function( data, status )
+		{
+			if ( status == 200 )
+			{
+				$scope.persona = data;
+				$scope.existe = true;
+			}
+		} );
+		request.error( function( data, status )
+		{
+			console.log(status);
+			$scope.persona = undefined;
+			$scope.existe = false;
+		});
+	};
+	
 	$scope.initialize();
 	
 });

@@ -24,6 +24,7 @@ import cl.ml.ceppi.core.util.Crypt;
 
 public class InitData {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) 
 	{
 		try 
@@ -54,7 +55,7 @@ public class InitData {
 			persona.setEstatura("170");
 			persona.setPeso("65");
 			persona.setFechaNacimiento(new Date());
-			personaFacade.save(persona);
+//			personaFacade.save(persona);
 			
 			/* MENU ADMINISTRACION */
 			MenuCompuesto menuCompuesto = new MenuCompuesto();

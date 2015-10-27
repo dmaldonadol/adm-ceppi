@@ -17,14 +17,14 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@SequenceGenerator(name = "SEC_TIPO_SOCIO", sequenceName = "SEC_TIPO_SOCIO")
-@Table(name = "TIPO_SOCIO")
+@SequenceGenerator(name = "SEC_TIPO_PROFESOR", sequenceName = "SEC_TIPO_PROFESOR")
+@Table(name = "TIPO_PROFESOR")
 public class TipoProfesor implements Serializable {
 	private static final long serialVersionUID = -3925374795494263674L;
 
 	@Id
-	@GeneratedValue(generator = "SEC_TIPO_SOCIO")
-	@Column(name = "ID_TIPO_SOCIO", nullable = false)
+	@GeneratedValue(generator = "SEC_TIPO_PROFESOR")
+	@Column(name = "ID_TIPO_PROFESOR", nullable = false)
 	private int oid;
 
 	@Column(unique = true, length = 10, nullable = false)

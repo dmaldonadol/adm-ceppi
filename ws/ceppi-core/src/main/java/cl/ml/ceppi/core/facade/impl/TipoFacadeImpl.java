@@ -181,17 +181,17 @@ public class TipoFacadeImpl implements TipoFacade
 		return tipoService.listTipoProfesor();
 	}
 
-	@Override
+	@Transactional
 	public void save(TipoProfesor obj) {
 		tipoService.save(obj);
 	}
 
-	@Override
+	@Transactional
 	public void update(TipoProfesor obj) {
 		tipoService.update(obj);		
 	}
 
-	@Override
+	@Transactional
 	public void delete(TipoProfesor obj) {
 		tipoService.delete(obj);
 	}
