@@ -52,6 +52,7 @@ app.controller("ProfesorController", function($scope, $http)
 			console.log( response );
 			NProgress.done();
 			$scope.initialize();
+			
 		} );
 		request.error( function( error )
 		{
@@ -120,15 +121,23 @@ app.controller("CrearProfesorController", function( $scope, $http, $location )
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
 		
-		var validateProfesor   = $("#form-create-profesor").parsley().validate();
+		
 		var validatePeople = $("#form-create-person").parsley().validate();
+		var validateProfesor   = $("#form-create-profesor").parsley().validate();
+		var existe = false;
+		if ( $scope.profesor.persona )
+		{
+			validateProfesor = true;
+			existe = true;
+		}
 		
 		if( validateProfesor && validatePeople )
 		{			
 			console.log( $scope.profesor );
 			if( $scope.validate() )
 			{
-				$scope.profesor.persona.fechaNacimiento = $('#fechaNacimiento').val();
+				$scope.profesor.persona.fechaNacimiento = existe ? $scope.profesor.persona.fechaNacimiento : $('#fechaNacimiento').val();
+				
 				var request = $http.put( CONSTANTS.contextPath + "/api/private/profesor", $scope.profesor );
 				request.success( function( response )
 				{
@@ -164,7 +173,7 @@ app.controller("CrearProfesorController", function( $scope, $http, $location )
 	 *************************************************************/
 	$scope.validate = function()
 	{
-		if(! $scope.profesor.tipo )
+		if(! $scope.profesor.tipoProfesor )
 		{
 			$scope.errorMsg= "Seleccione un tipo de profesor";
 			$scope.diplayError = true;
@@ -183,21 +192,89 @@ app.controller("CrearProfesorController", function( $scope, $http, $location )
 	 *************************************************************/
 	$scope.buscar = function ( rut )
 	{
+	
+		if ( $scope.bloqRut )
+		{
+			return;
+		}
+		
+		$scope.diplayMsg = false;
+		$scope.msg = "";
+		
+		$scope.bloqRut = false;
+		$scope.show = false;
+		
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/profesor/byRut/" + rut );
+		request.success( function( data, status )
+		{
+			if ( status == 200 )
+			{
+				$scope.diplayMsg = true;
+				$scope.msg = "Profesor ya existe en el portal.";
+			}
+		} );
+		request.error( function( data, status )
+		{
+			if ( status == 404 )
+			{
+				$scope.buscarPersona(rut);
+			}
+			
+			else
+			{
+				$scope.show = false;
+				console.log(error);
+			}
+			
+		});
+	};
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.buscarPersona = function ( rut )
+	{
 		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/personaByRut/" + rut );
 		request.success( function( data, status )
 		{
 			if ( status == 200 )
 			{
-				$scope.persona = data;
-				$scope.existe = true;
+				$scope.profesor.persona = data;
+				$scope.bloqRut = true;
+				$scope.show = true;
+				$scope.setGenero();
 			}
 		} );
 		request.error( function( data, status )
 		{
-			console.log(status);
-			$scope.persona = undefined;
-			$scope.existe = false;
+			if ( status == 404 )
+			{
+				$scope.show = true;
+			}
+			else
+			{
+				$scope.show= false;
+				console.log(error);
+			}
 		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.setGenero = function()
+	{
+		if($scope.profesor.persona.genero === "MASCULINO" )
+		{
+			$scope.button.male='btn-primary';
+		}
+		else
+		{
+			$scope.button.female='btn-primary';	
+		}
 	};
 	
 	$scope.initialize();
@@ -251,11 +328,10 @@ app.controller("EditarProfesorController", function($scope, $http, $routeParams,
 	 *************************************************************/
 	$scope.obtener = function( oid, callback )
 	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/usuario/"+oid );
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/profesor/"+oid );
 		request.success( function( response )
 		{
-			$scope.usuario = response;
-			$scope.usuario.persona.rut = $scope.usuario.persona.rut + "-" + $scope.usuario.persona.dv; 
+			$scope.profesor = response;
 			console.log( response );
 			callback();
 		} );
@@ -275,22 +351,21 @@ app.controller("EditarProfesorController", function($scope, $http, $routeParams,
 	 *************************************************************/
 	$scope.actualizar = function( )
 	{
-		var validateUser   = $("#form-create-user").parsley().validate();
+		var validateUser   = $("#form-create-profesor").parsley().validate();
 		var validatePeople = $("#form-create-person").parsley().validate();
 		var validate = $scope.validate();
-		$scope.usuario.persona.fechaNacimiento = $('#fechaNacimiento').val();
-		delete $scope.usuario.passwordConfirmed;
+		$scope.profesor.persona.fechaNacimiento = $('#fechaNacimiento').val();
 		
 		if( validateUser && validatePeople && validate )
 		{
-			var request = $http.post( CONSTANTS.contextPath + "/api/private/usuario" , $scope.usuario );
+			var request = $http.post( CONSTANTS.contextPath + "/api/private/profesor" , $scope.profesor );
 			NProgress.configure({ parent: '#main' });
 			NProgress.start();
 			request.success( function( response )
 			{
 				console.log( response );
 				NProgress.done();
-				$location.path('/administracion/usuarios');
+				$location.path('/mantenedores/profesores');
 			} );
 			request.error( function( error )
 			{
@@ -330,7 +405,7 @@ app.controller("EditarProfesorController", function($scope, $http, $routeParams,
 	 *************************************************************/
 	$scope.validate = function()
 	{
-		if(! $scope.profesor.tipo )
+		if(! $scope.profesor.tipoProfesor )
 		{
 			$scope.errorMsg= "Seleccione un tipo de profesor";
 			$scope.diplayError = true;

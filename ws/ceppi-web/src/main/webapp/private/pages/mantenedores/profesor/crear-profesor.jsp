@@ -33,24 +33,20 @@
 	                                    <label class="col-sm-3 control-label">Rut</label>
 	                                    <div class="col-sm-5">
 	                                        <input type="text" class="form-control" ng-model="profesor.persona.rut" placeholder="ej. 11111111"
-	                                        data-parsley-error-message="Por favor ingrese rut" data-parsley-required maxlength="8" ng-disabled="existe">
+	                                        data-parsley-error-message="Por favor ingrese rut" data-parsley-required maxlength="8" ng-disabled="bloqRut">
 	                                    </div>
 	                                    <div class="col-sm-2">
 	                                        <input type="text" class="form-control" ng-model="profesor.persona.dv" placeholder="dv"
-	                                        data-parsley-error-message="Por favor ingrese dv" data-parsley-required maxlength="1"  ng-disabled="existe">
+	                                        data-parsley-error-message="Por favor ingrese dv" data-parsley-required maxlength="1"  ng-disabled="bloqRut">
 	                                    </div>
 	                                    <div class="col-sm-1">
-					        				<button class="btn btn-success"  value="button"  ng-click="buscar(profesor.persona.rut)"><i class="ico-search"></i></button>
+					        				<button class="btn btn-success" value="button"  ng-click="buscar(profesor.persona.rut)"><i class="ico-search"></i></button>
 					        			</div>
 	                                </div>
 	                                
-	                                <div ng-show="persona" class="form-group">
-	                                	<label class="col-sm-3 control-label">Nombre</label>
-	                                	<label class="col-sm-3 control-label">{{persona.nombre}}&nbsp;{{persona.apellidoPaterno}}&nbsp;{{persona.apellidoMaterno}} </label>
-	                                	<br/>
-	                                </div>
+	                                <div ng-show="diplayMsg" class="alert alert-danger">{{msg}}</div>
 	                                
-	                                <div ng-show="!existe">
+	                                <div ng-show="show">
 		                                <div class="form-group">
 		                                    <label class="col-sm-3 control-label">Nombre</label>
 		                                    <div class="col-sm-9">
@@ -106,13 +102,13 @@
 		        				</form>
 		        			</div>
 		        			<div class="col-md-6" style="border-right:1px solid #e0e7e8;">
-		        				<form class="form-horizontal form-bordered" id="form-create-user">
+		        				<form class="form-horizontal form-bordered" id="form-create-profesor">
 		        					<h4 class="text-primary mt0">Información Profesor</h4>
 		        					
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Tipo de Profesor</label>
 	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="profesor.tipo" ng-options="tipo.nombre for tipo in tipoProfesor track by tipo.oid"></select>
+	                                        <select class="form-control" ng-model="profesor.tipoProfesor" ng-options="tipo.nombre for tipo in tipoProfesor track by tipo.oid"></select>
 	                                    </div>
 	                                </div>
 	                                

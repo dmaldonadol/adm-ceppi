@@ -29,12 +29,14 @@
 		        			<div class="col-md-6">
 		        				<form class="form-horizontal form-bordered" id="form-create-person">
 			        				<h4 class="text-primary mt0">Informacion Personal</h4>
-			        				<p class="pb10">Indique el tipo de profesor.</p>
 			        				
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Rut</label>
-	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="profesor.persona.rut" placeholder="ej. 11111111-1" disabled="disabled">
+	                                    <div class="col-sm-5">
+	                                        <input type="text" class="form-control" ng-model="profesor.persona.rut" placeholder="ej. 11111111" disabled="disabled">
+	                                    </div>
+	                                    <div class="col-sm-2">
+	                                        <input type="text" class="form-control" ng-model="profesor.persona.dv" disabled="disabled">
 	                                    </div>
 	                                </div>
 	                                
@@ -93,13 +95,13 @@
 		        				</form>
 		        			</div>
 		        			<div class="col-md-6" style="border-right:1px solid #e0e7e8;">
-		        				<form class="form-horizontal form-bordered" id="form-create-user">
+		        				<form class="form-horizontal form-bordered" id="form-create-profesor">
 		        					<h4 class="text-primary mt0">Información Profesor</h4>
 		        					
 		        					<div class="form-group">
 	                                    <label class="col-sm-3 control-label">Tipo de Profesor</label>
 	                                    <div class="col-sm-9">
-	                                        <select class="form-control" ng-model="profesor.tipo" ng-options="tipo.nombre for tipo in tipoProfesor track by tipo.oid"></select>
+	                                        <select class="form-control" ng-model="profesor.tipoProfesor" ng-options="tipo.nombre for tipo in tipoProfesor track by tipo.oid"></select>
 	                                    </div>
 	                                </div>
 	                                

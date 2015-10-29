@@ -105,7 +105,7 @@
 		        		</div>
 		        		<div class="row" style="border-top:1px solid #e0e7e8;">
 		        			<div class="col-md-12 text-right pt5 pb0">
-		        				<a href="#/administracion/usuarios" class="btn btn-default">Cancelar</a>
+		        				<a href="#/administracion/socios" class="btn btn-default">Cancelar</a>
 		        				<button class="btn btn-success"  value="button"  ng-click="guardar()">Guardar</button>
 		        			</div>
 		        		</div>

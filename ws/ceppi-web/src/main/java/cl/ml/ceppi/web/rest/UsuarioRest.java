@@ -61,7 +61,7 @@ public class UsuarioRest
 	public Response save( Usuario usuario ) 
 	{		
 		LOGGER.info("[ init - guardar usuarios ]");
-		return UsuarioLogic.update(usuario);
+		return UsuarioLogic.save(usuario);
 	}
 	
 	@POST

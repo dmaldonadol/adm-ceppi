@@ -51,7 +51,7 @@
 					        				<label class="control-label parsley-custom-error-message">{{msjSocioExiste}}</label>
 					        			</div>
 	                                </div>
-	                                <div id="datospersonales" ng-show="continuar">
+	                                <div id="datospersonales" ng-show="continuar"  class="form-group">
 		                                <div class="form-group">
 		                                    <label class="col-sm-3 control-label">Nombre</label>
 		                                    <div class="col-sm-9">

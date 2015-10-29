@@ -60,7 +60,7 @@
 	                            <tr ng-repeat="p in profesores | filter:q as results">	                                                               
 	                                    <td>{{p.persona.rut}}-{{p.persona.dv}}</td>
 	                                    <td>{{p.persona.nombre}}&nbsp;{{p.persona.apellidoPaterno}}</td>
-	                                    <td>{{p.tipo.nombre}}</td>
+	                                    <td>{{p.tipoProfesor.nombre}}</td>
 	                                    <td class="text-center">
 	                                        <div class="toolbar">
 	                                            <div class="btn-group">
@@ -69,7 +69,7 @@
 	                                                    <span class="caret"></span>
 	                                                </button>
 	                                                <ul class="dropdown-menu dropdown-menu-right">	                                                    
-	                                                    <li><a href="#/mantenedores/profesor/editar/{{p.oid}}"><i class="icon ico-pencil"></i>Editar</a></li>
+	                                                    <li><a href="#/mantenedores/profesores/editar/{{p.oid}}"><i class="icon ico-pencil"></i>Editar</a></li>
 	                                                    <li class="divider"></li>
 	                                                    <li><a href="javascript:void(0);" ng-click="eliminar(p)" class="text-danger"><i class="icon ico-remove3"></i>Eliminar</a></li>
 	                                                </ul>

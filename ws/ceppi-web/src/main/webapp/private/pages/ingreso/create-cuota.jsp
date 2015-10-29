@@ -56,6 +56,18 @@
 		                            	<label class="control-label">{{formatNumber(socio.persona.rut)}}-{{socio.persona.dv}}</label>
 		                            </div>
 		                        </div>
+		                        <div class="form-group">
+		                        	<label class="col-sm-3 control-label">Tipo:</label>
+		                            <div class="col-sm-9">
+		                            	<label class="control-label">{{socio.tipoSocio.nombre}}</label>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                        	<label class="col-sm-3 control-label">Categoria:</label>
+		                            <div class="col-sm-9">
+		                            	<label class="control-label">{{socio.categoriaSocio.nombre}}</label>
+		                            </div>
+		                        </div>
                        		</form>
                        	</div>
                     </div>

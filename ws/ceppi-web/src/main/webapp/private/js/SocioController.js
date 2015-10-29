@@ -154,7 +154,7 @@ app.controller("CrearSocioController", function( $scope, $http, $location )
 			if ( status == 200 )
 			{
 				$scope.continuar = false;
-				$scope.msjSocioExiste = "Socio ya existe en el sistema.";
+				$scope.msjSocioExiste = "Socio ya existe en el portal.";
 				$scope.socioExiste = true;
 			}
 		} );
@@ -367,7 +367,7 @@ app.controller("EditarSocioController", function($scope, $http, $routeParams)
 	 *************************************************************/
 	$scope.obtener = function( oid, callback )
 	{
-		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/"+oid );
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/socio/byID/"+oid );
 		request.success( function( response )
 		{
 			$scope.socio = response;

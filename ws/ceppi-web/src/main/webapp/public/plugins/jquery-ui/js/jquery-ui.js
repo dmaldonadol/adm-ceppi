@@ -3818,16 +3818,16 @@ function Datepicker() {
 	this._dayOverClass = "ui-datepicker-days-cell-over"; // The name of the day hover marker class
 	this.regional = []; // Available regional settings, indexed by language code
 	this.regional[""] = { // Default regional settings
-		closeText: "Done", // Display text for close link
-		prevText: "Prev", // Display text for previous month link
-		nextText: "Next", // Display text for next month link
-		currentText: "Today", // Display text for current month link
-		monthNames: ["January","February","March","April","May","June",
-			"July","August","September","October","November","December"], // Names of months for drop-down and formatting
-		monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], // For formatting
-		dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], // For formatting
-		dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], // For formatting
-		dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"], // Column headings for days starting at Sunday
+		closeText: "Cerrar", // Display text for close link
+		prevText: "Ant", // Display text for previous month link
+		nextText: "Sig", // Display text for next month link
+		currentText: "Hoy", // Display text for current month link
+		monthNames: ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
+			"Julio","Agosto","Septiembre","Octubre","Noviembre","Dicimbre"], // Names of months for drop-down and formatting
+		monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"], // For formatting
+		dayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"], // For formatting
+		dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"], // For formatting
+		dayNamesMin: ["Do","Lu","Ma","Mi","Ju","Vi","Sa"], // Column headings for days starting at Sunday
 		weekHeader: "Wk", // Column header for week of the year
 		dateFormat: "mm/dd/yy", // See format options on parseDate
 		firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
@@ -3850,8 +3850,8 @@ function Datepicker() {
 			// if not applicable, false to just disable them
 		navigationAsDateFormat: false, // True if date formatting applied to prev/today/next links
 		gotoCurrent: false, // True if today link goes back to current selection instead
-		changeMonth: false, // True if month can be selected directly, false if only prev/next
-		changeYear: false, // True if year can be selected directly, false if only prev/next
+		changeMonth: true, // True if month can be selected directly, false if only prev/next
+		changeYear: true, // True if year can be selected directly, false if only prev/next
 		yearRange: "c-10:c+10", // Range of years to display in drop-down,
 			// either relative to today's year (-nn:+nn), relative to currently displayed year
 			// (c-nn:c+nn), absolute (nnnn:nnnn), or a combination of the above (nnnn:-n)

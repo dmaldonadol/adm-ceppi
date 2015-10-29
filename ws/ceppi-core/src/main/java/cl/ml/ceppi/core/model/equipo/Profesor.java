@@ -50,6 +50,10 @@ public class Profesor implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Profesor(int id) {
+		this.oid = id;
+	}
+
 	public int getOid() {
 		return oid;
 	}
