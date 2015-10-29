@@ -7,9 +7,7 @@ package cl.ml.ceppi.web.rest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -18,10 +16,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.core.model.equipo.Equipo;
-import cl.ml.ceppi.core.model.equipo.Jugador;
 import cl.ml.ceppi.web.logic.EquipoLogic;
-import cl.ml.ceppi.web.logic.JugadorLogic;
 
 
 /**
@@ -32,63 +27,13 @@ import cl.ml.ceppi.web.logic.JugadorLogic;
  * Description : 
  * ---------------------------------------------------------------------------
  */
-@Path("/private/jugador")
-public class JugadorRest 
+@Path("/private/persona")
+public class PersonaRest 
 {
 	
-	private static final Logger LOGGER = Logger.getLogger(JugadorRest.class);
+	private static final Logger LOGGER = Logger.getLogger(PersonaRest.class);
 	private HttpServletRequest request;
 	
-	
-	@GET
-	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces({ MediaType.APPLICATION_JSON })
-	@Path("/search/rut/{rut}")
-	public Response existPlayer(@PathParam("rut")  String rut ) 
-	{
-		return JugadorLogic.existPlayer(rut);
-	}
-	
-	
-	@GET
-	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces({ MediaType.APPLICATION_JSON })
-	public Response getAllPlayers() 
-	{
-		LOGGER.info("[ init - listar equipos ]");
-		return JugadorLogic.findAll();
-	}
-	
-	
-	@GET
-	@Path("/{id}")
-	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces({ MediaType.APPLICATION_JSON })
-	public Response getPlayerById(@PathParam("id") int id) 
-	{
-		LOGGER.info("[ init - find by id equipos ]");
-		return JugadorLogic.findById(id);
-	}
-	
-	
-	@PUT
-	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces({ MediaType.APPLICATION_JSON })
-	public Response save(Jugador jugador) 
-	{
-		LOGGER.info("[ init - save equipos ]");
-		return JugadorLogic.save( jugador );
-	}
-	
-	
-	@DELETE
-	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces({ MediaType.APPLICATION_JSON })
-	public Response remove( Jugador jugador ) 
-	{
-		LOGGER.info("[ init - save equipos ]");
-		return JugadorLogic.remove(jugador);
-	}
 	
 	
 	
@@ -99,12 +44,47 @@ public class JugadorRest
 	public HttpServletRequest getRequest() {
 		return request;
 	}
-	
 	/**
 	 * @param request the request to set
 	 */
 	public void setRequest(HttpServletRequest request) {
 		this.request = request;
 	}
-
+	
+	
+	
+	@GET
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response getAll() 
+	{
+		LOGGER.info("[ init - listar equipos ]");
+		return EquipoLogic.findAll();
+	}
+	
+	
+	@GET
+	@Path("/{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response getById(@PathParam("id") int id) 
+	{
+		LOGGER.info("[ init - find by id equipos ]");
+		return EquipoLogic.findById(id);
+	}
+	
+	
+	
+	@GET
+	@Path("/search/rut{id}")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response getByRut(@PathParam("rut") String rut) 
+	{
+		LOGGER.info("[ init - find by id equipos ]");
+		return EquipoLogic.findById(0);
+	}
+	
+	
+	
 }

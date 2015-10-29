@@ -74,20 +74,24 @@ public class EquipoRest
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response addPlayer( Equipo equipo, Jugador jugador ) 
+	@Path("/{idEquipo}/jugadores/")
+	public Response addPlayer( @PathParam("idEquipo") int idEquipo, Jugador jugador ) 
 	{
 		LOGGER.info("[ init - save equipos ]");
-		return EquipoLogic.addPlayer(equipo, jugador);
+		return EquipoLogic.addPlayer( new Equipo( idEquipo ), jugador);
 	}
 	
 	
 	@DELETE
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response removePlayer( Equipo equipo, Jugador jugador ) 
+	@Path("/{idEquipo}/jugadores/{idJugador}")
+	public Response removePlayer( @PathParam("idEquipo") int idEquipo,@PathParam("idJugador") int idJugador ) 
 	{
 		LOGGER.info("[ init - save equipos ]");
-		return EquipoLogic.removePlayer(equipo, jugador);
+		Jugador jugador =  new Jugador();
+		jugador.setOid(idJugador);
+		return EquipoLogic.removePlayer(new Equipo( idEquipo ), jugador );
 	}
 	
 	

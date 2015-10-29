@@ -10,7 +10,6 @@ import javax.ws.rs.core.Response;
 import org.apache.log4j.Logger;
 
 import cl.ml.ceppi.core.facade.JugadorFacade;
-import cl.ml.ceppi.core.model.equipo.Equipo;
 import cl.ml.ceppi.core.model.equipo.Jugador;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 

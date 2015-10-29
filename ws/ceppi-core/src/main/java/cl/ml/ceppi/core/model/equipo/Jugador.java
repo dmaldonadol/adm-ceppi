@@ -54,6 +54,15 @@ public class Jugador implements Serializable {
 	{
 		
 	}
+	
+	
+	/**
+	 * 
+	 */
+	public Jugador( int id) 
+	{
+		this.setOid(id);
+	}
 
 	public int getOid() {
 		return oid;
