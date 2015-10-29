@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/jquery-ui/css/jquery-ui.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/nprogress/css/nprogress.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/steps/css/jquery-steps.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/public/font-awesome/css/font-awesome.css">
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
     </head>
     

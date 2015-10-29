@@ -15,11 +15,34 @@
         
         
         <div class="row">
+        
 	        <div class="col-md-3">
 	            <div class="panel panel-default" id="toolbar-showcase">
 	                <div class="panel-collapse pull out">
 	                    <table class="table table-bordered table-hover">
 	                        <thead>
+	                        	<tr>
+	                        		<th colspan="2">
+	                        			
+	                        			<div id="spinner4">
+								        	<div class="input-group" style="width:210px;">
+								            	<div class="spinner-buttons input-group-btn">
+								                	<button type="button" class="btn spinner-down btn-primary" ng-click="suma(false);">
+								                    	<i class="fa fa-chevron-left"></i>
+								                    </button>
+								                </div>
+								                <input type="text" class="spinner-input form-control" maxlength="3" readonly ng-model="anio" style="padding-left: 53px;"> 
+								                <div class="spinner-buttons input-group-btn">
+								                    <button type="button" class="btn spinner-up btn-primary" ng-click="suma(true);">
+								                        <i class="fa fa-chevron-right"></i>
+								                    </button>
+								                </div>
+								            </div>
+							            </div>
+	                        			
+	                        		
+	                        		</th>
+	                        	</tr>
 	                            <tr>
 	                            	<th>MES</th>
 	                                <th>Estado</th>
@@ -29,8 +52,8 @@
 	                            <tr ng-repeat="c in table">
 	                            	<td>{{c.name}}</td>
 	                                <td>
-	                                	<a ng-show="!c.estado" ng-click="pagar(c)">Pagar</a>
-	                                	<a ng-show="c.estado" ng-click="verComprobante(c)">Pagado</a>
+	                                	<a ng-show="!c.estado" ng-click="pagar(c)" class="label label-primary">Pagar</a>
+	                                	<a ng-show="c.estado" ng-click="verComprobante(c)" class="label label-success ">Ver detalle</a>
                                     </td>
                                 </tr>
                             </tbody>

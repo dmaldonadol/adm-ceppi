@@ -65,7 +65,11 @@ app.controller("AdmCuotaController", function( $scope, $http, $location, $routeP
 	$scope.initialize = function()
 	{
 		$scope.params = $routeParams;
-		$scope.anio = (new Date).getFullYear();
+		if ( $scope.anio == undefined )
+		{
+			$scope.anio = (new Date).getFullYear();
+		}
+		
 		$scope.idsocio = $scope.params.id;
 		NProgress.configure({ parent: '#main' });
 		NProgress.start();
@@ -78,6 +82,19 @@ app.controller("AdmCuotaController", function( $scope, $http, $location, $routeP
 		});
 	};
 	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.suma = function( suma )
+	{
+		$scope.anio = suma ? parseInt($scope.anio) + 1 : parseInt($scope.anio) - 1;
+		
+		$scope.obtenerListaAnual( $scope.params.id, $scope.anio,  function()
+		{
+			NProgress.done();
+		});
+	};
 	
 	
 	/*************************************************************
