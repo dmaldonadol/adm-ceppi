@@ -21,4 +21,6 @@ public interface JugadorService
 	Jugador findJugadorById(int id);
 	
 	List<Jugador> listJugadoresHastaAnio(String anio);
+
+	Jugador findJugadorByRut(String rut);
 }

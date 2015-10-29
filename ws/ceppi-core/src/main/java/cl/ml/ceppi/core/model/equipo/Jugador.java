@@ -50,8 +50,9 @@ public class Jugador implements Serializable {
 	/**
 	 * 
 	 */
-	public Jugador() {
-		// TODO Auto-generated constructor stub
+	public Jugador() 
+	{
+		
 	}
 
 	public int getOid() {

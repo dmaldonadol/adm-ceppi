@@ -125,6 +125,10 @@ public final class EquipoLogic
 	}
 	
 	
+	
+
+	
+	
 	/**
 	 * Lista los equipos del sistema
 	 * @return

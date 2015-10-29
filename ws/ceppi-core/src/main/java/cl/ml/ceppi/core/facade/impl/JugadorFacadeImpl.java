@@ -49,4 +49,10 @@ public class JugadorFacadeImpl implements JugadorFacade {
 	{
 		return service.listJugadoresHastaAnio(anio);
 	}
+
+	@Override
+	public Jugador findJugadorByRut(String rut) 
+	{
+		return service.findJugadorByRut(rut);
+	}
 }

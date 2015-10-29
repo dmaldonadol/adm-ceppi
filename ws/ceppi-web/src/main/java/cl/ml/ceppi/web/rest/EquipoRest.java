@@ -7,6 +7,7 @@ package cl.ml.ceppi.web.rest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -19,6 +20,7 @@ import javax.ws.rs.core.Response;
 import org.apache.log4j.Logger;
 
 import cl.ml.ceppi.core.model.equipo.Equipo;
+import cl.ml.ceppi.core.model.equipo.Jugador;
 import cl.ml.ceppi.web.logic.EquipoLogic;
 
 
@@ -66,6 +68,36 @@ public class EquipoRest
 	{
 		LOGGER.info("[ init - save equipos ]");
 		return EquipoLogic.save(equipo);
+	}
+	
+	
+	@PUT
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response addPlayer( Equipo equipo, Jugador jugador ) 
+	{
+		LOGGER.info("[ init - save equipos ]");
+		return EquipoLogic.addPlayer(equipo, jugador);
+	}
+	
+	
+	@DELETE
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response removePlayer( Equipo equipo, Jugador jugador ) 
+	{
+		LOGGER.info("[ init - save equipos ]");
+		return EquipoLogic.removePlayer(equipo, jugador);
+	}
+	
+	
+	@DELETE
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response remove( Equipo equipo ) 
+	{
+		LOGGER.info("[ init - save equipos ]");
+		return EquipoLogic.remove(equipo);
 	}
 	
 	

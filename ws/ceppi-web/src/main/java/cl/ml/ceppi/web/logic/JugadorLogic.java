@@ -5,6 +5,15 @@
  */
 package cl.ml.ceppi.web.logic;
 
+import javax.ws.rs.core.Response;
+
+import org.apache.log4j.Logger;
+
+import cl.ml.ceppi.core.facade.JugadorFacade;
+import cl.ml.ceppi.core.model.equipo.Equipo;
+import cl.ml.ceppi.core.model.equipo.Jugador;
+import cl.ml.ceppi.web.locator.ServiceLocator;
+
 
 /**
  * ---------------------------------------------------------------------------
@@ -14,6 +23,133 @@ package cl.ml.ceppi.web.logic;
  * Description : 
  * ---------------------------------------------------------------------------
  */
-public class JugadorLogic {
+public class JugadorLogic 
+{
+	
+	private static final Logger LOGGER = Logger.getLogger(JugadorLogic.class);
+	private static JugadorFacade facade = (JugadorFacade) ServiceLocator.getInstance().getBean("jugadorFacade");
+	
+	
+	
+	
+	
+
+	/**
+	 * Lista los equipos del sistema
+	 * @return
+	 */
+	public static Response findAll() 
+	{
+		try 
+		{			
+			return Response.status(Response.Status.OK).entity( facade.listJugadores() ).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener la lista de equipos. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
+	
+	/**
+	 * Lista los equipos del sistema
+	 * @return
+	 */
+	public static Response findById( int id ) 
+	{
+		try 
+		{			
+			return Response.status(Response.Status.OK).entity( facade.findJugadorById(id) ).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener el equipo. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
+	
+	
+	/**
+	 * Lista los equipos del sistema
+	 * @return
+	 */
+	public static Response save( Jugador jugador ) 
+	{
+		try 
+		{			
+			facade.save(jugador);
+			return Response.status(Response.Status.OK).entity( null ).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al guardar el equipo. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
+	
+	/**
+	 * Lista los equipos del sistema
+	 * @return
+	 */
+	public static Response update( Jugador jugador  ) 
+	{
+		try 
+		{			
+			facade.update(jugador);
+			return Response.status(Response.Status.OK).entity( null ).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al actualizar el equipo. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
+	
+	
+	/**
+	 * Lista los equipos del sistema
+	 * @return
+	 */
+	public static Response remove( Jugador jugador ) 
+	{
+		try 
+		{			
+			facade.delete(jugador);
+			return Response.status(Response.Status.OK).entity( null ).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al actualizar el equipo. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	/**
+	 * Lista los equipos del sistema
+	 * @return
+	 */
+	public static Response existPlayer( String rut ) 
+	{
+		try 
+		{			
+			Jugador jugador = facade.findJugadorByRut( rut );
+			return Response.status(null !=  jugador ? Response.Status.OK : Response.Status.NOT_FOUND ).entity( jugador ).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al buscar el jugador. ", e);
+			return Response.status(Response.Status.PRECONDITION_FAILED).entity(null).build();
+		}
+	}
+	
 
 }

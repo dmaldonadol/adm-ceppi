@@ -54,4 +54,10 @@ public class JugadorServiceImpl implements JugadorService
 		return dao.listJugadoresHastaAnio(anio);
 	}
 
+	@Override
+	public Jugador findJugadorByRut(String rut) 
+	{
+		return dao.findJugadorByRut(rut);
+	}
+
 }

@@ -22,6 +22,8 @@ public interface JugadorFacade
 	List<Jugador> listJugadores();
 
 	Jugador findJugadorById(int id);
+	
+	Jugador findJugadorByRut(String rut);
 
 	List<Jugador> listJugadoresHastaAnio(String anio);
 }

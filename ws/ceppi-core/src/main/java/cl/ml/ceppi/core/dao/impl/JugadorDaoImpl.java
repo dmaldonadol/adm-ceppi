@@ -17,7 +17,9 @@ import cl.ml.ceppi.core.model.equipo.Jugador;
  * 
  */
 @Repository("JugadorDao")
-public class JugadorDaoImpl implements JugadorDao {
+public class JugadorDaoImpl implements JugadorDao 
+{
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -53,17 +55,26 @@ public class JugadorDaoImpl implements JugadorDao {
 		return (Jugador) cr.list().get(0);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Jugador> listJugadoresHastaAnio(String anio)
 	{
 		Criteria cr = getSession().createCriteria(Jugador.class);
 		cr.createAlias("persona.fechaNacimiento", "fechaNacimiento");
 		cr.add(Restrictions.le("extract(year from fechaNacimiento)", anio));
-		
 //		DetachedCriteria criteria = DetachedCriteria.forClass(Jugador.class);
 //		criteria.add(Restrictions.le("persona.fechaNacimiento", anio));
-			    
 		return (List<Jugador>)cr.list();
+	}
+
+	@Override
+	public Jugador findJugadorByRut(String rut) 
+	{
+		Criteria cr = getSession().createCriteria(Jugador.class);
+		cr.createAlias("persona.rut", "rut");
+		cr.add(Restrictions.eq("rut", rut));
+		Jugador jugador =  cr.list().isEmpty() ? (Jugador)cr.list().get(0) : null;
+		return jugador;
 	}
 
 }
