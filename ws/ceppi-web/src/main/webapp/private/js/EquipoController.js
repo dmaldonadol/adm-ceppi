@@ -166,12 +166,14 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 		$scope.params = $routeParams;
 		$scope.getPerfilEquipo( $scope.params.id, function()
 		{
-			NProgress.done();
-			
-			if( $scope.equipo.genero == "MASCULINO" )
-				$scope.button.male='btn-primary';
-			else
-				$scope.button.female='btn-primary';
+			$scope.obtenerJugadores( function()
+			{
+				NProgress.done();
+				if( $scope.equipo.genero == "MASCULINO" )
+					$scope.button.male='btn-primary';
+				else
+					$scope.button.female='btn-primary';
+			});
 		});
 	};
 	
@@ -193,6 +195,41 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 			console.log(error);
 			callback();
 		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.obtenerJugadores = function( callback )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/jugador" );
+		request.success( function( response )
+		{
+			console.log( response );
+			$scope.jugadores = response;			
+			callback();
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+			callback
+		});
+	};
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.seleccionarJugador = function( jugador )
+	{
+		jugador.selected = !jugador.selected;
+		if ( jugador.selected )
+		{
+			$scope.equipo.juagadores.push( jugador );
+		}
+		console.log( $scope.equipo );
 	};
 	
 	/*************************************************************

@@ -43,6 +43,36 @@ app.controller("JugadorController", function($scope, $http)
 	};
 	
 	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.eliminar = function(jugador)
+	{
+		bootbox.confirm('¿Seguro desea eliminar el jugador?', function (result) 
+		{
+			if( result )
+			{
+				var request = $http.delete( CONSTANTS.contextPath + "/api/private/jugador/"+jugador.oid );
+				NProgress.configure({ parent: '#main' });
+				NProgress.start();
+				request.success( function( response )
+				{
+					console.log( response );
+					NProgress.done();
+					$scope.initialize();
+				} );
+				request.error( function( error )
+				{
+					console.log(error);
+					NProgress.done();
+				});
+			}
+		});
+		
+	};
+	
+	
 	$scope.initialize();
 });
 

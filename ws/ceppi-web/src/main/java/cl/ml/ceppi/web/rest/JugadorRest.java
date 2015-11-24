@@ -86,11 +86,12 @@ public class JugadorRest
 	
 	
 	@DELETE
+	@Path("/{id}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response remove( Jugador jugador ) 
+	public Response remove( @PathParam("id") int id ) 
 	{
-		return JugadorLogic.remove(jugador);
+		return JugadorLogic.remove( new Jugador(id) );
 	}
 	
 	

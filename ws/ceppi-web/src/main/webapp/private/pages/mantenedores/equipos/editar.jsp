@@ -99,15 +99,15 @@
 		                      </span>
 		                  	</a>
 		                  	
-		                  <a href="javascript:void(0);" class="media border-dotted" ng-repeat="playeers in equipo.juagadores | filter:q as results">
+		                  <a href="javascript:void(0);" class="media border-dotted" ng-repeat="player in equipo.juagadores | filter:q as results">
 		                      <span class="pull-left">
-		                          <img src="<%=request.getContextPath() %>/public/image/avatar/avatar6.jpg" class="media-object" alt="">
+		                          <img src="<%=request.getContextPath() %>/public/image/avatar/avatar.png" class="media-object" alt="">
 		                      </span>
 		                      <span class="media-body">
-		                          <span class="media-heading">Arthur Abbott</span>
-		                          <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
+		                          <span class="media-heading">{{player.persona.nombre}} {{player.persona.apellidoPaterno}} {{player.persona.apellidoMaterno}}</span>
+		                          <span class="media-text ellipsis nm">{{player.posicion}}</span>
 		                          <!-- meta icon -->
-		                          <span class="media-meta">2m</span>
+		                          <span class="media-meta">{{player.numero}}</span>
 		                          <!--/ meta icon -->
 		                      </span>
 		                  </a>
@@ -129,59 +129,23 @@
 		                <h3 class="semibold modal-title">Agregar Jugador</h3>
 		            </div>
 		            <div class="modal-body">
-		                <form class="form-horizontal form-bordered" action="">
-		                 <div class="form-group">
-		                     <label class="col-sm-3 control-label">Rut</label>
-		                     <div class="col-sm-5">
-		                         <input type="text" class="form-control" ng-model="objUpdate.rut">
-		                     </div>
-		                     <div class="col-sm-2">
-		                         <input type="text" class="form-control" ng-model="objUpdate.dv">
-		                     </div>
-		                 </div>
-		                 <div class="form-group">
-                             <label class="col-sm-3 control-label">Nombre</label>
-                             <div class="col-sm-9">
-                                 <input type="text" class="form-control" ng-model="usuario.persona.nombre" placeholder="Nombres"
-                                 data-parsley-error-message="Por favor ingrese su nombre" data-parsley-required>
-                             </div>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label class="col-sm-3 control-label">Apellido <br> Paterno</label>
-                             <div class="col-sm-9">
-                                 <input type="text" class="form-control" ng-model="usuario.persona.apellidoPaterno" placeholder="Apellido Paterno"
-                                 data-parsley-error-message="Por favor ingrese su apellido paterno" data-parsley-required>
-                             </div>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label class="col-sm-3 control-label">Apellido Materno</label>
-                             <div class="col-sm-9">
-                                 <input type="text" class="form-control" ng-model="usuario.persona.apellidoMaterno" placeholder="Apeliido Materno"
-                                 data-parsley-error-message="Por favor ingrese su apellido Materno" data-parsley-required>
-                             </div>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label class="col-sm-3 control-label">Email</label>
-                             <div class="col-sm-9">
-                                 <input type="email" class="form-control" ng-model="usuario.persona.email" placeholder="ejemplo@mail.com"
-                                 data-parsley-error-message="Por favor ingrese su email" data-parsley-required data-parsley-type="email">
-                             </div>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label class="col-sm-3 control-label">Género</label>
-                             <div class="col-sm-9">
-                                    <div class="btn-group">
-                                     <button type="button" class="btn btn-default {{button.male}}"   ng-click="usuario.persona.genero='MASCULINO';button.male='btn-primary';button.female='';"  >Masculino</button>	                                            
-                                     <button type="button" class="btn btn-default {{button.female}}" ng-click="usuario.persona.genero='FEMENINO';button.female='btn-primary';button.male='';">Femenino</button>
-                                 </div>
-                                </div>
-                         </div>
-		                </form>
-		                
+		            	<input type="text" ng-model="qj" placeholder="buscar" class="form-control" />
+		            	<table class="table table-bordered table-hover">
+	                        <thead>
+	                            <tr>
+	                            	<th>Rut</th>
+	                                <th>Nombre</th>
+	                                <th>Posición</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>	                            
+	                            <tr ng-repeat="jugador in jugadores | filter:qj as results" ng-click="seleccionarJugador( jugador )" ng-class="{'success' : jugador.selected}">
+	                            	<td>{{jugador.persona.rut}}-{{jugador.persona.dv}}</td>
+                                    <td>{{jugador.persona.nombre}} {{jugador.persona.apellidoPaterno}}</td>
+                                    <td>{{jugador.posicion}}</td>
+	                            </tr>
+                            </tbody>
+                         </table>    
 		            </div>
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
