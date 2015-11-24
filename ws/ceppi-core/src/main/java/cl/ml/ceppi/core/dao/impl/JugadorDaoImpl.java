@@ -3,6 +3,7 @@ package cl.ml.ceppi.core.dao.impl;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -45,13 +46,23 @@ public class JugadorDaoImpl implements JugadorDao
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Jugador> listJugadores() {
-		return (List<Jugador>) getSession().createQuery("from Jugador").list();
+		List<Jugador> jugadores = (List<Jugador>) getSession().createQuery("from Jugador").list();
+		for( Jugador jugador : jugadores )
+		{
+			Hibernate.initialize(jugador.getSkillJugador() );
+		}
+		return jugadores;
 	}
 
 	@Override
 	public Jugador findJugadorById(int id) {
 		Criteria cr = getSession().createCriteria(Jugador.class);
 		cr.add(Restrictions.eq("oid", id));
+		Jugador jg = (Jugador) cr.list().get(0);
+		if(null != jg)
+		{
+			Hibernate.initialize( jg.getSkillJugador() );
+		}
 		return (Jugador) cr.list().get(0);
 	}
 	

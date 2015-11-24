@@ -12,9 +12,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
  	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> 
- 	<property name="url" value="jdbc:oracle:thin:@192.168.10.178:1521:XE"/> 
- 	<property name="username" value="ceppi" /> 
- 	<property name="password" value="ceppi" /> 
+ 	<property name="url" value="jdbc:oracle:thin:@titan.kvz.local:1521:ORA11G"/> 
+ 	<property name="username" value="ca_perfilacion_test" /> 
+ 	<property name="password" value="ca_perfilacion_test" /> 
 </bean>
 
 <!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->

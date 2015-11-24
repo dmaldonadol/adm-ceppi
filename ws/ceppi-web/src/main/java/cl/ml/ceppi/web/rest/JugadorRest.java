@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -18,9 +19,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.core.model.equipo.Equipo;
 import cl.ml.ceppi.core.model.equipo.Jugador;
-import cl.ml.ceppi.web.logic.EquipoLogic;
 import cl.ml.ceppi.web.logic.JugadorLogic;
 
 
@@ -55,7 +54,6 @@ public class JugadorRest
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getAllPlayers() 
 	{
-		LOGGER.info("[ init - listar equipos ]");
 		return JugadorLogic.findAll();
 	}
 	
@@ -66,7 +64,6 @@ public class JugadorRest
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getPlayerById(@PathParam("id") int id) 
 	{
-		LOGGER.info("[ init - find by id equipos ]");
 		return JugadorLogic.findById(id);
 	}
 	
@@ -76,8 +73,15 @@ public class JugadorRest
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response save(Jugador jugador) 
 	{
-		LOGGER.info("[ init - save equipos ]");
 		return JugadorLogic.save( jugador );
+	}
+	
+	@POST
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response update( Jugador jugador ) 
+	{
+		return JugadorLogic.update( jugador );
 	}
 	
 	
@@ -86,11 +90,8 @@ public class JugadorRest
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response remove( Jugador jugador ) 
 	{
-		LOGGER.info("[ init - save equipos ]");
 		return JugadorLogic.remove(jugador);
 	}
-	
-	
 	
 	
 	/**

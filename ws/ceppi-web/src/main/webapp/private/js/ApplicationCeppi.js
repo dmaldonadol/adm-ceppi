@@ -25,7 +25,10 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
     .when('/mantenedores/equipos/edit/:id',{controller:'EditarEquipoController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/equipos/editar.jsp'})
     
     
-    .when('/mantenedores/jugadores',{controller:'PerfilController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores.jsp'})
+    .when('/mantenedores/jugadores',{controller:'JugadorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores/jugador-lista.jsp'})
+    .when('/mantenedores/jugadores/nuevo',{controller:'CrearJugadorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores/jugador-nuevo.jsp'})
+    .when('/mantenedores/jugadores/:id',{controller:'JugadorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores/jugador-perfil.jsp'})
+    .when('/mantenedores/jugadores/editar/:id',{controller:'EditarJugadorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/jugadores/jugador-editar.jsp'})
     
     .when('/mantenedores/profesores',{controller:'ProfesorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/profesor/profesores.jsp'})
     .when('/mantenedores/profesores/crear',{controller:'CrearProfesorController',templateUrl:  CONSTANTS.contextPath + '/private/pages/mantenedores/profesor/crear-profesor.jsp'})

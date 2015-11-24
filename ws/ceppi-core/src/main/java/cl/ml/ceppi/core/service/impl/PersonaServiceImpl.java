@@ -24,8 +24,8 @@ public class PersonaServiceImpl implements PersonaService
 	private PersonaDao personaDao;
 
 	@Transactional
-	public void save(Persona usuario) {
-		personaDao.save(usuario);
+	public Persona save(Persona usuario) {
+		return personaDao.save(usuario);
 	}
 
 	@Transactional

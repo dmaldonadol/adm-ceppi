@@ -10,7 +10,9 @@ import javax.ws.rs.core.Response;
 import org.apache.log4j.Logger;
 
 import cl.ml.ceppi.core.facade.JugadorFacade;
+import cl.ml.ceppi.core.facade.PersonaFacade;
 import cl.ml.ceppi.core.model.equipo.Jugador;
+import cl.ml.ceppi.core.model.persona.Persona;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 
 
@@ -27,6 +29,7 @@ public class JugadorLogic
 	
 	private static final Logger LOGGER = Logger.getLogger(JugadorLogic.class);
 	private static JugadorFacade facade = (JugadorFacade) ServiceLocator.getInstance().getBean("jugadorFacade");
+	private static PersonaFacade facadxe = (PersonaFacade) ServiceLocator.getInstance().getBean("personaFacade");
 	
 	
 	
@@ -77,7 +80,17 @@ public class JugadorLogic
 	public static Response save( Jugador jugador ) 
 	{
 		try 
-		{			
+		{	
+			Persona persona = facadxe.findPersonaByRut(jugador.getPersona().getRut());
+			if( null != persona )
+			{
+				jugador.setPersona(persona);
+			}
+			else
+			{
+				Persona personax = facadxe.save(jugador.getPersona());
+				jugador.setPersona(personax);
+			}
 			facade.save(jugador);
 			return Response.status(Response.Status.OK).entity( null ).build();
 		}

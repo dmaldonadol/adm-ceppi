@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/nprogress/css/nprogress.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/steps/css/jquery-steps.css">
         <link rel="stylesheet" href="<%=request.getContextPath() %>/public/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/public/plugins/gritter/css/gritter.css">
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/modernizr/js/modernizr.js"></script>
     </head>
     
@@ -57,13 +58,17 @@
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/steps/js/jquery-steps.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/nprogress/js/nprogress.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/inputmask/js/inputmask.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/bootbox/js/bootbox.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/public/plugins/gritter/js/jquery.gritter.js"></script>
         
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/Utils.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ApplicationCeppi.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/DashboardController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/UsuarioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/PerfilController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/SocioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/EquipoController.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/JugadorController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CategoriaController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/CentroCostoController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ProfesionController.js"></script>
