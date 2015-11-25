@@ -60,7 +60,7 @@
 	                                <div class="form-group">
 	                                    <label class="col-sm-3 control-label">Año Limite</label>
 	                                    <div class="col-sm-9">
-	                                        <input type="text" class="form-control" ng-model="equipo.anioLimite"
+	                                        <input type="number" class="form-control" ng-model="equipo.anioLimite"
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese el Año limite del equipo" data-parsley-required>
 	                                    </div>
 	                                </div>

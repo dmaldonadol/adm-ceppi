@@ -31,10 +31,11 @@ app.controller("EquipoController", function($scope, $http)
 			$scope.equipos = response;			
 			callback();
 		} );
-		request.error( function( error )
+		request.error( function( error, status )
 		{
 			console.log(error);
-			callback
+			Utils.messageHttpErrorGritter( status );
+			NProgress.done();
 		});
 	};
 	
@@ -152,7 +153,7 @@ app.controller("PerfilEquipoController", function($scope, $http, $routeParams)
  * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
  * @desc Controlador PerfilEquipoController
  *************************************************************/
-app.controller("EditarEquipoController", function($scope, $http, $routeParams)
+app.controller("EditarEquipoController", function($scope, $http, $routeParams, $location )
 {
 	$scope.button = {male:'', female:''};
 
@@ -168,11 +169,14 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 		{
 			$scope.obtenerJugadores( function()
 			{
-				NProgress.done();
-				if( $scope.equipo.genero == "MASCULINO" )
-					$scope.button.male='btn-primary';
-				else
-					$scope.button.female='btn-primary';
+				$scope.obtenerStaff( function()
+				{
+					NProgress.done();
+					if( $scope.equipo.genero == "MASCULINO" )
+						$scope.button.male='btn-primary';
+					else
+						$scope.button.female='btn-primary';
+				});
 			});
 		});
 	};
@@ -190,10 +194,10 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 			$scope.equipo = response;
 			callback();
 		});
-		request.error( function( error )
+		request.error( function( error, status )
 		{
-			console.log(error);
-			callback();
+			Utils.messageHttpErrorGritter( status );
+			NProgress.done();
 		});
 	};
 	
@@ -211,10 +215,31 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 			$scope.jugadores = response;			
 			callback();
 		} );
-		request.error( function( error )
+		request.error( function( error, status )
 		{
+			Utils.messageHttpErrorGritter( status );
 			console.log(error);
-			callback
+		});
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.obtenerStaff = function( callback )
+	{
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/profesor" );
+		request.success( function( response )
+		{
+			console.log( response );
+			$scope.staff = response;			
+			callback();
+		} );
+		request.error( function( error, status )
+		{
+			Utils.messageHttpErrorGritter( status );
+			console.log(error);
 		});
 	};
 	
@@ -229,6 +254,41 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 		{
 			$scope.equipo.juagadores.push( jugador );
 		}
+		else
+		{
+			for( var x in $scope.equipo.juagadores )
+			{
+				if( $scope.equipo.juagadores[x].oid === jugador.oid )
+				{
+					$scope.equipo.juagadores.splice(x,1);
+				}
+			}
+		}
+		console.log( $scope.equipo );
+	};
+	
+	
+	/*************************************************************
+	 * @author Juan Francisco ( juan.maldonado.leon@gmail.com )
+	 * @desc 
+	 *************************************************************/
+	$scope.seleccionarStaff = function( staff )
+	{
+		staff.selected = !staff.selected;
+		if ( staff.selected )
+		{
+			$scope.equipo.profesores.push( staff );
+		}
+		else
+		{
+			for( var x in $scope.equipo.profesores )
+			{
+				if( $scope.equipo.profesores[x].oid === staff.oid )
+				{
+					$scope.equipo.profesores.splice(x,1);
+				}
+			}
+		}
 		console.log( $scope.equipo );
 	};
 	
@@ -238,7 +298,41 @@ app.controller("EditarEquipoController", function($scope, $http, $routeParams)
 	 *************************************************************/
 	$scope.actualizar = function()
 	{
-		alert("TODO:");
+		var validateForm   = $("#form-editar-equipo").parsley().validate();
+		if( validateForm )
+		{
+			
+			for(var x in $scope.equipo.juagadores )
+			{
+				delete $scope.equipo.juagadores[x].selected;
+			}
+			
+			for(var x in $scope.equipo.profesores )
+			{
+				delete $scope.equipo.profesores[x].selected;
+			}
+			
+			var request = $http.post( CONSTANTS.contextPath + "/api/private/equipo" , $scope.equipo );
+			NProgress.configure({ parent: '#main' });
+			NProgress.start();
+			request.success( function( response )
+			{
+				
+				console.log( response );
+				NProgress.done();
+				$location.path('/mantenedores/equipos');
+			} );
+			request.error( function( error, status )
+			{
+				console.log(error);
+				Utils.messageHttpErrorGritter( status );
+				NProgress.done();
+			});
+		}
+		else
+		{
+			NProgress.done();
+		}
 	};
 	
 	

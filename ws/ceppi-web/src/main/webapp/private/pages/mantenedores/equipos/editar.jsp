@@ -1,20 +1,6 @@
 <section id="main" role="main">
     <div class="container-fluid">
     
-    
-    	<section class="jumbotron jumbotron-bg11 mt-15 mb15 mr-15 ml-15" data-stellar-background-ratio="0.4" style="min-height: 320px; background-position: 50% 30px;">
-		    <div class="overlay pattern pattern10"></div>
-		    <div class="container" style="padding-top:8%;">
-		        <h1 class="thin text-white text-center font-alt">Create your application in an instant.</h1>
-		        <h4 class="thin text-white text-center">Adminre is a clean and flat backend and frontend theme build with Twitter bootstrap</h4>
-		        <div class="text-center pt15">
-		            <a href="javascript:void(0);" class="btn btn-primary">Learn More <i class="ico-angle-right"></i></a>
-		        </div>
-		    </div>
-		</section>
-    
-    
-    
         <div class="page-header page-header-block">
             <div class="page-header-section">
                 <h4 class="title semibold">Editar Equipo</h4>
@@ -38,7 +24,7 @@
 	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-list22"></i></span> Información</h3>
 	                </div>
 	               <div class="panel-body panel-collapse pull out" style="padding-top:0px;">
-		        		<form class="form-horizontal form-bordered" id="form-crear-equipo">
+		        		<form class="form-horizontal form-bordered" id="form-editar-equipo">
 		        		<div class="form-group">
 		                    <label class="col-sm-3 control-label">Nombre</label>
 		                    <div class="col-sm-9">
@@ -99,16 +85,45 @@
 		                      </span>
 		                  	</a>
 		                  	
-		                  <a href="javascript:void(0);" class="media border-dotted" ng-repeat="player in equipo.juagadores | filter:q as results">
+		                  <a href="#/mantenedores/jugadores/editar/{{player.oid}}" class="media border-dotted" ng-repeat="player in equipo.juagadores | filter:q as results">
 		                      <span class="pull-left">
 		                          <img src="<%=request.getContextPath() %>/public/image/avatar/avatar.png" class="media-object" alt="">
 		                      </span>
 		                      <span class="media-body">
 		                          <span class="media-heading">{{player.persona.nombre}} {{player.persona.apellidoPaterno}} {{player.persona.apellidoMaterno}}</span>
 		                          <span class="media-text ellipsis nm">{{player.posicion}}</span>
-		                          <!-- meta icon -->
 		                          <span class="media-meta">{{player.numero}}</span>
-		                          <!--/ meta icon -->
+		                      </span>
+		                  </a>
+		              </div>
+					</div>
+	      		</div>
+	      		
+	      		
+	      		
+	      		
+	      		<div class="panel panel-default" id="toolbar-showcase">
+	                <div class="panel-heading">
+	                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-list22"></i></span> Staff Técnico</h3>
+	                    <div class="panel-toolbar text-right">                            
+                        	<button type="button" data-toggle="modal" data-target="#modal-add-staff" class="btn btn-sm btn-default">Agregar <i class="ico-plus"></i></button>                                                         
+                        </div>
+	                </div>
+	               <div class="panel-body panel-collapse pull out" style="padding:0px;">
+		        		<div class="media-list">
+		        			<a href="javascript:void(0);" class="media border-dotted" ng-show="equipo.profesores.length==0">		                      
+		                      <span class="media-body">
+		                          <span class="media-text ellipsis nm">No se ha asignado staff al equipo.</span>		                          
+		                      </span>
+		                  	</a>
+		                  	
+		                  <a href="#/mantenedores/jugadores/editar/{{player.oid}}" class="media border-dotted" ng-repeat="staff in equipo.profesores | filter:q as results">
+		                      <span class="pull-left">
+		                          <img src="<%=request.getContextPath() %>/public/image/avatar/avatar.png" class="media-object" alt="">
+		                      </span>
+		                      <span class="media-body">
+		                          <span class="media-heading">{{staff.persona.nombre}} {{staff.persona.apellidoPaterno}} {{staff.persona.apellidoMaterno}}</span>
+		                          <span class="media-text ellipsis nm">{{staff.tipoProfesor.nombre}}</span>
 		                      </span>
 		                  </a>
 		              </div>
@@ -129,7 +144,17 @@
 		                <h3 class="semibold modal-title">Agregar Jugador</h3>
 		            </div>
 		            <div class="modal-body">
-		            	<input type="text" ng-model="qj" placeholder="buscar" class="form-control" />
+		            
+		            	<div class="input-group">
+                             <div class="has-icon">
+                                 <input type="text" ng-model="qj" placeholder="buscar" class="form-control" />
+                                 <i class="ico-search form-control-icon"></i>
+                             </div>
+                             <div class="input-group-btn">
+                             	<a href="#/mantenedores/jugadores/nuevo" class="btn btn-default">Nuevo</a>	                                        	                                       
+                             </div>
+                         </div>
+		            	
 		            	<table class="table table-bordered table-hover">
 	                        <thead>
 	                            <tr>
@@ -138,7 +163,7 @@
 	                                <th>Posición</th>
 	                            </tr>
 	                        </thead>
-	                        <tbody>	                            
+	                        <tbody style="background:white;" >	                            
 	                            <tr ng-repeat="jugador in jugadores | filter:qj as results" ng-click="seleccionarJugador( jugador )" ng-class="{'success' : jugador.selected}">
 	                            	<td>{{jugador.persona.rut}}-{{jugador.persona.dv}}</td>
                                     <td>{{jugador.persona.nombre}} {{jugador.persona.apellidoPaterno}}</td>
@@ -149,10 +174,57 @@
 		            </div>
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-		                <button type="button" class="btn btn-primary" ng-click="agregarJugador();">Agregar</button>
 		            </div>
-		        </div><!-- /.modal-content -->
-		    </div><!-- /.modal-dialog -->
+		        </div>
+		    </div>
+		</div>
+		
+		
+		
+		
+		
+		<div id="modal-add-staff" class="modal fade" aria-hidden="true" style="display: none;">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header text-center">
+		                <button type="button" class="close" data-dismiss="modal">×</button>
+		                <h3 class="semibold modal-title">Agregar Jugador</h3>
+		            </div>
+		            <div class="modal-body">
+		            
+		            	<div class="input-group">
+                             <div class="has-icon">
+                                 <input type="text" ng-model="qj" placeholder="buscar" class="form-control" />
+                                 <i class="ico-search form-control-icon"></i>
+                             </div>
+                             <div class="input-group-btn">
+                             	<a href="#/mantenedores/jugadores/nuevo" class="btn btn-default">Nuevo</a>	                                        	                                       
+                             </div>
+                         </div>
+                         <hr/>
+		            	
+		            	<table class="table table-bordered table-hover">
+	                        <thead>
+	                            <tr>
+	                            	<th>Rut</th>
+	                                <th>Nombre</th>
+	                                <th>Tipo</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody style="background:white;" >	                            
+	                            <tr ng-repeat="s in staff | filter:qj as results" ng-click="seleccionarStaff( s )" ng-class="{'success' : s.selected}">
+	                            	<td>{{s.persona.rut}}-{{s.persona.dv}}</td>
+                                    <td>{{s.persona.nombre}} {{s.persona.apellidoPaterno}}</td>
+                                    <td>{{s.tipoProfesor.nombre}}</td>
+	                            </tr>
+                            </tbody>
+                         </table>    
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		            </div>
+		        </div>
+		    </div>
 		</div>
         
         

@@ -120,4 +120,18 @@ public class Equipo implements Serializable
 		this.genero = genero;
 	}
 
+	/**
+	 * @return the profesores
+	 */
+	public List<Profesor> getProfesores() {
+		return profesores;
+	}
+
+	/**
+	 * @param profesores the profesores to set
+	 */
+	public void setProfesores(List<Profesor> profesores) {
+		this.profesores = profesores;
+	}
+
 }

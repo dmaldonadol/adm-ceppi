@@ -56,7 +56,6 @@ public class EquipoRest
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getTeamById(@PathParam("id") int id) 
 	{
-		LOGGER.info("[ init - find by id equipos ]");
 		return EquipoLogic.findById(id);
 	}
 	
