@@ -34,39 +34,36 @@ public class Jugador implements Serializable {
 	@Column(name = "ID_JUGADOR", nullable = false)
 	private int oid;
 
-	@Column
+	@Column(name = "NUMERO")
 	private String numero;
 
-	@Column
+	@Column(name = "POSICION")
 	private String posicion;
-	
-	@Column
+
+	@Column(name = "ESTATURA")
 	private String estatura;
-	
-	@Column
+
+	@Column(name = "PESO")
 	private String peso;
 
 	@OneToMany
 	private List<SkillJugador> skillJugador;
-	
-	@OneToOne//(cascade = {CascadeType.ALL})
+
+	@OneToOne // (cascade = {CascadeType.ALL})
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 
 	/**
 	 * 
 	 */
-	public Jugador() 
-	{
-		
+	public Jugador() {
+
 	}
-	
-	
+
 	/**
 	 * 
 	 */
-	public Jugador( int id) 
-	{
+	public Jugador(int id) {
 		this.setOid(id);
 	}
 
@@ -110,7 +107,6 @@ public class Jugador implements Serializable {
 		this.persona = persona;
 	}
 
-
 	/**
 	 * @return the estatura
 	 */
@@ -118,14 +114,13 @@ public class Jugador implements Serializable {
 		return estatura;
 	}
 
-
 	/**
-	 * @param estatura the estatura to set
+	 * @param estatura
+	 *            the estatura to set
 	 */
 	public void setEstatura(String estatura) {
 		this.estatura = estatura;
 	}
-
 
 	/**
 	 * @return the peso
@@ -134,9 +129,9 @@ public class Jugador implements Serializable {
 		return peso;
 	}
 
-
 	/**
-	 * @param peso the peso to set
+	 * @param peso
+	 *            the peso to set
 	 */
 	public void setPeso(String peso) {
 		this.peso = peso;

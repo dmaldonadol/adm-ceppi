@@ -8,8 +8,7 @@
     <header id="header" class="navbar">
             <div class="navbar-header">
                 <a class="navbar-brand" href="javascript:void(0);">
-                    <span class="logo-figure"></span>
-                    <span class="logo-text"></span>
+                    <span class="logo-text" style="margin-top: 20px;"></span>
                 </a>
             </div>
 

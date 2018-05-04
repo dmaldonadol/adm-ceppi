@@ -35,13 +35,14 @@ public class Ingreso implements Serializable {
 	@Column(name = "ID_INGRESO", nullable = false)
 	private int oid;
 
-	@Column
+	@Column(name = "MONTO")
 	private String monto;
 
+	@Column(name = "FECHA")
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
 
-	@Column
+	@Column(name = "DETALLE")
 	private String detalle;
 
 	@ManyToOne
@@ -59,8 +60,7 @@ public class Ingreso implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Ingreso(int id) 
-	{
+	public Ingreso(int id) {
 		this.oid = id;
 	}
 

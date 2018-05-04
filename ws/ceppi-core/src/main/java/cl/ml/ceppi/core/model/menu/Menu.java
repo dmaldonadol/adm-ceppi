@@ -37,22 +37,22 @@ public abstract class Menu implements Serializable {
 	@Column(name = "ID_MENU", nullable = false)
 	private int oid;
 
-	@Column
+	@Column(name = "CODIGO")
 	private String codigo;
 
-	@Column
+	@Column(name = "NOMBRE")
 	private String nombre;
 
-	@Column
+	@Column(name = "PATH")
 	private String path;
 
-	@Column
+	@Column(name = "ORDEN")
 	private String orden;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_PADRE")
 	private Menu menu;
-	
+
 	@Transient
 	private Permiso permiso;
 

@@ -31,25 +31,26 @@ import cl.ml.ceppi.core.model.tipo.TipoGasto;
 public class Gasto implements Serializable {
 
 	private static final long serialVersionUID = -1954990226741449568L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_GASTO")
 	@Column(name = "ID_GASTO", nullable = false)
 	private int oid;
-	
-	@Column
+
+	@Column(name = "MONTO")
 	private String monto;
-	
+
+	@Column(name = "FECHA")
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
-	
-	@Column
+
+	@Column(name = "DETALLE")
 	private String detalle;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ID_TIPO_GASTO")
 	private TipoGasto tipoGasto;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ID_CENTRO_COSTO")
 	private CentroCosto centroCosto;
@@ -57,7 +58,7 @@ public class Gasto implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "ID_SOCIO")
 	private Socio socio;
-	
+
 	/**
 	 * 
 	 */
@@ -65,8 +66,7 @@ public class Gasto implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Gasto(int id) 
-	{
+	public Gasto(int id) {
 		this.oid = id;
 	}
 

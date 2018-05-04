@@ -40,8 +40,8 @@ public class Acceso implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "ID_MENU")
 	private Menu itemsMenu;
-	
-	@Column
+
+	@Column(name = "PERMISO")
 	@Enumerated(EnumType.STRING)
 	private Permiso permiso;
 

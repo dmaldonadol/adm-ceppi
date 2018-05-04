@@ -24,8 +24,7 @@ import cl.ml.ceppi.core.model.estado.Genero;
 @Entity
 @SequenceGenerator(name = "SEC_EQUIPO", sequenceName = "SEC_EQUIPO")
 @Table(name = "EQUIPO")
-public class Equipo implements Serializable 
-{
+public class Equipo implements Serializable {
 
 	private static final long serialVersionUID = 240104970931764714L;
 
@@ -33,23 +32,23 @@ public class Equipo implements Serializable
 	@GeneratedValue(generator = "SEC_EQUIPO")
 	@Column(name = "ID_EQUIPO", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 20, nullable = false)
+
+	@Column(name = "NOMBRE", unique = true, length = 20, nullable = false)
 	private String nombre;
-	
-	@Column(length = 50, nullable = false)
+
+	@Column(name = "DESCRIPCION", length = 50, nullable = false)
 	private String descripcion;
-	
-	@Column(length = 4, nullable = false)
+
+	@Column(name = "ANIO_LIMITE", length = 4, nullable = false)
 	private String anioLimite;
-	
-	@Column
+
+	@Column(name = "GENERO")
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
-	
+
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Jugador> juagadores = new ArrayList<Jugador>();
-	
+
 	@OneToMany(fetch = FetchType.LAZY)
 	private List<Profesor> profesores = new ArrayList<Profesor>();
 
@@ -58,7 +57,7 @@ public class Equipo implements Serializable
 	 */
 	public Equipo() {
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -114,7 +113,8 @@ public class Equipo implements Serializable
 	}
 
 	/**
-	 * @param genero the genero to set
+	 * @param genero
+	 *            the genero to set
 	 */
 	public void setGenero(Genero genero) {
 		this.genero = genero;
@@ -128,7 +128,8 @@ public class Equipo implements Serializable
 	}
 
 	/**
-	 * @param profesores the profesores to set
+	 * @param profesores
+	 *            the profesores to set
 	 */
 	public void setProfesores(List<Profesor> profesores) {
 		this.profesores = profesores;

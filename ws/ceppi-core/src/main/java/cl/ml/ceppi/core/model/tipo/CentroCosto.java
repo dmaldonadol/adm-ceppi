@@ -26,14 +26,14 @@ public class CentroCosto implements Serializable {
 	@GeneratedValue(generator = "SEC_CENTRO_COSTO")
 	@Column(name = "ID_CENTRO_COSTO", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 10, nullable = false)
+
+	@Column(name = "CODIGO", unique = true, length = 10, nullable = false)
 	private String codigo;
-	
-	@Column(length = 50, nullable = false)
+
+	@Column(name = "NOMBRE", length = 50, nullable = false)
 	private String nombre;
-	
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
 	/**
@@ -49,7 +49,6 @@ public class CentroCosto implements Serializable {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
-	
 
 	public CentroCosto(int oid, String codigo, String nombre, String descripcion) {
 		super();

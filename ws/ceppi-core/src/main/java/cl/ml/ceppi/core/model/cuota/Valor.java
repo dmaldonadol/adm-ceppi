@@ -26,19 +26,19 @@ import cl.ml.ceppi.core.model.tipo.TipoSocio;
 public class Valor implements Serializable {
 
 	private static final long serialVersionUID = 2888630646540937616L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_VALOR")
 	@Column(name = "ID_VALOR", nullable = false)
 	private int oid;
-	
+
 	@Column(name = "VALOR", nullable = false)
 	private String valor;
-	
+
 	@OneToOne
 	@JoinColumn(name = "ID_TIPO_SOCIO")
 	private TipoSocio tipoSocio;
-	
+
 	@OneToOne
 	@JoinColumn(name = "ID_CATEGORIA_SOCIO")
 	private CategoriaSocio categoriaSocio;
@@ -50,7 +50,7 @@ public class Valor implements Serializable {
 	public Valor(int id) {
 		this.oid = id;
 	}
-	
+
 	public Valor(int id, String valor, TipoSocio tipoSocio, CategoriaSocio categoriaSocio) {
 		this.oid = id;
 		this.tipoSocio = tipoSocio;

@@ -57,17 +57,18 @@
   height: 50px;
 }
 .logo-text {
-  width: 110px;
+  width: 140px;
   background-image: url("../image/logo/logo-text.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 110px 50px;
-          background-size: 110px 50px;
+  -webkit-background-size: 119px 38px;
+          background-size: 119px 38px;
 }
 .logo-text + .logo-figure {
   margin-left: -13px;
 }
 .logo-text.inverse {
   background-image: url("../image/logo/logo-text-inverse.png");
+  background-size: 140px 48px !important;
 }
 .logo-figure {
   width: 32px;

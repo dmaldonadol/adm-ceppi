@@ -18,19 +18,19 @@ import javax.persistence.Table;
 @Table(name = "PROFESION")
 public class Profesion implements Serializable {
 	private static final long serialVersionUID = -7033070437508223564L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_PROFESION")
 	@Column(name = "ID_PROFESION", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 10, nullable = false)
+
+	@Column(name = "CODIGO", unique = true, length = 10, nullable = false)
 	private String codigo;
-	
-	@Column(length = 50, nullable = false)
+
+	@Column(name = "NOMBRE", length = 50, nullable = false)
 	private String nombre;
-	
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
 	/**
@@ -46,7 +46,7 @@ public class Profesion implements Serializable {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
-	
+
 	public Profesion(int oid, String codigo, String nombre, String descripcion) {
 		super();
 		this.oid = oid;

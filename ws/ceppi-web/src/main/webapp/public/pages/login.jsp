@@ -32,9 +32,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-lg-offset-4">
                         <!-- Brand -->
-                        <div class="text-center" style="margin-bottom:40px;">
-                            <span class="logo-figure inverse"></span>
-                            <span class="logo-text inverse"></span>
+                        <div class="text-center">
+                            <span class="logo-text inverse" style="margin-top: 40px;"></span>
                             <h5 class="semibold text-muted mt-5">Iniciar sesión con tu cuenta.</h5>
                         </div>
                         <!--/ Brand -->

@@ -34,19 +34,19 @@ public class Socio implements Serializable {
 	@GeneratedValue(generator = "SEC_SOCIO")
 	@Column(name = "ID_SOCIO", nullable = false)
 	private int oid;
-	
-	@Column
+
+	@Column(name = "ESTADO")
 	private Estado estado;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ID_TIPO_SOCIO")
 	private TipoSocio tipoSocio;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ID_CATEGORIA_SOCIO")
 	private CategoriaSocio categoriaSocio;
 
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 
@@ -54,8 +54,7 @@ public class Socio implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Socio(int id) 
-	{
+	public Socio(int id) {
 		this.oid = id;
 	}
 

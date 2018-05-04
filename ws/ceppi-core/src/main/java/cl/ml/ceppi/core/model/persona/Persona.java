@@ -38,34 +38,35 @@ public class Persona implements Serializable {
 	@Column(name = "ID_PERSONA", nullable = false)
 	private int oid;
 
-	@Column(unique = true, length = 10)
+	@Column(name = "RUT", unique = true, length = 10)
 	private String rut;
 
-	@Column(length = 1)
+	@Column(name = "DV", length = 1)
 	private String dv;
 
-	@Column(nullable = false, length = 100)
+	@Column(name = "NOMBRE", nullable = false, length = 100)
 	private String nombre;
 
-	@Column(nullable = false, length = 100)
+	@Column(name = "APE_PATERNO", nullable = false, length = 100)
 	private String apellidoPaterno;
 
-	@Column(length = 100)
+	@Column(name = "APE_MATERNO", length = 100)
 	private String apellidoMaterno;
 
-	@Column(length = 50)
+	@Column(name = "EMAIL", length = 50)
 	private String email;
 
-	@Column
+	@Column(name = "ESTATURA")
 	private String estatura;
 
-	@Column
+	@Column(name = "PESO")
 	private String peso;
 
-	@Column
+	@Column(name = "GENERO")
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
-	
+
+	@Column(name = "FECHA_NACIMIENTO")
 	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
 

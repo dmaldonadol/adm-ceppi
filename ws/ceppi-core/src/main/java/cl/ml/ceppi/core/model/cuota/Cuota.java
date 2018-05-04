@@ -25,22 +25,22 @@ import cl.ml.ceppi.core.model.socio.Socio;
 public class Cuota implements Serializable {
 
 	private static final long serialVersionUID = -8313810574976479543L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_CUOTA")
 	@Column(name = "ID_CUOTA", nullable = false)
 	private int oid;
-	
-	@ManyToOne(cascade = {CascadeType.ALL})
+
+	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "ID_VALOR")
 	private Valor valor;
-	
+
 	@Column(name = "ANIO", nullable = false)
 	private String anio;
-	
+
 	@Column(name = "MES", nullable = false)
 	private String mes;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ID_SOCIO")
 	private Socio socio;
@@ -48,7 +48,7 @@ public class Cuota implements Serializable {
 	public Cuota() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Cuota(Valor valor, String anio, String mes, Socio socio) {
 		super();
 		this.valor = valor;

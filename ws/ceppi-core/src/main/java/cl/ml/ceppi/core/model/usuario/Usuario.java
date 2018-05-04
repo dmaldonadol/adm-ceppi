@@ -27,23 +27,23 @@ import cl.ml.ceppi.core.model.persona.Persona;
 @Table(name = "USUARIO")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = -1065304047321416426L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_USUARIO")
 	@Column(name = "ID_USUARIO", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 20, nullable = false)
+
+	@Column(name = "USERNAME", unique = true, length = 20, nullable = false)
 	private String username;
-	
-	@Column(unique = true, length = 50, nullable = false)
+
+	@Column(name = "PASSWORD", unique = true, length = 50, nullable = false)
 	private String password;
-	
+
 	@OneToOne
 	@JoinColumn(name = "ID_PERFIL")
 	private Perfil perfil;
-	
-	@OneToOne(cascade=CascadeType.ALL)
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
 
@@ -52,8 +52,7 @@ public class Usuario implements Serializable {
 	 */
 	public Usuario() {
 	}
-	
-	
+
 	/**
 	 * 
 	 * @param oid
@@ -61,7 +60,6 @@ public class Usuario implements Serializable {
 	public Usuario(int oid) {
 		this.setOid(oid);
 	}
-	
 
 	public int getOid() {
 		return oid;

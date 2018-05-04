@@ -22,16 +22,19 @@ import javax.persistence.Table;
 public class Skill implements Serializable {
 
 	private static final long serialVersionUID = 6272579091850707826L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_SKILL")
 	@Column(name = "ID_SKILL", nullable = false)
 	private int oid;
-	@Column
+
+	@Column(name = "NOMBRE")
 	private String nombre;
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
-	@Column
+
+	@Column(name = "TIPO")
 	private TipoSkill tipo;
 
 	public int getOid() {

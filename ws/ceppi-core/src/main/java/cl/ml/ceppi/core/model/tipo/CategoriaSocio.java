@@ -1,6 +1,3 @@
-/**
- * 
- */
 package cl.ml.ceppi.core.model.tipo;
 
 import java.io.Serializable;
@@ -26,14 +23,14 @@ public class CategoriaSocio implements Serializable {
 	@GeneratedValue(generator = "SEC_CATEGORIA_SOCIO")
 	@Column(name = "ID_CATEGORIA_SOCIO", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 10, nullable = false)
+
+	@Column(name = "CODIGO", unique = true, length = 10, nullable = false)
 	private String codigo;
-	
-	@Column(length = 50, nullable = false)
+
+	@Column(name = "NOMBRE", length = 50, nullable = false)
 	private String nombre;
-	
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
 	/**
@@ -42,14 +39,13 @@ public class CategoriaSocio implements Serializable {
 	public CategoriaSocio() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public CategoriaSocio(String codigo, String nombre, String descripcion) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
-	
 
 	public CategoriaSocio(int oid, String codigo, String nombre, String descripcion) {
 		super();

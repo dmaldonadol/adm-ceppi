@@ -31,7 +31,7 @@ public class SkillJugador implements Serializable {
 	@Column(name = "ID_SKILL_JUGADOR", nullable = false)
 	private int oid;
 	
-	@Column
+	@Column(name = "DATA")
 	private String data;
 	
 	@OneToMany

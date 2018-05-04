@@ -27,13 +27,13 @@ public class TipoProfesor implements Serializable {
 	@Column(name = "ID_TIPO_PROFESOR", nullable = false)
 	private int oid;
 
-	@Column(unique = true, length = 10, nullable = false)
+	@Column(name = "CODIGO", unique = true, length = 10, nullable = false)
 	private String codigo;
-	
-	@Column(length = 50, nullable = false)
+
+	@Column(name = "NOMBRE", length = 50, nullable = false)
 	private String nombre;
-	
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
 	/**
@@ -49,7 +49,6 @@ public class TipoProfesor implements Serializable {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
-	
 
 	public TipoProfesor(int oid, String codigo, String nombre, String descripcion) {
 		super();

@@ -28,13 +28,13 @@ public class Perfil implements Serializable {
 	@Column(name = "ID_PERFIL", nullable = false)
 	private int oid;
 
-	@Column
+	@Column(name = "CODIGO")
 	private String codigo;
 
-	@Column
+	@Column(name = "NOMBRE")
 	private String nombre;
-	
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
 	/**
@@ -42,16 +42,14 @@ public class Perfil implements Serializable {
 	 */
 	public Perfil() {
 	}
-	
-	
+
 	/**
 	 * 
 	 * @param oid
 	 */
-	public Perfil( int oid) {
+	public Perfil(int oid) {
 		this.setOid(oid);
 	}
-
 
 	public int getOid() {
 		return oid;

@@ -16,22 +16,22 @@ import javax.persistence.Table;
 @Entity
 @SequenceGenerator(name = "SEC_TIPO_INGRESO", sequenceName = "SEC_TIPO_INGRESO")
 @Table(name = "TIPO_INGRESO")
-public class TipoIngreso implements Serializable{
+public class TipoIngreso implements Serializable {
 
 	private static final long serialVersionUID = 3090757832227438377L;
-	
+
 	@Id
 	@GeneratedValue(generator = "SEC_TIPO_INGRESO")
 	@Column(name = "ID_TIPO_INGRESO", nullable = false)
 	private int oid;
-	
-	@Column(unique = true, length = 10, nullable = false)
+
+	@Column(name = "CODIGO", unique = true, length = 10, nullable = false)
 	private String codigo;
-	
-	@Column(length = 50, nullable = false)
+
+	@Column(name = "NOMBRE", length = 50, nullable = false)
 	private String nombre;
-	
-	@Column
+
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
 	/**
@@ -40,8 +40,6 @@ public class TipoIngreso implements Serializable{
 	public TipoIngreso() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public TipoIngreso(String codigo, String nombre, String descripcion) {
 		super();
@@ -50,8 +48,6 @@ public class TipoIngreso implements Serializable{
 		this.descripcion = descripcion;
 	}
 
-
-
 	public TipoIngreso(int oid, String codigo, String nombre, String descripcion) {
 		super();
 		this.oid = oid;
@@ -59,8 +55,6 @@ public class TipoIngreso implements Serializable{
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
-
-
 
 	public int getOid() {
 		return oid;

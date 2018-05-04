@@ -4,7 +4,7 @@
 <aside class="sidebar sidebar-left sidebar-menu">
     <!-- START Sidebar Content -->
     <section class="content slimscroll">	
-	<h5 class="heading">Main Menu</h5>
+	<h5 class="heading">Men&uacute;</h5>
     <ul class="topmenu topmenu-responsive" data-toggle="menu">
     
     
