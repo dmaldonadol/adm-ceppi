@@ -7,11 +7,15 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
+import cl.ml.ceppi.core.facade.CuotaFacade;
 import cl.ml.ceppi.core.facade.PersonaFacade;
 import cl.ml.ceppi.core.facade.SocioFacade;
+import cl.ml.ceppi.core.model.cuota.ValorCuota;
 import cl.ml.ceppi.core.model.estado.Estado;
 import cl.ml.ceppi.core.model.persona.Persona;
 import cl.ml.ceppi.core.model.socio.Socio;
+import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
+import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 import cl.ml.ceppi.web.util.Constantes;
 
@@ -173,6 +177,12 @@ public class SocioLogic {
 		{
 			SocioFacade facade = (SocioFacade) ServiceLocator.getInstance().getBean(Constantes.SOCIO_FACADE);
 			Socio socio = facade.findSocioById(id);
+			
+			ValorCuota obj = new ValorCuota(0, new TipoSocio(socio.getTipoSocio().getOid()), new CategoriaSocio(socio.getCategoriaSocio().getOid()));
+			CuotaFacade facadeCuota = (CuotaFacade) ServiceLocator.getInstance().getBean(Constantes.CUOTA_FACADE);
+			ValorCuota cuota = facadeCuota.findValorCuota(obj);
+			
+			socio.setValorCuota(cuota.getValor());
 			
 			return Response.status(Status.OK).entity(socio).build();
 		}

@@ -3,13 +3,10 @@ package cl.ml.ceppi.core.model.cuota;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
@@ -20,9 +17,9 @@ import cl.ml.ceppi.core.model.tipo.TipoSocio;
  * 
  */
 
-@Entity
-@SequenceGenerator(name = "SEC_VALOR", sequenceName = "SEC_VALOR")
-@Table(name = "VALOR")
+//@Entity
+//@SequenceGenerator(name = "SEC_VALOR", sequenceName = "SEC_VALOR")
+//@Table(name = "VALOR")
 public class Valor implements Serializable {
 
 	private static final long serialVersionUID = 2888630646540937616L;

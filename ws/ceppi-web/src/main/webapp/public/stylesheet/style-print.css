@@ -1,0 +1,43 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+.modal-header + .modal-body {
+  border-radius: 0px;
+}
+
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+@media (min-width: 768px)
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.control-label {
+    font-weight: 600;
+    color: #6f6f6f;
+}
+@media (min-width: 768px)
+.col-sm-3 {
+    width: 25%;
+}
+
+@media (min-width: 768px)
+.col-sm-9 {
+    width: 75%;
+}
+

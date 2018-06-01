@@ -1,6 +1,7 @@
 package cl.ml.ceppi.core.model.socio;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import cl.ml.ceppi.core.model.estado.Estado;
 import cl.ml.ceppi.core.model.persona.Persona;
@@ -49,6 +53,13 @@ public class Socio implements Serializable {
 	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
+	
+	@Column(name = "FECHA_INGRESO")
+	@Temporal(TemporalType.DATE)
+	private Date fechaIngreso;
+	
+	@Transient
+	private String valorCuota;
 
 	public Socio() {
 		// TODO Auto-generated constructor stub
@@ -96,6 +107,22 @@ public class Socio implements Serializable {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public String getValorCuota() {
+		return valorCuota;
+	}
+
+	public void setValorCuota(String valorCuota) {
+		this.valorCuota = valorCuota;
+	}
+
+	public Date getFechaIngreso() {
+		return fechaIngreso;
+	}
+
+	public void setFechaIngreso(Date fechaIngreso) {
+		this.fechaIngreso = fechaIngreso;
 	}
 
 }

@@ -2,7 +2,6 @@ package cl.ml.ceppi.core.model.cuota;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,9 +30,11 @@ public class Cuota implements Serializable {
 	@Column(name = "ID_CUOTA", nullable = false)
 	private int oid;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "ID_VALOR")
-	private Valor valor;
+//	@ManyToOne(cascade = { CascadeType.ALL })
+//	@JoinColumn(name = "ID_VALOR")
+//	private Valor valor;
+	@Column(name = "VALOR")
+	private String valor;
 
 	@Column(name = "ANIO", nullable = false)
 	private String anio;
@@ -49,7 +50,7 @@ public class Cuota implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cuota(Valor valor, String anio, String mes, Socio socio) {
+	public Cuota(String valor, String anio, String mes, Socio socio) {
 		super();
 		this.valor = valor;
 		this.anio = anio;
@@ -93,11 +94,11 @@ public class Cuota implements Serializable {
 		this.socio = socio;
 	}
 
-	public Valor getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(Valor valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 

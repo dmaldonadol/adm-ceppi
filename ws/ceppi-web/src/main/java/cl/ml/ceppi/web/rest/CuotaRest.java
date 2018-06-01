@@ -18,6 +18,7 @@ import org.apache.log4j.Logger;
 import cl.ml.ceppi.core.model.cuota.Cuota;
 import cl.ml.ceppi.core.model.cuota.ValorCuota;
 import cl.ml.ceppi.web.logic.CuotaLogic;
+import cl.ml.ceppi.web.pojo.CuotaPojo;
 
 /**
  * 
@@ -140,15 +141,20 @@ public class CuotaRest
 		return CuotaLogic.registroCuotas(idsocio, anio);
 	}
 	
-	@PUT
-	@Path("/pagar/{anio}/{mes}/{socio}")
+	@POST
+	@Path("/pagar")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Response pagar(@PathParam("anio") String anio, @PathParam("mes") String mes, @PathParam("socio") int idsocio) 
+	public Response pagar(CuotaPojo pojo) 
 	{		
 		LOGGER.info("[ init - guardar cuota ]");
-		return CuotaLogic.pagar(getRequest(), anio, mes, idsocio);
+		return CuotaLogic.pagar(getRequest(), pojo);
 	}
+//	public Response pagar(CuotaPojo pojo, @PathParam("anio") String anio, @PathParam("mes") String mes, @PathParam("socio") int idsocio) 
+//	{		
+//		LOGGER.info("[ init - guardar cuota ]");
+//		return CuotaLogic.pagar(getRequest(), anio, mes, idsocio);
+//	}
 	
 	@GET
 	@Path("/verRegistro/{anio}/{mes}/{socio}")

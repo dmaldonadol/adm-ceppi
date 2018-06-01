@@ -1,5 +1,6 @@
 package cl.ml.ceppi.web.logic;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,6 @@ import cl.ml.ceppi.core.facade.CuotaFacade;
 import cl.ml.ceppi.core.facade.SocioFacade;
 import cl.ml.ceppi.core.model.cuota.Cuota;
 import cl.ml.ceppi.core.model.cuota.RegistroCuota;
-import cl.ml.ceppi.core.model.cuota.Valor;
 import cl.ml.ceppi.core.model.cuota.ValorCuota;
 import cl.ml.ceppi.core.model.estado.EstadoCuota;
 import cl.ml.ceppi.core.model.socio.Socio;
@@ -21,6 +21,7 @@ import cl.ml.ceppi.core.model.tipo.CategoriaSocio;
 import cl.ml.ceppi.core.model.tipo.TipoSocio;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.web.locator.ServiceLocator;
+import cl.ml.ceppi.web.pojo.CuotaPojo;
 import cl.ml.ceppi.web.util.Constantes;
 
 /**
@@ -249,7 +250,7 @@ public class CuotaLogic {
 	 * @param idsocio
 	 * @return
 	 */
-	public static Response pagar(HttpServletRequest req, String anio, String mes, int idsocio) 
+	public static Response pagar(HttpServletRequest req, CuotaPojo pojo) 
 	{
 		try 
 		{
@@ -258,13 +259,34 @@ public class CuotaLogic {
 			
 			Usuario usuario = (Usuario) req.getSession().getAttribute(Constantes.USER_SESSION);
 			
-			Socio socio = sociofacade.findSocioById(idsocio);
+			RegistroCuota registro = facade.findRegistroCuota(pojo.getAnio(), pojo.getMes(), pojo.getIdSocio());
+			Socio socio = sociofacade.findSocioById(pojo.getIdSocio());
 			ValorCuota valorcuota = facade.findValorCuota(new ValorCuota(0, socio.getTipoSocio(), socio.getCategoriaSocio()));
-			Valor valor = new Valor(0, valorcuota.getValor(), valorcuota.getTipoSocio(), valorcuota.getCategoriaSocio());
 			
-			Cuota cuota = new Cuota(valor, anio, mes, socio);
+			if ( registro != null )
+			{
+				BigDecimal montoRegistrado = new BigDecimal(registro.getCuota().getValor());
+				BigDecimal montoReq = new BigDecimal(pojo.getMonto());
+				BigDecimal suma = montoRegistrado.add(montoReq);
+				registro.getCuota().setValor(suma.toString());
+				registro.setComentario(pojo.getComentario());
+				
+				if ( suma.toString().equals(valorcuota.getValor()) )
+				{
+					registro.setEstadoCuota(EstadoCuota.PAGADA);
+				}
+				else
+				{
+					registro.setEstadoCuota(EstadoCuota.PARCIAL);
+				}
+				
+				facade.update(registro);
+				return Response.status(Status.CREATED).entity(registro).build();
+			}
 			
-			RegistroCuota registroCuota = new RegistroCuota(cuota, usuario, EstadoCuota.PAGADA, new Date());
+			Cuota cuota = new Cuota(EstadoCuota.PARCIAL.toString().equals(pojo.getEstado()) ? pojo.getMonto() : valorcuota.getValor(), pojo.getAnio(), pojo.getMes(), socio);
+			RegistroCuota registroCuota = new RegistroCuota(cuota, usuario, pojo.getEstado(), new Date(), pojo.getComentario());			
+			
 			facade.save(registroCuota);
 			
 			return Response.status(Status.CREATED).entity(registroCuota).build();

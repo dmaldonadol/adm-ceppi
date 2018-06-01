@@ -153,7 +153,10 @@ public class CuotaDaoImpl implements CuotaDao {
 		criteria.add(Restrictions.eq("cuota.anio", anio));
 		criteria.add(Restrictions.eq("cuota.mes", mes));
 		criteria.add(Restrictions.eq("socio.oid", idsocio));
-		
+		if ( criteria.list().isEmpty() )
+		{
+			return null;
+		}
 		return (RegistroCuota) criteria.list().get(0);
 	}
 }

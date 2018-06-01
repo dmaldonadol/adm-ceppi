@@ -52,18 +52,34 @@ public class RegistroCuota implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "FECHA_COBRO", nullable = false)
 	private Date fechaCobro;
+	
+	@Column(name = "COMENTARIO")
+	private String comentario;
 
 	public RegistroCuota() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public RegistroCuota(Cuota cuota, Usuario usuario, EstadoCuota estadoCuota, Date fechaCobro) 
+	public RegistroCuota(Cuota cuota, Usuario usuario, String estadoCuota, Date fechaCobro, String comentario) 
 	{
 		super();
 		this.cuota = cuota;
 		this.usuario = usuario;
-		this.estadoCuota = estadoCuota;
 		this.fechaCobro = fechaCobro;
+		this.comentario = comentario;
+		
+		if ( EstadoCuota.PAGADA.toString().equals(estadoCuota) )
+		{
+			this.estadoCuota = EstadoCuota.PAGADA;
+		}
+		else if (EstadoCuota.PARCIAL.toString().equals(estadoCuota)) 
+		{
+			this.estadoCuota = EstadoCuota.PARCIAL;
+		}
+		else
+		{
+			this.estadoCuota = EstadoCuota.PENDIENTE;
+		}
 	}
 
 	public int getOid() {
@@ -104,6 +120,14 @@ public class RegistroCuota implements Serializable {
 
 	public void setFechaCobro(Date fechaCobro) {
 		this.fechaCobro = fechaCobro;
+	}
+
+	public String getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
 	}
 
 }
