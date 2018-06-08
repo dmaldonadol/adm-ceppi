@@ -7,6 +7,7 @@ import java.util.List;
 
 import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 
 /**
@@ -25,10 +26,14 @@ public interface PerfilDao
 	void delete(Menu menu);
 	
 	List<Perfil> listPerfil();
-	List<Menu> listMenu();
+	List<MenuCompuesto> listMenu();
 		
 	Perfil findPerfilById(int id);
 	Menu findMenuById(int id);
 	
 	List<Acceso> listaAccesoByIdPerfil(int id);
+	void saveAcceso(Acceso acceso);
+	Acceso findAccesoById(int id);
+	Menu findMenuByCodigo(String codigo);
+	void delete(Acceso acceso);
 }

@@ -1,11 +1,18 @@
 package cl.ml.ceppi.web.logic;
 
+import java.util.List;
+
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import cl.ml.ceppi.core.facade.PerfilFacade;
+import cl.ml.ceppi.core.model.acceso.Acceso;
+import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
+import cl.ml.ceppi.core.model.menu.Permiso;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.web.locator.ServiceLocator;
 import cl.ml.ceppi.web.util.Constantes;
@@ -71,6 +78,18 @@ public class PerfilLogic {
 			PerfilFacade facade = (PerfilFacade) ServiceLocator.getInstance().getBean(Constantes.PERFIL_FACADE);
 						
 			facade.save(obj);
+
+			Acceso acceso = null;
+			for (String codigo : obj.getPermisos()) 
+			{
+				Menu menu = facade.findMenuByCodigo(codigo);
+				acceso = new Acceso();
+				acceso.setItemsMenu(menu);
+				acceso.setPerfil(obj);
+				acceso.setPermiso(Permiso.E);
+				
+				facade.saveAcceso(acceso);
+			}
 			
 			return Response.status(Status.OK).entity(null).build();
 		}
@@ -91,6 +110,25 @@ public class PerfilLogic {
 		try 
 		{
 			PerfilFacade facade = (PerfilFacade) ServiceLocator.getInstance().getBean(Constantes.PERFIL_FACADE);
+			
+			List<Acceso> accesosOld = facade.listaAccesoByIdPerfil(obj.getOid());
+			
+			for (Acceso acceso : accesosOld) 
+			{
+				facade.delete(acceso);
+			}
+			
+			Acceso acceso = null;
+			for (String codigo : obj.getPermisos()) 
+			{
+				Menu menu = facade.findMenuByCodigo(codigo);
+				acceso = new Acceso();
+				acceso.setItemsMenu(menu);
+				acceso.setPerfil(obj);
+				acceso.setPermiso(Permiso.E);
+				
+				facade.saveAcceso(acceso);
+			}
 			
 			facade.update(obj);
 			return Response.status(Status.OK).entity(null).build();
@@ -119,6 +157,34 @@ public class PerfilLogic {
 		catch (Exception e) 
 		{
 			LOGGER.error("Error al eliminar un perfil.", e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
+		}
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public static Response opcionesMenu() 
+	{
+		try 
+		{
+			PerfilFacade facade = (PerfilFacade) ServiceLocator.getInstance().getBean(Constantes.PERFIL_FACADE);
+			List<MenuCompuesto> lista = facade.listMenu();
+			
+			for (MenuCompuesto menuCompuesto : lista) {
+				for (Menu item :menuCompuesto.getItemMenu()) {
+					item.setMenu(null);
+				}
+			}
+			
+			ObjectMapper mapper = new ObjectMapper();
+			String json = mapper.writeValueAsString(lista);
+			return Response.status(Status.OK).entity(json).build();
+		}
+		catch (Exception e) 
+		{
+			LOGGER.error("Error al obtener opciones de menu.", e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
 		}
 	}

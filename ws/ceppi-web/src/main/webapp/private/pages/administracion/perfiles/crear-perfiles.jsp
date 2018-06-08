@@ -54,25 +54,22 @@
 	                                        data-parsley-errors-container="#error-container" data-parsley-error-message="ingrese una descripción" data-parsley-required></textarea>
 	                                    </div>
 	                                </div>
-		        					
 		        				</form>
 		        			</div>
+		        			
 		        			<div class="col-md-6">
 		        				<form class="form-horizontal form-bordered" >
 			        				<h4 class="text-primary mt0">Permisos del Perfil</h4>
 			        				<p class="pb10">Indique los permisos que poseera el nuevo perfil.</p>
-			        				
-			        				<div class="form-group">
-	                                    <div class="col-sm-1 control-label">
-                                                <input type="checkbox" name="customcheckbox1" id="customcheckbox1">
+									
+			        				<div class="form-group col-md-12" ng-repeat="item in menuObj">
+	                                    <div class="col-md-12">
+                                        	<span class="text" style="padding: 7px 0px 7px 0px; font-weight: 600;color: #6f6f6f;">{{item.nombre}}</span>
 	                                    </div>
-	                                    <label class="col-sm-11 control-label">Modulo Usuarios</label>
-	                                </div>
-	                                <div class="form-group">
-	                                    <div class="col-sm-1 control-label">
-                                                <input type="checkbox" name="customcheckbox1" id="customcheckbox1">
-	                                    </div>
-	                                    <div class="col-sm-11 control-label">Modulo Perfiles</div>
+	                                    <div class="col-md-12" ng-repeat="subItem in item.itemMenu">
+		                                    <div class="col-md-2"><input type="checkbox" name="{{subItem.codigo}}" id="{{subItem.codigo}}" ng-model="subItem.permiso" ng-change="addPermiso(subItem);"></div>
+		                                    <div class="col-md-10"><span class="text">{{subItem.nombre}}</span></div>
+								        </div>
 	                                </div>
 			        				
 		        				</form>

@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cl.ml.ceppi.core.dao.PerfilDao;
 import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.service.PerfilService;
 
@@ -60,7 +61,7 @@ public class PerfilServiceImpl implements PerfilService {
 	}
 
 	@Transactional
-	public List<Menu> listMenu() {
+	public List<MenuCompuesto> listMenu() {
 		return perfilDao.listMenu();
 	}
 
@@ -77,6 +78,29 @@ public class PerfilServiceImpl implements PerfilService {
 	public List<Acceso> listaAccesoByIdPerfil(int id)
 	{
 		return perfilDao.listaAccesoByIdPerfil(id);
+	}
+
+	@Transactional
+	public void saveAcceso(Acceso acceso) {
+		// TODO Auto-generated method stub
+		perfilDao.saveAcceso(acceso);
+	}
+
+	@Transactional
+	public Acceso findAccesoById(int id) {
+		// TODO Auto-generated method stub
+		return perfilDao.findAccesoById(id);
+	}
+
+	@Transactional
+	public Menu findMenuByCodigo(String codigo) {
+		// TODO Auto-generated method stub
+		return perfilDao.findMenuByCodigo(codigo);
+	}
+
+	@Transactional
+	public void delete(Acceso acceso) {
+		perfilDao.delete(acceso);
 	}
 
 }

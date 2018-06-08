@@ -85,6 +85,17 @@ public class PerfilRest
 		
 	}
 	
+	@GET
+	@Path("/opciones/menu")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response opcionesMenu( ) 
+	{		
+		LOGGER.info("[Init] - Opciones menu");
+		return PerfilLogic.opcionesMenu();
+		
+	}
+	
 
 	public HttpServletRequest getRequest() {
 		return request;

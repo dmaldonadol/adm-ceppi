@@ -60,6 +60,9 @@ public class Socio implements Serializable {
 	
 	@Transient
 	private String valorCuota;
+	
+	@Transient
+	private String estadoComercial;
 
 	public Socio() {
 		// TODO Auto-generated constructor stub
@@ -123,6 +126,14 @@ public class Socio implements Serializable {
 
 	public void setFechaIngreso(Date fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
+	}
+
+	public String getEstadoComercial() {
+		return estadoComercial;
+	}
+
+	public void setEstadoComercial(String estadoComercial) {
+		this.estadoComercial = estadoComercial;
 	}
 
 }

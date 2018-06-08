@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cl.ml.ceppi.core.facade.PerfilFacade;
 import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.service.PerfilService;
 
@@ -58,7 +59,7 @@ public class PerfilFacadeImpl implements PerfilFacade
 	}
 
 	@Transactional
-	public List<Menu> listMenu() {
+	public List<MenuCompuesto> listMenu() {
 		return perfilService.listMenu();
 	}
 
@@ -76,6 +77,29 @@ public class PerfilFacadeImpl implements PerfilFacade
 	public List<Acceso> listaAccesoByIdPerfil(int id)
 	{
 		return perfilService.listaAccesoByIdPerfil(id);
+	}
+
+	@Transactional
+	public void saveAcceso(Acceso acceso) {
+		// TODO Auto-generated method stub
+		perfilService.saveAcceso(acceso);
+	}
+
+	@Transactional
+	public Acceso findAccesoById(int id) {
+		// TODO Auto-generated method stub
+		return perfilService.findAccesoById(id);
+	}
+
+	@Transactional
+	public Menu findMenuByCodigo(String codigo) {
+		// TODO Auto-generated method stub
+		return perfilService.findMenuByCodigo(codigo);
+	}
+
+	@Transactional
+	public void delete(Acceso acceso) {
+		perfilService.delete(acceso);
 	}
 
 	

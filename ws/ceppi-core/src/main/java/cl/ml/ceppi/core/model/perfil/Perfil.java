@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @author Maldonado León
@@ -36,6 +37,9 @@ public class Perfil implements Serializable {
 
 	@Column(name = "DESCRIPCION")
 	private String descripcion;
+	
+	@Transient
+	private String[] permisos;
 
 	/**
 	 * 
@@ -81,6 +85,14 @@ public class Perfil implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String[] getPermisos() {
+		return permisos;
+	}
+
+	public void setPermisos(String[] permisos) {
+		this.permisos = permisos;
 	}
 
 }

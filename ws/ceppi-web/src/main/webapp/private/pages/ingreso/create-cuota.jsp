@@ -106,6 +106,12 @@
 		                            	<label class="control-label">{{formatNumber(socio.valorCuota)}}</label>
 		                            </div>
 		                        </div>
+		                        <div class="form-group">
+		                        	<label class="col-sm-3 control-label">Estado:</label>
+		                            <div class="col-sm-9">
+		                            	<label class="control-label">{{(socio.estadoComercial)}}</label>
+		                            </div>
+		                        </div>
                        		</form>
                        	</div>
                     </div>

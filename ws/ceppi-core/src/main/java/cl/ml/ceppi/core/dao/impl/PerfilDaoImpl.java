@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import cl.ml.ceppi.core.dao.PerfilDao;
 import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 
 /**
@@ -65,8 +67,23 @@ public class PerfilDaoImpl implements PerfilDao {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Menu> listMenu() {
-		return (List<Menu>) getSession().createQuery("from Menu").list();
+	public List<MenuCompuesto> listMenu() {
+		Criteria cr = getSession().createCriteria(Menu.class);
+		cr.add(Restrictions.isNull("menu"));
+		cr.addOrder(Order.asc("orden"));
+		
+		List<MenuCompuesto> menu = (List<MenuCompuesto>) cr.list();
+		
+		for (MenuCompuesto item : menu) 
+		{
+			Criteria crs = getSession().createCriteria(Menu.class);
+			crs.add(Restrictions.eq("menu", item));
+			crs.addOrder(Order.asc("orden"));
+			item.setItemMenu(crs.list());
+			item.setMenu(null);
+		}
+		
+		return menu;
 	}
 
 	@Override
@@ -89,6 +106,30 @@ public class PerfilDaoImpl implements PerfilDao {
 		Criteria cr = getSession().createCriteria(Acceso.class);
 		cr.add(Restrictions.eq("perfil.oid", id));
 		return (List<Acceso>)cr.list();
+	}
+
+	@Override
+	public void saveAcceso(Acceso acceso) {
+		getSession().persist(acceso);
+	}
+
+	@Override
+	public Acceso findAccesoById(int id) {
+		Criteria cr = getSession().createCriteria(Acceso.class);
+		cr.add(Restrictions.eq("oid", id));
+		return (Acceso) cr.uniqueResult();
+	}
+
+	@Override
+	public Menu findMenuByCodigo(String codigo) {
+		Criteria cr = getSession().createCriteria(Menu.class);
+		cr.add(Restrictions.eq("codigo", codigo));
+		return (Menu) cr.uniqueResult();
+	}
+
+	@Override
+	public void delete(Acceso acceso) {
+		getSession().delete(acceso);
 	}
 
 }

@@ -70,7 +70,29 @@ app.controller("CrearPerfilController", function($scope, $http, $location)
 	 *************************************************************/
 	$scope.initialize = function()
 	{
+		$scope.permisos=[];
+		$scope.getOpcionesMenu(function()
+		{
+			NProgress.done();
+		});
+	};
+	
+	$scope.getOpcionesMenu = function( callback )
+	{
 		
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/opciones/menu");
+		request.success( function( response )
+		{
+			console.log( response );
+			$scope.menuObj = response;
+			callback();
+			
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+			NProgress.done();
+		});
 	};
 	
 	/*************************************************************
@@ -83,7 +105,9 @@ app.controller("CrearPerfilController", function($scope, $http, $location)
 		NProgress.start();
 		if( $scope.validate() )
 		{
+			$scope.perfil.permisos = $scope.permisos;
 			console.log( $scope.perfil );
+			
 			var request = $http.put( CONSTANTS.contextPath + "/api/private/perfil", $scope.perfil );
 			request.success( function( response )
 			{
@@ -102,6 +126,21 @@ app.controller("CrearPerfilController", function($scope, $http, $location)
 			NProgress.done();
 		}
 		
+	};
+	
+	$scope.addPermiso = function ( obj )
+	{
+		if ( obj.permiso )
+		{
+			$scope.permisos.push( obj.codigo );
+		}
+		else
+		{
+			var index = $scope.permisos.indexOf(obj.codigo);
+			$scope.permisos.splice(index, 1);
+		}
+		
+		console.log($scope.permisos);
 	};
 	
 	/*************************************************************
@@ -168,7 +207,6 @@ app.controller("EditarPerfilController", function($scope, $http, $routeParams, $
 		});
 	};
 
-	
 	
 	
 	/*************************************************************
