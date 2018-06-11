@@ -62,6 +62,11 @@ public class PerfilFacadeImpl implements PerfilFacade
 	public List<MenuCompuesto> listMenu() {
 		return perfilService.listMenu();
 	}
+	
+	@Transactional
+	public List<MenuCompuesto> listMenuPerfil( int idPerfil ) {
+		return perfilService.listMenuPerfil(idPerfil);
+	}
 
 	@Transactional
 	public Perfil findPerfilById(int id) {

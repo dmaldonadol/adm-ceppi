@@ -181,7 +181,10 @@ app.controller("EditarPerfilController", function($scope, $http, $routeParams, $
 		$scope.params.id;
 		$scope.obtener( $scope.params.id, function()
 		{
-			NProgress.done();
+			$scope.getOpcionesMenu( function()
+			{
+				NProgress.done();
+			});
 		} );
 	};
 	
@@ -206,6 +209,60 @@ app.controller("EditarPerfilController", function($scope, $http, $routeParams, $
 			callback();
 		});
 	};
+	
+	/**
+	 * 
+	 */
+	$scope.getOpcionesMenu = function( callback )
+	{
+		
+		var request = $http.get( CONSTANTS.contextPath + "/api/private/perfil/opciones/menu");
+		request.success( function( response )
+		{
+			$scope.menuObj = response;
+			$scope.permisos=[];
+			for ( var i=0; i < $scope.perfil.permisos.length; i++ )
+			{
+				$scope.permisos.push($scope.perfil.permisos[i]);
+				for ( var a=0; a < $scope.menuObj.length; a++ )
+				{
+					for ( var e=0; e < $scope.menuObj[a].itemMenu.length; e++ )
+					{
+						if ( $scope.perfil.permisos[i] == $scope.menuObj[a].itemMenu[e].codigo)
+						{
+							$scope.menuObj[a].itemMenu[e].permiso = true;
+						}
+					}
+				}
+			}
+			
+			callback();
+			
+		} );
+		request.error( function( error )
+		{
+			console.log(error);
+			NProgress.done();
+		});
+	};
+	
+	/**
+	 * 
+	 */
+	$scope.addPermiso = function ( obj )
+	{
+		if ( obj.permiso )
+		{
+			$scope.permisos.push( obj.codigo );
+		}
+		else
+		{
+			var index = $scope.permisos.indexOf(obj.codigo);
+			$scope.permisos.splice(index, 1);
+		}
+		
+		console.log($scope.permisos);
+	};
 
 	
 	
@@ -217,6 +274,7 @@ app.controller("EditarPerfilController", function($scope, $http, $routeParams, $
 	{
 		if( $scope.validate() )
 		{
+			$scope.perfil.permisos = $scope.permisos;
 			var request = $http.post( CONSTANTS.contextPath + "/api/private/perfil" , $scope.perfil );
 			NProgress.configure({ parent: '#main' });
 			NProgress.start();

@@ -64,6 +64,11 @@ public class PerfilServiceImpl implements PerfilService {
 	public List<MenuCompuesto> listMenu() {
 		return perfilDao.listMenu();
 	}
+	
+	@Transactional
+	public List<MenuCompuesto> listMenuPerfil( int idPerfil ) {
+		return perfilDao.listMenuPerfil(idPerfil);
+	}
 
 	@Transactional
 	public Perfil findPerfilById(int id) {

@@ -15,6 +15,7 @@ import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
+import oracle.net.aso.b;
 
 /**
  * @author Maldonado León
@@ -81,6 +82,47 @@ public class PerfilDaoImpl implements PerfilDao {
 			crs.addOrder(Order.asc("orden"));
 			item.setItemMenu(crs.list());
 			item.setMenu(null);
+		}
+		
+		return menu;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<MenuCompuesto> listMenuPerfil( int idPerfil ) 
+	{
+		Criteria cr = getSession().createCriteria(Menu.class);
+		cr.add(Restrictions.isNull("menu"));
+		cr.addOrder(Order.asc("orden"));
+		
+		List<MenuCompuesto> menu = (List<MenuCompuesto>) cr.list();
+		List<Acceso> accesos = listaAccesoByIdPerfil(idPerfil);
+		StringBuilder builder = new StringBuilder();
+		String comma = "";
+		for (Acceso acceso : accesos) {
+			builder.append(comma);
+			builder.append("'");
+			builder.append(acceso.getItemsMenu().getCodigo());
+			builder.append("'");
+			comma = ",";
+		}
+		
+		for (MenuCompuesto item : menu) 
+		{
+			List<Menu> subMenu = getSession().createQuery("from Menu where menu.oid = "+ item.getOid() +" and codigo in (" + builder.toString() +") order by orden asc").list();
+			if ( !subMenu.isEmpty() )
+			{
+				item.setItemMenu(subMenu);
+			}
+			
+//			Criteria crs = getSession().createCriteria(Menu.class);
+//			crs.add(Restrictions.eq("menu", item));
+//			crs.add(Restrictions.in("codigo", accesos));
+//			crs.addOrder(Order.asc("orden"));
+//			if ( !crs.list().isEmpty() ) 
+//			{
+//				item.setItemMenu(crs.list());
+//			}
 		}
 		
 		return menu;

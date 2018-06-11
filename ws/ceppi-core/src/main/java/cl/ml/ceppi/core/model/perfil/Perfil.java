@@ -4,6 +4,8 @@
 package cl.ml.ceppi.core.model.perfil;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,9 +39,9 @@ public class Perfil implements Serializable {
 
 	@Column(name = "DESCRIPCION")
 	private String descripcion;
-	
+
 	@Transient
-	private String[] permisos;
+	private List<String> permisos = new ArrayList<String>();
 
 	/**
 	 * 
@@ -87,11 +89,11 @@ public class Perfil implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String[] getPermisos() {
+	public List<String> getPermisos() {
 		return permisos;
 	}
 
-	public void setPermisos(String[] permisos) {
+	public void setPermisos(List<String> permisos) {
 		this.permisos = permisos;
 	}
 

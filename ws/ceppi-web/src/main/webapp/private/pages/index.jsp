@@ -63,6 +63,7 @@
         
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/Utils.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/ApplicationCeppi.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/MenuController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/DashboardController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/UsuarioController.js"></script>
         <script type="text/javascript" src="<%=request.getContextPath() %>/private/js/PerfilController.js"></script>

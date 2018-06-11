@@ -2,11 +2,8 @@ var app = angular.module('CeppiApp', ['ngRoute']).config(function($routeProvider
 {
 	app.registerCtrl = $controllerProvider.register;
 	$routeProvider
-    .when('/', 
-    {
-    	controller:'DashboardController',
-    	templateUrl:  CONSTANTS.contextPath + '/private/pages/inicio.jsp' 	
-    })
+    .when('/', {controller:'DashboardController', templateUrl:  CONSTANTS.contextPath + '/private/pages/inicio.jsp'})
+    .when('/', {controller:'MenuController', templateUrl:  CONSTANTS.contextPath + '/private/pages/commons/menu.jsp'})
     .when('/administracion/usuarios',{controller:'UsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/usuarios.jsp'})
     .when('/administracion/usuarios/crear',{controller:'CrearUsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/crear-usuario.jsp'})
     .when('/administracion/usuarios/editar/:id',{controller:'EditarUsuarioController',templateUrl:  CONSTANTS.contextPath + '/private/pages/administracion/usuarios/editar-usuario.jsp'})

@@ -25,6 +25,7 @@ public interface PerfilFacade
 	
 	List<Perfil> listPerfil();
 	List<MenuCompuesto> listMenu();
+	List<MenuCompuesto> listMenuPerfil( int idPerfil );
 		
 	Perfil findPerfilById(int id);
 	Menu findMenuById(int id);

@@ -1,5 +1,6 @@
 package cl.ml.ceppi.web.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.core.Response;
@@ -57,7 +58,16 @@ public class PerfilLogic {
 		try 
 		{
 			PerfilFacade perfilFacade = (PerfilFacade) ServiceLocator.getInstance().getBean("perfilFacade");
-			return Response.status(Response.Status.OK).entity(perfilFacade.findPerfilById(id)).build();
+			Perfil perfil = perfilFacade.findPerfilById(id);
+			List<Acceso> accesos = perfilFacade.listaAccesoByIdPerfil(id);
+			List<String> permisos = new ArrayList<String>();
+			for (Acceso acceso : accesos) 
+			{
+				permisos.add(acceso.getItemsMenu().getCodigo());
+			}
+			perfil.setPermisos(permisos);
+			
+			return Response.status(Response.Status.OK).entity(perfil).build();
 		}
 		catch (Exception e) 
 		{

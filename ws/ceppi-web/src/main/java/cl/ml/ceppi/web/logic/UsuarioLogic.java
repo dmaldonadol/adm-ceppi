@@ -9,7 +9,8 @@ import org.apache.log4j.Logger;
 
 import cl.ml.ceppi.core.facade.PerfilFacade;
 import cl.ml.ceppi.core.facade.UsuarioFacade;
-import cl.ml.ceppi.core.model.acceso.Acceso;
+import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.core.util.Crypt;
@@ -57,19 +58,28 @@ public class UsuarioLogic {
 	 * @param perfil
 	 * @return
 	 */
-	public static List<Acceso> acceso(Perfil perfil)
+	public static List<MenuCompuesto> acceso(Perfil perfil)
 	{
-		List<Acceso> acceso = null;
+		List<MenuCompuesto> menu = null;
 		try 
 		{
 			PerfilFacade facade = (PerfilFacade) ServiceLocator.getInstance().getBean(Constantes.PERFIL_FACADE);
-			acceso = facade.listaAccesoByIdPerfil(perfil.getOid());
+			
+			menu = facade.listMenuPerfil(perfil.getOid());
+			
+			for (MenuCompuesto menuCompuesto : menu) {
+				menuCompuesto.setMenu(null);
+				for (Menu item :menuCompuesto.getItemMenu()) 
+				{
+					item.setMenu(null);
+				}
+			}
 		}
 		catch (Exception e) 
 		{
 			LOGGER.error("Error al obtener el menu por perfil.", e);
 		}
-		return acceso;
+		return menu;
 	}
 
 	/**

@@ -19,7 +19,8 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.core.model.acceso.Acceso;
+import cl.ml.ceppi.core.model.menu.Menu;
+import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.web.logic.UsuarioLogic;
 import cl.ml.ceppi.web.util.Constantes;
@@ -56,7 +57,7 @@ public class AuthenticationRest {
 			{
 				HttpSession session = request.getSession( true );
 				
-				List<Acceso> acceso = UsuarioLogic.acceso(usuario.getPerfil());
+				List<MenuCompuesto> acceso = UsuarioLogic.acceso(usuario.getPerfil());
 				
 				session.setAttribute( Constantes.USER_SESSION , usuario );
 				session.setAttribute( Constantes.USER_ACCESS , acceso );
