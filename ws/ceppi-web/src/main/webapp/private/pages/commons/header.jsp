@@ -54,22 +54,9 @@
                         <ul class="dropdown-menu" role="menu">
                             <li class="pa15">
                                 <h5 class="semibold hidden-xs hidden-sm">
-                                    <p class="nm">60%</p>
-                                    <small class="text-muted">Profile complete</small>
+                                    <label class="text hidden-xs hidden-sm pl5">Perfil:&nbsp; <%= usuario.getPerfil().getNombre() %></label>
                                 </h5>
-                                <h5 class="semibold hidden-md hidden-lg">
-                                    <p class="nm">Erich Reyes</p>
-                                    <small class="text-muted">60% Profile complete</small>
-                                </h5>
-                                <div class="progress progress-xs nm mt10">
-                                    <div class="progress-bar progress-bar-warning" style="width: 60%">
-                                        <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
                             </li>
-                            <li class="divider"></li>
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-user-plus2"></i></span> Mi cuenta</a></li>
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-cog4"></i></span> Profile Setting</a></li>
                             <li class="divider"></li>
                             <li><a id="logout" href="<%=request.getContextPath() %>/logout"><span class="icon"><i class="ico-exit"></i></span> Salir</a></li>
                         </ul>

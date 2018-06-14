@@ -60,12 +60,11 @@ public class UsuarioLogic {
 	 */
 	public static List<MenuCompuesto> acceso(Perfil perfil)
 	{
-		List<MenuCompuesto> menu = null;
 		try 
 		{
 			PerfilFacade facade = (PerfilFacade) ServiceLocator.getInstance().getBean(Constantes.PERFIL_FACADE);
 			
-			menu = facade.listMenuPerfil(perfil.getOid());
+			List<MenuCompuesto> menu = facade.listMenuPerfil(perfil.getOid());
 			
 			for (MenuCompuesto menuCompuesto : menu) {
 				menuCompuesto.setMenu(null);
@@ -74,12 +73,57 @@ public class UsuarioLogic {
 					item.setMenu(null);
 				}
 			}
+			
+			return menu;
 		}
 		catch (Exception e) 
 		{
 			LOGGER.error("Error al obtener el menu por perfil.", e);
+			return null;
 		}
-		return menu;
+	}
+
+	/**
+	 * 
+	 * @param menu
+	 * @return
+	 */
+	private static String createMenu(List<MenuCompuesto> menu) 
+	{
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append("<aside class=\"sidebar sidebar-left sidebar-menu\">");
+		builder.append("<section class=\"content slimscroll\">");
+		builder.append("<h5 class=\"heading\">Men&uacute;</h5>");
+		builder.append("<ul class=\"topmenu topmenu-responsive\" data-toggle=\"menu\">");
+		
+		for (MenuCompuesto menuCompuesto : menu) 
+		{
+			builder.append("<li>");
+			builder.append("<a href=\"javascript:void(0);\" data-target=\"#dashboard" + menuCompuesto.getCodigo() +"\" data-toggle=\"submenu\" data-parent=\".topmenu\">");
+			builder.append("<span class=\"figure\"><i class=\"ico-dashboard2\"></i></span>");
+			builder.append("<span class=\"text\">" + menuCompuesto.getNombre() + "</span>");
+			builder.append("<span class=\"arrow\"></span>");
+			builder.append("</a>");
+			builder.append("<ul id=\"dashboard" + menuCompuesto.getCodigo() +"\" class=\"collapse \">");
+			builder.append("<li class=\"submenu-header ellipsis\">" + menuCompuesto.getNombre() + "</li>");
+			for (Menu subMenu : menuCompuesto.getItemMenu()) 
+			{
+				builder.append("<li>");
+				builder.append("<a href=\"" + subMenu.getPath() + "\"><span class=\"text\">"+ subMenu.getNombre() + "</span></a>");
+				builder.append("</li>");
+			}
+			builder.append("</ul>");
+			builder.append("</li>");
+		}
+		
+		builder.append("</ul>");
+		builder.append("</section>");
+		builder.append("</aside>");
+		
+		LOGGER.info("MENU: " + builder.toString());
+		
+		return builder.toString();
 	}
 
 	/**

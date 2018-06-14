@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.model.persona.Persona;
@@ -46,6 +47,9 @@ public class Usuario implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
+	
+	@Transient
+	private String menuHtml;
 
 	/**
 	 * 
@@ -99,6 +103,14 @@ public class Usuario implements Serializable {
 
 	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
+	}
+
+	public String getMenuHtml() {
+		return menuHtml;
+	}
+
+	public void setMenuHtml(String menuHtml) {
+		this.menuHtml = menuHtml;
 	}
 
 }

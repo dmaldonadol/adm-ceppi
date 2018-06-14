@@ -1,5 +1,6 @@
 package cl.ml.ceppi.core.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -15,7 +16,6 @@ import cl.ml.ceppi.core.model.acceso.Acceso;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.perfil.Perfil;
-import oracle.net.aso.b;
 
 /**
  * @author Maldonado León
@@ -107,6 +107,7 @@ public class PerfilDaoImpl implements PerfilDao {
 			comma = ",";
 		}
 		
+		List<Menu>  index = new ArrayList<Menu>();
 		for (MenuCompuesto item : menu) 
 		{
 			List<Menu> subMenu = getSession().createQuery("from Menu where menu.oid = "+ item.getOid() +" and codigo in (" + builder.toString() +") order by orden asc").list();
@@ -114,15 +115,15 @@ public class PerfilDaoImpl implements PerfilDao {
 			{
 				item.setItemMenu(subMenu);
 			}
-			
-//			Criteria crs = getSession().createCriteria(Menu.class);
-//			crs.add(Restrictions.eq("menu", item));
-//			crs.add(Restrictions.in("codigo", accesos));
-//			crs.addOrder(Order.asc("orden"));
-//			if ( !crs.list().isEmpty() ) 
-//			{
-//				item.setItemMenu(crs.list());
-//			}
+			else
+			{
+				index.add(item);
+			}
+		}
+		
+		for (Menu obj : index) 
+		{
+			menu.remove(obj);
 		}
 		
 		return menu;
