@@ -15,6 +15,7 @@ import cl.ml.ceppi.core.model.estado.Genero;
 import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.menu.MenuSimple;
+import cl.ml.ceppi.core.model.menu.Permiso;
 import cl.ml.ceppi.core.model.perfil.Perfil;
 import cl.ml.ceppi.core.model.persona.Persona;
 import cl.ml.ceppi.core.model.tipo.TipoGasto;
@@ -45,22 +46,22 @@ public class InitData {
 //					System.out.println(">> " + menuCompuesto.getNombre());
 //				}
 //			}
-//			
-//			TipoSocio tipoSocio = new TipoSocio("0001", "TP1", "TP1");
-//			tipoFacade.save(tipoSocio);
-//			
-//			Persona persona = new Persona();
-//			persona.setNombre("David");
-//			persona.setApellidoPaterno("Maldonado");
-//			persona.setApellidoMaterno("Leon");
-//			persona.setRut("16020016");
-//			persona.setDv("2");
-//			persona.setEmail("maldonadoleon@gmail.com");
-//			persona.setGenero(Genero.MASCULINO);
-//			persona.setEstatura("170");
-//			persona.setPeso("65");
-//			persona.setFechaNacimiento(new Date());
-//			personaFacade.save(persona);
+			
+			TipoSocio tipoSocio = new TipoSocio("0001", "ACTIVO", "ACTIVO");
+			tipoFacade.save(tipoSocio);
+			
+			Persona persona = new Persona();
+			persona.setNombre("David");
+			persona.setApellidoPaterno("Maldonado");
+			persona.setApellidoMaterno("Leon");
+			persona.setRut("16020016");
+			persona.setDv("2");
+			persona.setEmail("maldonadoleon@gmail.com");
+			persona.setGenero(Genero.MASCULINO);
+			persona.setEstatura("170");
+			persona.setPeso("65");
+			persona.setFechaNacimiento(new Date());
+			personaFacade.save(persona);
 			
 			/* MENU ADMINISTRACION */
 			MenuCompuesto menuCompuesto = new MenuCompuesto();
@@ -273,44 +274,64 @@ public class InitData {
 			perfilFacade.saveMenu(menuCompuesto);
 			
 //			/* PERFILES */
-//			Perfil perfil = new Perfil();
-//			perfil.setCodigo("0001");
-//			perfil.setNombre("Administrador");
-//			perfil.setDescripcion("Todopoderoso del sistema");
-//			perfilFacade.save(perfil);
-//			
-//			Usuario usuario = new Usuario();
-//			usuario.setUsername("admin");
-//			usuario.setPassword(Crypt.encrypt("admin"));
-//			usuario.setPersona(persona);
-//			usuario.setPerfil(perfil);
-//			usuarioFacade.save(usuario);
-//
-//			perfil = new Perfil();
-//			perfil.setCodigo("0002");
-//			perfil.setNombre("Tesorero");
-//			perfil.setDescripcion("Administra el dinero del club");
-//			perfilFacade.save(perfil);
-//
-//			perfil = new Perfil();
-//			perfil.setCodigo("0003");
-//			perfil.setNombre("Recaudador");
-//			perfil.setDescripcion("Ingresa cuotas al sistema");
-//			perfilFacade.save(perfil);
-//			
-//			TipoGasto tipoGasto = new TipoGasto("0001", "Locomocion", "Locomocion");
-//			TipoGasto tipoGasto1 = new TipoGasto("0002", "Colacion", "Colacion");
-//			TipoGasto tipoGasto2 = new TipoGasto("0003", "Articulos de Oficina", "Articulos de Oficina");
-//			tipoFacade.save(tipoGasto);
-//			tipoFacade.save(tipoGasto1);
-//			tipoFacade.save(tipoGasto2);
-//			
-//			TipoIngreso tipoIngreso = new TipoIngreso("0001", "Donacion", "Donacion");
-//			TipoIngreso tipoIngreso1 = new TipoIngreso("0002", "Bingo", "Bingo");
-//			TipoIngreso tipoIngreso2 = new TipoIngreso("0003", "Rifa", "Rifa");
-//			tipoFacade.save(tipoIngreso);
-//			tipoFacade.save(tipoIngreso1);
-//			tipoFacade.save(tipoIngreso2);
+			Perfil perfil = new Perfil();
+			perfil.setCodigo("0001");
+			perfil.setNombre("Administrador");
+			perfil.setDescripcion("Todopoderoso del sistema");
+			perfilFacade.save(perfil);
+			
+			Usuario usuario = new Usuario();
+			usuario.setUsername("admin");
+			usuario.setPassword(Crypt.encrypt("admin"));
+			usuario.setPersona(persona);
+			usuario.setPerfil(perfil);
+			usuarioFacade.save(usuario);
+
+			perfil = new Perfil();
+			perfil.setCodigo("0002");
+			perfil.setNombre("Tesorero");
+			perfil.setDescripcion("Administra el dinero del club");
+			perfilFacade.save(perfil);
+
+			perfil = new Perfil();
+			perfil.setCodigo("0003");
+			perfil.setNombre("Recaudador");
+			perfil.setDescripcion("Ingresa cuotas al sistema");
+			perfilFacade.save(perfil);
+			
+			TipoGasto tipoGasto = new TipoGasto("0001", "Locomocion", "Locomocion");
+			TipoGasto tipoGasto1 = new TipoGasto("0002", "Colacion", "Colacion");
+			TipoGasto tipoGasto2 = new TipoGasto("0003", "Articulos de Oficina", "Articulos de Oficina");
+			tipoFacade.save(tipoGasto);
+			tipoFacade.save(tipoGasto1);
+			tipoFacade.save(tipoGasto2);
+			
+			TipoIngreso tipoIngreso = new TipoIngreso("0001", "Donacion", "Donacion");
+			TipoIngreso tipoIngreso1 = new TipoIngreso("0002", "Bingo", "Bingo");
+			TipoIngreso tipoIngreso2 = new TipoIngreso("0003", "Rifa", "Rifa");
+			tipoFacade.save(tipoIngreso);
+			tipoFacade.save(tipoIngreso1);
+			tipoFacade.save(tipoIngreso2);
+			
+			Acceso acceso = null;
+			List<MenuCompuesto> accesos = perfilFacade.listMenu();
+			Perfil perfilAdm = perfilFacade.findPerfilById(1);
+			
+			for (MenuCompuesto items : accesos) 
+			{
+				for ( Menu submenu : items.getItemMenu())
+				{
+					acceso = new Acceso();
+					acceso.setPerfil(perfilAdm);
+					acceso.setPermiso(Permiso.E);
+					acceso.setItemsMenu(submenu);
+					perfilFacade.saveAcceso(acceso);
+				}
+			}			
+			
+			System.out.println("------------------------------------------");
+			System.out.println("Fin Ejecucion");
+			System.out.println("------------------------------------------");
 			
 			
 		} catch (Exception e) {
