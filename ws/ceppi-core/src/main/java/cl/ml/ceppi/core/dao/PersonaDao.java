@@ -10,7 +10,7 @@ import cl.ml.ceppi.core.model.persona.Persona;
  */
 public interface PersonaDao 
 {
-	Persona save(Persona persona);
+	void save(Persona persona);
 
 	void update(Persona persona);
 

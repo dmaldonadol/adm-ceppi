@@ -86,11 +86,11 @@ public class JugadorLogic
 			{
 				jugador.setPersona(persona);
 			}
-			else
-			{
-				Persona personax = facadxe.save(jugador.getPersona());
-				jugador.setPersona(personax);
-			}
+//			else
+//			{
+//				Persona personax = facadxe.save(jugador.getPersona());
+//				jugador.setPersona(personax);
+//			}
 			facade.save(jugador);
 			return Response.status(Response.Status.OK).entity( null ).build();
 		}

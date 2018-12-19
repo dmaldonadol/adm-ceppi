@@ -13,8 +13,8 @@ import cl.ml.ceppi.core.model.persona.Persona;
  */
 public interface PersonaFacade 
 {
-	Persona save(Persona persona);
-	Persona saveDos(Persona persona);
+	void save(Persona persona);
+	void saveDos(Persona persona);
 
 	void update(Persona persona);
 

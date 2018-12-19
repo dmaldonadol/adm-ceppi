@@ -73,7 +73,7 @@ public class UsuarioLogic {
 					item.setMenu(null);
 				}
 			}
-			
+			createMenu(menu);
 			return menu;
 		}
 		catch (Exception e) 

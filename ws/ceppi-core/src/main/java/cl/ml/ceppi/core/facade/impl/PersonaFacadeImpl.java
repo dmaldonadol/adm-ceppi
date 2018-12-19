@@ -21,13 +21,13 @@ public class PersonaFacadeImpl implements PersonaFacade
 	private PersonaService personaService;
 
 	@Transactional
-	public Persona save(Persona persona) {
-		return personaService.save(persona);
+	public void save(Persona persona) {
+		personaService.save(persona);
 	}
 	
 	@Transactional
-	public Persona saveDos(Persona persona) {
-		return personaService.save(persona);
+	public void saveDos(Persona persona) {
+		personaService.save(persona);
 	}
 
 	@Transactional

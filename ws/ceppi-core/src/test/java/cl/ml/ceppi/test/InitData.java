@@ -277,12 +277,12 @@ public class InitData {
 			Perfil perfil = new Perfil();
 			perfil.setCodigo("0001");
 			perfil.setNombre("Administrador");
-			perfil.setDescripcion("Todopoderoso del sistema");
+			perfil.setDescripcion("Administrador del sistema");
 			perfilFacade.save(perfil);
 			
 			Usuario usuario = new Usuario();
 			usuario.setUsername("admin");
-			usuario.setPassword(Crypt.encrypt("admin"));
+			usuario.setPassword(Crypt.encrypt("ceppiadmin"));
 			usuario.setPersona(persona);
 			usuario.setPerfil(perfil);
 			usuarioFacade.save(usuario);

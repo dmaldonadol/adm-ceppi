@@ -26,8 +26,8 @@ public class PersonaDaoImpl implements PersonaDao {
 	}
 
 	@Override
-	public Persona save(Persona persona) {
-		return (Persona) getSession().merge(persona);
+	public void save(Persona persona) {
+		getSession().persist(persona);
 	}
 
 	@Override

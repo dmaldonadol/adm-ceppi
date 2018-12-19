@@ -19,7 +19,6 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
-import cl.ml.ceppi.core.model.menu.Menu;
 import cl.ml.ceppi.core.model.menu.MenuCompuesto;
 import cl.ml.ceppi.core.model.usuario.Usuario;
 import cl.ml.ceppi.web.logic.UsuarioLogic;
