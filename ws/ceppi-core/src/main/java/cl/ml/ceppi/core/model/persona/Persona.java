@@ -77,6 +77,20 @@ public class Persona implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Persona(String nombre, String apepaterno, String apematerno, String rut, String dv, String email,
+			Genero genero, String estatura, String peso, Date fechanac) {
+		this.nombre = nombre;
+		this.apellidoPaterno = apepaterno;
+		this.apellidoMaterno = apematerno;
+		this.rut = rut;
+		this.dv = dv;
+		this.email = email;
+		this.genero = genero;
+		this.estatura = estatura;
+		this.peso = peso;
+		this.fechaNacimiento = fechanac;
+	}
+
 	public int getOid() {
 		return oid;
 	}

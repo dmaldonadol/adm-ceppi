@@ -47,6 +47,12 @@ public class Acceso implements Serializable {
 
 	public Acceso() {
 	}
+	
+	public Acceso(Perfil perfil, Permiso permiso, Menu menu) {
+		this.perfil = perfil;
+		this.permiso = permiso;
+		this.itemsMenu = menu;
+	}
 
 	public int getOid() {
 		return oid;

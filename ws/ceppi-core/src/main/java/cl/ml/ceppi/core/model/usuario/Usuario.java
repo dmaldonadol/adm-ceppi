@@ -47,7 +47,7 @@ public class Usuario implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_PERSONA")
 	private Persona persona;
-	
+
 	@Transient
 	private String menuHtml;
 
@@ -55,6 +55,13 @@ public class Usuario implements Serializable {
 	 * 
 	 */
 	public Usuario() {
+	}
+
+	public Usuario(String username, String pass, Persona persona, Perfil perfil) {
+		this.username = username;
+		this.password = pass;
+		this.persona = persona;
+		this.perfil = perfil;
 	}
 
 	/**
